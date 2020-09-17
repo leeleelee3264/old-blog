@@ -1,39 +1,38 @@
 ---
 layout: page
-title: About the blog and writer
+title: Introduction of the site
 tags: [about, blog, absinthe4902]
-date: 2020-01-04
+date: 2020-09-17
 comments: false
 ---
     
-<center><b>The blog</b>for logging what I've been studying</center>
+<center>Blog for logging my stuff during challenging <b>one day one commit</b></center>
 
 ## Usage of the blog
-* To log the content of study
-* To keep track of my portfolio
-* To save useful resource
-* To avoid wasting my time to find the same post
-* To archive my own wandering momnet
-* To encourage myself to keep learning
-* To help people who needs certain information
-* To have communication with other people
+* Summarize what I learned today.
+* Archiving references while coding.
+* Queuing useful resources.
+* Managing my portfolio.
+* Maybe communicate with other developers too!
 * etc...
 
 
-## About the writer
+## About myself
 
 {% capture images %}
     <!-- https://cloud.githubusercontent.com/assets/754514/14509720/61c61058-01d6-11e6-93ab-0918515ecd56.png
     https://cloud.githubusercontent.com/assets/754514/14509716/61ac6c8e-01d6-11e6-879f-8308883de790.png -->
-    assets/img/mylogo.png
+    /assets/img/mylogo.png
 {% endcapture %}
-{% include gallery images=images caption="cute dog logo I'm using now" cols=2 %}
+{% include gallery images=images caption="" cols=2 %}
+* Bachelor degree of Computer Science.
+* Junior front end, a little bit of backend developer.
+* Mostly using Java with Spring and Python with Django.
+* Additional: Mysql for DB, Git for version control, aws Linux for server. 
+* Have intermediate knowledge of HTML, CSS, Javascript. 
+* Slowly practicing React.js.
 
-See a [live version of Moon](http://taylantatli.github.io/Moon) hosted on GitHub.
-
-## Getting Started
-
-To learn how to install and use this theme check out the [Setup Guide](http://taylantatli.me/Moon/moon-theme/) for more information.
-      
-[checkout github](https://github.com/absinthe4902){: .btn}
+## You may also want to checkout... 
+ 
+[github](https://github.com/absinthe4902){: .btn}
 [korean blog](https://calgaryhomeless.tistory.com){: .btn}
