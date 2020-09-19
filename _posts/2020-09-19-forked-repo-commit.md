@@ -2,7 +2,7 @@
 layout: post 
 title: "Making forked repo to standalone repo"
 date: 2020-09-17
-excerpt: "fork한 repo를 내 repo로 만들기 feat.잔디심기"
+excerpt: "make forked repo to my own feat.planting grass"
 tags: [index, absinthe4902]
 feature: https://www.google.com/url?sa=i&url=https%3A%2F%2Fcommons.wikimedia.org%2Fwiki%2FFile%3AGit-logo.svg&psig=AOvVaw3byQEWfvG09a9l9D0tXjao&ust=1600521072443000&source=images&cd=vfe&ved=0CAIQjRxqFwoTCLD1geHj8usCFQAAAAAdAAAAABAD
 comments: false
