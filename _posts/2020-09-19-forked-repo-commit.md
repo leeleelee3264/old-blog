@@ -1,6 +1,6 @@
 ---
 layout: post 
-title: "Making forked repo to standalone repo"
+title: "[Git]Making forked repo to standalone repo"
 date: 2020-09-17
 excerpt: "make forked repo to my own feat.planting grass"
 tags: [index, absinthe4902]
