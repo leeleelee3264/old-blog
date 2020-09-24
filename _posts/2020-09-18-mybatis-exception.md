@@ -1,7 +1,7 @@
 ---
 layout: post 
 title: "[Spring] Mybatis Exception"
-date: 2020-09-17
+date: 2020-09-18
 excerpt: "Thinking about how to handle Mybatis Exception."
 tags: [index, absinthe4902]
 feature: /assets/img/spring.png
