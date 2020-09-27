@@ -35,3 +35,5 @@ My problem was forking the repo at the very first time. Keep in mind cloning [gi
 # Reference
 
 [GitHub: make fork an “own project”](https://stackoverflow.com/questions/18390249/github-make-fork-an-own-project)
+
+<a class="btn btn-rss" href="/feed.xml" target="_blank">RSS</a>

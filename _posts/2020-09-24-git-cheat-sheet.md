@@ -108,3 +108,5 @@ git config user.name
 
 # working directory 의 glo
 ```
+
+<a class="btn btn-rss" href="/feed.xml" target="_blank">RSS</a>

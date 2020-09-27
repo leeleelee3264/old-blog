@@ -27,3 +27,5 @@ MySql, NoSql etc ...
 
 <a name="resource"/>
 all the link I referenced before.
+
+<a class="btn btn-rss" href="/feed.xml" target="_blank">RSS</a>
