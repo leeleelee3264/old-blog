@@ -1,3 +1,6 @@
+# plugin
+plugins:
+    - jekyll-feed
 # Site
 title:              Log of Seungmin Lee
 bio:                'To keep logging what I have been studying.'
