@@ -10,6 +10,7 @@ comments: false
 
 # un-classified command 
 > KB로 되어있는 (default 값) 파일들 MB로 보기 
+>
 ```bash
 ls -alh
  ```
@@ -34,12 +35,14 @@ git commit --amend
 ```
 
 > 제일 최근에 한 commit에 새로운 파일 추가하기
+
 ```bash
 git add src/file/you/want/to/add.java
 git commit --amend
 ```
 
 > commit 날짜 바꾸기 aka 인공 잔디 심기
+
 ```bash
 #1. 제일 최근에 한 commit의 날짜 변경
 # 마지막에 +0900 은 KST 시간대 설정
@@ -80,6 +83,7 @@ git push origin 브랜치이름 -f
 
 # branch
 > 원격 저장소 branch 가져오기 
+
 ```bash
 # 1. 일단 pull 하고 local 과 remote에 있는 branch 확인하기 
 git branch -a 
@@ -88,6 +92,7 @@ git checkout -t origin/0921_excel
 ```
 
 > checkout 커맨드 
+
 ```bash
 # 1. 브랜치 변경하기 
 git checkout master
@@ -96,6 +101,7 @@ git checkout src/path/sample.java
 ```
 
 > switch, restore aka upgrade of checkout
+
 ```bash
 # 1. 브랜치 변경하기 
 git switch master
@@ -112,6 +118,7 @@ git resotre --staged src/path/sample.java
 
 # restore 
 > 현재 브랜치에 없는 파일 가져오기 
+
 ```bash
 # commit 을 안 해서 없는 (새로 생성한) 파일은 그냥 cherry-pick으로 가져오자. 
 # 이 커맨드 써서 가져오려면 꼬이기만 한다. 
