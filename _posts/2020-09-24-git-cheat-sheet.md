@@ -60,7 +60,13 @@ git push origin 브랜치이름 -f
 ```
 
 # branch
-
+> 원격 저장소 branch 가져오기 
+```bash
+# 1. 일단 pull 하고 local 과 remote에 있는 branch 확인하기 
+git branch -a 
+# 2. remote에 있다고 표기된 branch 가져오기 
+git checkout -t origin/0921_excel 
+```
 # merge
 
 > merge 취소
@@ -109,4 +115,11 @@ git config user.name
 # working directory 의 glo
 ```
 
-<a class="btn btn-rss" href="/feed.xml" target="_blank">RSS</a>
+# cached 
+
+> .gitginore 가 안 먹힐 때 AKA tracking 하지 말아야 할 파일을 트래킹 할 때 
+```bash
+git rm -r --cached .
+git add . 
+git commit -m "RESOLVED: .gitignore is not working"
+```
