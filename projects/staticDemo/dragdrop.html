@@ -20,7 +20,7 @@ comments: false
 
         .file-upload {
             background-color: #ffffff;
-            width: 600px;
+            width: 100%;
             margin: 0 auto;
             padding: 20px;
         }
@@ -164,7 +164,9 @@ comments: false
 <!-- Header -->
 <header class="header flex" role="banner">
     <div class="container animated fadeIn">
-        <div>
+        <div class="content">
+            <span>Excel file drag and drop style form. <a href="https://absinthe4902.github.io/front-dropdown-file/">more detail</a></span>
+
             <div class="file-upload">
                 <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Excel</button>
 
@@ -177,10 +179,10 @@ comments: false
                     </div>
                 </div>
                 <div class="file-upload-content">
-                    <img class="file-upload-image" src="/tcadmin/static/demo/excelIcon.png" alt="excel icon" />
+                    <img class="file-upload-image" src="/assets/img/demo/excelIcon.png" alt="excel icon" />
                     <div class="image-title-wrap">
-                        <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Image</span></button>
-                        <button type="button"  class="upload-image">Upload <span class="image-title">Uploaded Image</span></button>
+                        <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Excel</span></button>
+                        <button type="button"  class="upload-image">Upload <span class="image-title">Uploaded Excel</span></button>
                     </div>
                 </div>
             </div>
