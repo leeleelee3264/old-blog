@@ -3,7 +3,7 @@ layout: post
 title: "[Java] Java Map cheat sheet for myself"
 date: 2020-10-07
 excerpt: "Every Java Map command I use frequently"
-tags: [index, absinthe4902]
+tags: [Java, Map, absinthe4902]
 feature: /assets/img/Java_logo_icon.png
 comments: false
 ---
@@ -82,4 +82,4 @@ public class MapTest {
 }
 ```
 
-In this result, there is no 5 in testMap. Because computeIfAbsent ignore an attempt to put null in map. But 4 is indeed in the map. putIfAbsent dosen't care much.
+In this result, there is no 5 in testMap. Because computeIfAbsent ignore an attempt to put null in map. But 4 is indeed in the map. putIfAbsent doesn't care much. Perfect answer is [here!](https://stackoverflow.com/questions/48183999/what-is-the-difference-between-putifabsent-and-computeifabsent-in-java-8-map)
