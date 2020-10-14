@@ -10,9 +10,12 @@ comments: false
 <!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9"><![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js"><!--<![endif]-->
 <head>
-    {% include head.html %}
 
     <style>
+
+        .span-container {
+            text-align: center;
+        }
 
         *, *:before, *:after {
             box-sizing: border-box;
@@ -104,7 +107,7 @@ comments: false
         }
 
         .remove-image {
-            width: 200px;
+            /*width: 50%;*/
             margin: 0;
             color: #fff;
             background: #cd4535;
@@ -131,7 +134,7 @@ comments: false
         }
 
         .upload-image {
-            width: 200px;
+            /*width: 200px;*/
             margin: 0;
             color: #fff;
             background: lightseagreen;
@@ -160,13 +163,13 @@ comments: false
     </style>
 </head>
 <body>
-{% include nav.html %}
 <!-- Header -->
 <header class="header flex" role="banner">
     <div class="container animated fadeIn">
-        <div class="content">
+        <div class="span-container">
             <span>Excel file drag and drop style form. <a href="https://absinthe4902.github.io/front-dropdown-file/">more detail</a></span>
-
+        </div>
+        <div class="content">
             <div class="file-upload">
                 <button class="file-upload-btn" type="button" onclick="$('.file-upload-input').trigger( 'click' )">Add Excel</button>
 
@@ -182,14 +185,14 @@ comments: false
                     <img class="file-upload-image" src="/assets/img/demo/excelIcon.png" alt="excel icon" />
                     <div class="image-title-wrap">
                         <button type="button" onclick="removeUpload()" class="remove-image">Remove <span class="image-title">Uploaded Excel</span></button>
-                        <button type="button"  class="upload-image">Upload <span class="image-title">Uploaded Excel</span></button>
+                        <button type="button" class="upload-image">Upload <span class="image-title">Uploaded Excel</span></button>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </header>
-{% include scripts.html %}
+
 
 <script>
     function readURL(input) {
@@ -200,7 +203,12 @@ comments: false
             reader.onload = function (e) {
                 document.querySelector('.image-upload-wrap').style.display = 'none';
                 document.querySelector('.file-upload-content').style.display = 'block';
-                document.querySelector('.image-title').innerHTML = input.files[0].name;
+
+                let imgTitles = document.querySelectorAll('.image-title');
+
+                for(let title of imgTitles) {
+                    title.innerHTML = input.files[0].name;
+                }
             };
 
             reader.readAsDataURL(input.files[0]);
