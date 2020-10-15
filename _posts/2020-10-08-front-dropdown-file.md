@@ -46,7 +46,7 @@ comments: false
 
  And as we all know, our clients make unexpected exception. For example, I made a formatted excel template to write data easily. (giving them select box in cell). But my colleague didn't have excel software and try to open the template in google sheet. Sadly, select box wasn't working. Furthermore, it didn't let us input data manually. It just gave us many alert of 'It's not allowed data in the cell'. The point is, like i said I have to think about more general type of client situation. 
 
- Anyway here are the extension for microsoft file! You can find normal MIME type such as json, text, audio is here! [MIME type for input tag]([https://developer.mozilla.org/ko/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types](https://developer.mozilla.org/ko/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types))
+ Anyway here are the extension for microsoft file! You can find normal MIME type such as json, text, audio is here! [MIME type for input tag](https://developer.mozilla.org/ko/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types](https://developer.mozilla.org/ko/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types)
 
 ```
 Extension MIME Type
@@ -132,7 +132,7 @@ function readURL(input) {
     
 ```
 
- Recently I've been trying to use plain javascript only and no jQuery. I was actually surprised that plain javascript cover almost everything. And I struggled a lot with getElementByClassName. It returns collection type, quite different with getElementById. **I found out $('.className') is the same with document.querySelector('.className').** This page is very helpful, [youmightnotneedjquery](h[ttp://youmightnotneedjquery.com/](http://youmightnotneedjquery.com/))
+ Recently I've been trying to use plain javascript only and no jQuery. I was actually surprised that plain javascript cover almost everything. And I struggled a lot with getElementByClassName. It returns collection type, quite different with getElementById. **I found out $('.className') is the same with document.querySelector('.className').** This page is very helpful, [youmightnotneedjquery](http://youmightnotneedjquery.com/)
 
   When file is uploaded, excel icon will show up. But there was a problem. After removing an uploaded file, I tried to uploading the same file with previous one but the excel icon didn't show up because they are the same one. So I had to add removing img in removeUpload(). It's very simple. Just set file input element to "".
 
@@ -142,7 +142,7 @@ function readURL(input) {
 <summary>Css code</summary>
 
   ```css
-*, *:before, *:after {
+    *, *:before, *:after {
             box-sizing: border-box;
         }
 
