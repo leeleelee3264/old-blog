@@ -138,9 +138,6 @@ function readURL(input) {
 
 ## CSS
 
-<details>
-<summary>Css code</summary>
-
   ```css
     *, *:before, *:after {
                 box-sizing: border-box;
@@ -285,15 +282,3 @@ function readURL(input) {
             transition: all .2s ease;
         }
   ```
-</details>
-
-<details>
-  <summary>Click to expand!</summary>
-  
-  ```javascript
-    function whatIsLove() {
-      console.log('Baby Don't hurt me. Don't hurt me');
-      return 'No more';
-    }
-  ```
-</details>
