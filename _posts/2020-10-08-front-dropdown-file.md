@@ -46,7 +46,7 @@ comments: false
 
  And as we all know, our clients make unexpected exception. For example, I made a formatted excel template to write data easily. (giving them select box in cell). But my colleague didn't have excel software and try to open the template in google sheet. Sadly, select box wasn't working. Furthermore, it didn't let us input data manually. It just gave us many alert of 'It's not allowed data in the cell'. The point is, like i said I have to think about more general type of client situation. 
 
- Anyway here are the extension for microsoft file! You can find normal MIME type such as json, text, audio is here! [MIME type for input tag](https://developer.mozilla.org/ko/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types](https://developer.mozilla.org/ko/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types)
+ Anyway here are the extension for microsoft file! You can find normal MIME type such as json, text, audio is here! [MIME type for input tag](https://developer.mozilla.org/ko/docs/Web/HTTP/Basics_of_HTTP/MIME_types/Common_types)
 
 ```
 Extension MIME Type
@@ -143,9 +143,9 @@ function readURL(input) {
 
   ```css
     *, *:before, *:after {
-            box-sizing: border-box;
-        }
-
+                box-sizing: border-box;
+            }
+    
         .file-upload {
             background-color: #ffffff;
             width: 100%;
@@ -284,5 +284,16 @@ function readURL(input) {
             border: 0;
             transition: all .2s ease;
         }
+  ```
+</details>
+
+<details>
+  <summary>Click to expand!</summary>
+  
+  ```javascript
+    function whatIsLove() {
+      console.log('Baby Don't hurt me. Don't hurt me');
+      return 'No more';
+    }
   ```
 </details>
