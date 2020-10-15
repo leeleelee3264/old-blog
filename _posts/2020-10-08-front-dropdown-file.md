@@ -4,7 +4,7 @@ title: "[Front] Upload file with Drag and Drop!"
 date: 2020-10-14
 excerpt: "Upload File with more style AKA Drag and Drop"
 tags: [Front, HTML, CSS, JavaScript, absinthe4902]
-feature: /assets/img/front-end-log.png
+feature: /assets/img/front-end-logo.png
 comments: false
 ---
 # drag and drop (front)
@@ -13,7 +13,7 @@ comments: false
 
  Few days ago, I had to make a function that is about taking excel file from client side and reading it to save to our database. I usually go as simple as possible interms of HTML/CSS, but this time I did some research and work! Instead of using basic file chose button, draging a file and dropping in to a box. I was very happy when finishing these process because I thought it's quite user friendly interface.  Go check demo first and let's dig in!
 
-![drag%20and%20drop%20(front)%203bbcb41524264640801dce23e80eb29e/dragdrop.png](/assets/img/post/dragdrop.png)
+![drag%20and%20drop%20(front)%203bbcb41524264640801dce23e80eb29e/dragdrop.png](/assets/img/post/dragdrop.PNG)
 
 [demo](https://absinthe4902.github.io/demo/dragdrop){: .btn}
  
@@ -141,7 +141,7 @@ function readURL(input) {
 <details>
 <summary>Css code</summary>
 
-```css
+  ```css
 *, *:before, *:after {
             box-sizing: border-box;
         }
@@ -284,5 +284,5 @@ function readURL(input) {
             border: 0;
             transition: all .2s ease;
         }
-```
+  ```
 </details>
