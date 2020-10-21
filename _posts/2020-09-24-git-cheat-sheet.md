@@ -67,6 +67,30 @@ git branch -a
 # 2. remote에 있다고 표기된 branch 가져오기 
 git checkout -t origin/0921_excel 
 ```
+
+> checkout 커맨드 
+```bash
+# 1. 브랜치 변경하기 
+git checkout master
+# 2. 브랜치에서 작업했던 파일 작업 전으로 날려버리기 (add 하기 전) 
+git checkout src/path/sample.java
+```
+
+> switch, restore aka upgrade of checkout
+```bash
+# 1. 브랜치 변경하기 
+git switch master
+# 2. 브랜치 새로 만들어서 변경하기 
+git switch -c master
+# 3. 특정 버전 commit 에서 브랜치 새로 만들어서 변경하기 
+git switch -c master commit-number
+
+# 4. 브랜치에서 작업했던 파일 작업 전으로 날려버리기 (add 하기 전) 
+git restore src/path/sample.java
+# 4. 브랜치에서 작업했던 파일 작업 전으로 날려버리기 (add 한 후) 
+git resotre --staged src/path/sample.java
+```
+
 # merge
 
 > merge 취소
