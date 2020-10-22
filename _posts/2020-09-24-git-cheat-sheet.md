@@ -26,6 +26,13 @@ git reset --softed HEAD^
 #1. 제일 최근에 한 commit의 message 변경
 git commit --amend
 ```
+> commit 날짜 바꾸기 aka 인공 잔디 심기
+>
+```bash
+#1. 제일 최근에 한 commit의 날짜 변경
+# 마지막에 +0900 은 KST 시간대 설정
+git commit --amend --no-edit -date "Fri Oct 23 11:11:11 2020 +0900"
+```
 
 > working directory를 remote repo의 마지막 commit으로 되돌리기
 
