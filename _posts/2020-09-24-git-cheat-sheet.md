@@ -87,7 +87,7 @@ git switch -c master commit-number
 
 # 4. 브랜치에서 작업했던 파일 작업 전으로 날려버리기 (add 하기 전) 
 git restore src/path/sample.java
-# 4. 브랜치에서 작업했던 파일 작업 전으로 날려버리기 (add 한 후) 
+# 5. 브랜치에서 작업했던 파일 작업 전으로 날려버리기 (add 한 후) 
 git resotre --staged src/path/sample.java
 ```
 
