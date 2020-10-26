@@ -46,7 +46,7 @@ git commit --amend
 ```bash
 #1. 제일 최근에 한 commit의 날짜 변경
 # 마지막에 +0900 은 KST 시간대 설정
-git commit --amend --no-edit -date "Fri Oct 23 11:11:11 2020 +0900"
+git commit --amend --no-edit --date "Fri Oct 23 11:11:11 2020 +0900"
 ```
 
 > working directory를 remote repo의 마지막 commit으로 되돌리기
