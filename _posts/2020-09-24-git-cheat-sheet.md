@@ -1,12 +1,18 @@
 ---
 layout: post 
-title: "[Git] Git cheat sheet for myself"
+title: "[Git] Git cheat sheet for myself (On-Going)"
 date: 2020-09-24
 excerpt: "Every Git command I use frequently"
 tags: [index, leeleelee3264]
 feature: /assets/img/git.png
 comments: false
 ---
+
+# un-classified command 
+> KB로 되어있는 (default 값) 파일들 MB로 보기 
+```bash
+ls -alh
+ ```
 
 # commit
 
@@ -26,8 +32,14 @@ git reset --softed HEAD^
 #1. 제일 최근에 한 commit의 message 변경
 git commit --amend
 ```
+
+> 제일 최근에 한 commit에 새로운 파일 추가하기
+```bash
+git add src/file/you/want/to/add.java
+git commit --amend
+```
+
 > commit 날짜 바꾸기 aka 인공 잔디 심기
->
 ```bash
 #1. 제일 최근에 한 commit의 날짜 변경
 # 마지막에 +0900 은 KST 시간대 설정
@@ -98,6 +110,16 @@ git restore src/path/sample.java
 git resotre --staged src/path/sample.java
 ```
 
+# restore 
+> 현재 브랜치에 없는 파일 가져오기 
+```bash
+# commit 을 안 해서 없는 (새로 생성한) 파일은 그냥 cherry-pick으로 가져오자. 
+# 이 커맨드 써서 가져오려면 꼬이기만 한다. 
+# 얘는 현재의 브랜치에서는 삭제되어 없는 파일을 과거 브랜치에서 가져오는 용으로
+
+git restore --source branchName src/file/you/delete/before.java
+```
+
 # merge
 
 > merge 취소
@@ -105,6 +127,8 @@ git resotre --staged src/path/sample.java
 ```bash
 #1. local에서 진행한 merge 취소하기 
 git reset --merge ORIG_HEAD
+#2. 더 쉬운 방법 (Conflict 발생했을 때 쓴다)
+git merge --abort
 ```
 
 # cherry-pick 🍒
@@ -113,6 +137,9 @@ git reset --merge ORIG_HEAD
 
 ```bash
 git cherry-pick 커밋아이디
+
+# 가끔  cherry-pick으로 commit 가져오다가 branch끼리 conflict 가 난다. 그때는 cherry-pick을 취소하자
+git cherry-pick --abort
 ```
 
 # config

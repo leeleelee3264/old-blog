@@ -11,7 +11,7 @@ logo:               'assets/img/mylogo.png'
 background:         'assets/img/banff.jpg'
 tiled_bg:           false   # Set this true if you want to tile your background image, otherwise it will be covered
 locale:             en_US
-url:                https://leeleelee3254.github.io
+url:                https://leeleelee3264.github.io
 
 # Jekyll
 permalink:          /:title/
