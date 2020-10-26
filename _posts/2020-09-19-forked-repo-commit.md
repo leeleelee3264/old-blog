@@ -3,7 +3,7 @@ layout: post
 title: "[Git] Making forked repo to standalone repo"
 date: 2020-09-17
 excerpt: "Make forked repo to my own feat.planting grass"
-tags: [index, absinthe4902]
+tags: [index, leeleelee3264]
 feature: /assets/img/git.png
 comments: false
 ---

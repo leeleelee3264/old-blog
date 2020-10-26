@@ -3,7 +3,7 @@ layout: post
 title: "[Git] Git cheat sheet for myself"
 date: 2020-09-24
 excerpt: "Every Git command I use frequently"
-tags: [index, absinthe4902]
+tags: [index, leeleelee3264]
 feature: /assets/img/git.png
 comments: false
 ---

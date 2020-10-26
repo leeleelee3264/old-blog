@@ -3,7 +3,7 @@ layout: post
 title: "[Java] Java Map cheat sheet for myself"
 date: 2020-10-07
 excerpt: "Every Java Map command I use frequently"
-tags: [Java, Map, absinthe4902]
+tags: [Java, Map, leeleelee3264]
 feature: /assets/img/Java_logo_icon.png
 comments: false
 ---

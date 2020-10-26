@@ -3,7 +3,7 @@ layout: post
 title: "[Front] Upload file with Drag and Drop!"
 date: 2020-10-14
 excerpt: "Upload File with more style AKA Drag and Drop"
-tags: [Front, HTML, CSS, JavaScript, absinthe4902]
+tags: [Front, HTML, CSS, JavaScript, leeleelee3264]
 feature: /assets/img/front-end-logo.png
 comments: false
 ---
@@ -15,7 +15,7 @@ comments: false
 
 ![drag%20and%20drop%20(front)%203bbcb41524264640801dce23e80eb29e/dragdrop.png](/assets/img/post/dragdrop.PNG)
 
-[demo](https://absinthe4902.github.io/demo/dragdrop){: .btn}
+[demo](https://leeleelee3264.github.io/demo/dragdrop){: .btn}
  
 
 ## HTML

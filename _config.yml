@@ -11,7 +11,7 @@ logo:               'assets/img/mylogo.png'
 background:         'assets/img/banff.jpg'
 tiled_bg:           false   # Set this true if you want to tile your background image, otherwise it will be covered
 locale:             en_US
-url:                https://absinthe4902.github.io
+url:                https://leeleelee3254.github.io
 
 # Jekyll
 permalink:          /:title/
@@ -43,7 +43,7 @@ disqus_shortname:   Seungmin
 email:              absinthe4902@gmail.com
 # twitter:            username
 # facebook:           username
-github-url:         absinthe4902
+github-url:         leeleelee3264
 #stackoverflow:     123456/username   from a "http://stackoverflow.com/users/123456/username" link
 linkedin:          seungmin4035
 #xing:              username
