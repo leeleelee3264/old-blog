@@ -1,7 +1,7 @@
 ---
 layout: post 
 title: "[Front] Divide layout in thymeleaf."
-date: 2020-10-07
+date: 2020-10-25
 excerpt: "Divide layout in thymeleaf and feeling better about long long HTML"
 tags: [Front, HTML, CSS, JavaScript, thymeleaf, leeleelee3264]
 feature: /assets/img/front-end-log.png
