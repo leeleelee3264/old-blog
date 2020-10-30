@@ -1,10 +1,10 @@
 ---
 layout: post 
-title: "[Spring] Mybatis Exception"
+title: "[Spring] Exception and SQL Exception"
 date: 2020-09-18
-excerpt: "Thinking about how to handle Mybatis Exception."
-tags: [index, leeleelee3264]
-feature: /assets/img/spring.png
+excerpt: "Learning about Checked, Unchecked Exception and Thinking about how to handle SQL Exception."
+tags: [Back, Java, MySql]
+feature: /assets/img/Java_logo_icon.png
 comments: false
 ---
 
@@ -16,23 +16,23 @@ A week ago, I felt maybe I need to adjust exception of sql. At that time, I just
 
 ![%5BSpring%5D%20Mybatis%20Exception%20Handling%20e0a1e27c763c4302bb70b3efb85274e1/checked_unchecked.png](/assets/img/post/checked_unchecked.png)
 
-Java use Throwable type when something goes wrong. The highest type Throwable then seperate to three pieces. Error, Checked Exception and Unchecked Exception. Error is just error. We cannot actually do something with error. It means, we don't have to (and can't) handle error. Then what about unchecked exception and checked exception? 
+Java use Throwable type when something goes wrong. The highest type Throwable then separate to three pieces. Error, Checked Exception and Unchecked Exception. Error is just error. We cannot actually do something with error. It means, we don't have to (and can't) handle error. Then what about unchecked exception and checked exception? 
 
 > Checked Exception at Compile time, Unchecked Exception at Run time.
 
 ## Checked Exception
 
-If I want to run program, I have to compile code first. (Compiling is like translating. Translating human friendly language such as Java, C, Python to computer friendlt language which contains 0 and 1) If I make a mistake like opening not exsiting file, using not existing class or method then compiler will tell me 'Hey, this part is weird. I can't compile with these guys'. What should I do next? Without any choice, I must fix it. If not, I won't be able to run the program I made. Straight forwardly, **checked exception will be checked by compiler at the very first time**.
+If I want to run program, I have to compile code first. (Compiling is like translating. Translating human friendly language such as Java, C, Python to computer friendly language which contains 0 and 1) If I make a mistake like opening not exist file, using not existing class or method then compiler will tell me 'Hey, this part is weird. I can't compile with these guys'. What should I do next? Without any choice, I must fix it. If not, I won't be able to run the program I made. Straight forwardly, **checked exception will be checked by compiler at the very first time**.
 
 ## Unchecked Exception
 
-On the other hand, compiler can't catch unchcked excption which will happen in the future. And I also can't catch them either. I can olny predict and try to prevent code from exception with Exception handling. **These are happend when program is actually running**. We have certain rules about programming. Using legal argument, not accessing out of arrays, casting variable with proper  casting method, not using null as value etc. However, these kind of exception sometimes happends due to client passing wrong value, server using mistaken code ect. We shell see them after running program.  
+On the other hand, compiler can't catch unchecked exception which will happen in the future. And I also can't catch them either. I can only predict and try to prevent code from exception with Exception handling. **These are happend when program is actually running**. We have certain rules about programming. Using legal argument, not accessing out of arrays, casting variable with proper  casting method, not using null as value etc. However, these kind of exception sometimes happens due to client passing wrong value, server using mistaken code ect. We shell see them after running program.  
 
 And here is the point! Can you see SQLException under Exception tree? SQLException is one of checked exception. And it's today's topic. Now let's dig in to SQLException.
 
 # SQLException and DataAccessException
 
-I was a bit confused about the fact SQLException is checked exception. What I understand is that checked exception always pop up at compiler time. But in my ordinary code, exception related to sql pop up run time and compiler time both. When I miss or don't configure setting about sql, compiler give me lots of error and stop right there. It were mostly about connection with spring and sql. On the other hand, If I made bad sql grammer or try to use unvalid value in sql sentence, then I got runtime exception. I didn't get value I'd expected, but program was still running. I did some research and found out there are **SQLException and DataAccessException** in spring. SQLException is checked exception and DataAccessException implements RuntimeException.
+I was a bit confused about the fact SQLException is checked exception. What I understand is that checked exception always pop up at compiler time. But in my ordinary code, exception related to sql pop up run time and compiler time both. When I miss or don't configure setting about sql, compiler give me lots of error and stop right there. It were mostly about connection with spring and sql. On the other hand, If I made bad sql grammar or try to use invalid value in sql sentence, then I got runtime exception. I didn't get value I'd expected, but program was still running. I did some research and found out there are **SQLException and DataAccessException** in spring. SQLException is checked exception and DataAccessException implements RuntimeException.
 
 ```java
 org.springframework.dao
@@ -45,12 +45,12 @@ java.lang.Object
 					org.springframework.dao.DataAccessException
 ```
 
-> Change SQLException to DataAcessException
+> Change SQLException to DataAccessException
 
-Now it's a trend to change checked exception to unchecked exception in standard spec and open source framework. Most of time, we can't react to checked exception right away. Because Java steped into server area, we have to go throght couple of step to fix exceptions. (coding, building, uploading, running...) People changed mind. If we can't fix exceptions fast, then at least we can make exceptions not too critical. Let's make checked exception to unchecked exception! It's bad hobby but sometimes we just ignore runtime exception and got ugly exception notification. I'll summarize it. 
+Now it's a trend to change checked exception to unchecked exception in standard spec and open source framework. Most of time, we can't react to checked exception right away. Because Java stepped into server area, we have to go through couple of step to fix exceptions. (coding, building, uploading, running...) People changed mind. If we can't fix exceptions fast, then at least we can make exceptions not too critical. Let's make checked exception to unchecked exception! It's bad hobby but sometimes we just ignore runtime exception and got ugly exception notification. I'll summarize it. 
 
 - **turn checked exception to unchecked exception when caller (programmer) cannot fix, recover exception.**
-- then what can I do with exception with sql? connection failure, bad sql grammer... obviously not many things.
+- then what can I do with exception with sql? connection failure, bad sql grammar... obviously not many things.
 - so let's just wrap it to unchecked exception to prevent stop running program.
 - we still can use try-catch with runtime exception if we want.
 - it even reduce writing throws and try-catch as well.
@@ -58,15 +58,15 @@ Now it's a trend to change checked exception to unchecked exception in standard 
 ## reason of wrapping SQLException to DataAccessException
 
 - only DAO has SQLException
-- we should not pass sqlexception all the way throgh with bunch of throws.
+- we should not pass sqlexception all the way through with bunch of throws.
 - wrap SqlException to DataAccessException
 - with DataAccessException, we can chose using exception handling when we really need.
 - **it called abstraction of exception. make low level to high level.**
-- with high level exception, we can get more detail about the occured exception.
+- with high level exception, we can get more detail about the occurred exception.
 
 # Finally! Exception code of Mybatis
 
-When I wrote this code, it looked decent. But I feel like I have to change couple of things to improve. It's prototype anyway. Now the code's flow is very simple. Meeting exception, logging exception. I might need to handle indivisual case of exception later. At that moment, I'll use this code quite usfully. And for good measure, I seperate exception from mybatis and general concept of sql exception. Just in case. 
+When I wrote this code, it looked decent. But I feel like I have to change couple of things to improve. It's prototype anyway. Now the code's flow is very simple. Meeting exception, logging exception. I might need to handle individual case of exception later. At that moment, I'll use this code quite useful. And for good measure, I separate exception from mybatis and general concept of sql exception. Just in case. 
 
 ```java
 
@@ -137,7 +137,7 @@ Things I have to fix
 
 [RuntimeException and higher exception](https://docs.oracle.com/javase/8/docs/api/java/lang/RuntimeException.html?is-external=true)
 [SQLException to DataAccessException](https://jongmin92.github.io/2018/04/04/Spring/toby-4/)
-[Runtime and Compiletime](https://dd-corp.tistory.com/9)
+[Runtime and Compile time](https://dd-corp.tistory.com/9)
 [Spring SQLException Handling](https://webprogrammer.tistory.com/m/2448?category=149261)
 
 

@@ -20,8 +20,6 @@ comments: false
 ## About myself
 
 {% capture images %}
-    https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FO8U6S%2FbtqEmLRR2Rg%2FS9xgGOgMF8JbA8PwWBU5lK%2Fimg.png
-    https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fdzgf9B%2FbtqCWLdZYDJ%2FtbBTDKPDZSIKJnqgESTTe0%2Fimg.png
     /assets/img/mylogo.png
 {% endcapture %}
 {% include gallery images=images caption="" cols=2 %}

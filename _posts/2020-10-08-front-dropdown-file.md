@@ -3,7 +3,7 @@ layout: post
 title: "[Front] Upload file with Drag and Drop!"
 date: 2020-10-14
 excerpt: "Upload File with more style AKA Drag and Drop"
-tags: [Front, HTML, CSS, JavaScript, leeleelee3264]
+tags: [Front, HTML, CSS, JavaScript]
 feature: /assets/img/front-end-logo.png
 comments: false
 ---
@@ -11,7 +11,7 @@ comments: false
 
 # Taking file with more action
 
- Few days ago, I had to make a function that is about taking excel file from client side and reading it to save to our database. I usually go as simple as possible interms of HTML/CSS, but this time I did some research and work! Instead of using basic file chose button, draging a file and dropping in to a box. I was very happy when finishing these process because I thought it's quite user friendly interface.  Go check demo first and let's dig in!
+ Few days ago, I had to make a function that is about taking excel file from client side and reading it to save to our database. I usually go as simple as possible in terms of HTML/CSS, but this time I did some research and work! Instead of using basic file chose button, dragging a file and dropping in to a box. I was very happy when finishing these process because I thought it's quite user friendly interface.  Go check demo first and let's dig in!
 
 ![drag%20and%20drop%20(front)%203bbcb41524264640801dce23e80eb29e/dragdrop.png](/assets/img/post/dragdrop.PNG)
 
@@ -42,7 +42,7 @@ comments: false
             </div>
 ```
 
- In file input form, I had to set accept attribute first to let server know what kind of multipartfile will be uploaded. It called MIME type. I found that MIME type of microsoft file are quite complicated and long. And surprised that there are so many same excel file with hundred extension such as xlsx, xls, cvs! Maybe next time, I need to consider the most general file extension for excel too. 
+ In file input form, I had to set accept attribute first to let server know what kind of Multipartfile will be uploaded. It called MIME type. I found that MIME type of microsoft file are quite complicated and long. And surprised that there are so many same excel file with hundred extension such as xlsx, xls, cvs! Maybe next time, I need to consider the most general file extension for excel too. 
 
  And as we all know, our clients make unexpected exception. For example, I made a formatted excel template to write data easily. (giving them select box in cell). But my colleague didn't have excel software and try to open the template in google sheet. Sadly, select box wasn't working. Furthermore, it didn't let us input data manually. It just gave us many alert of 'It's not allowed data in the cell'. The point is, like i said I have to think about more general type of client situation. 
 

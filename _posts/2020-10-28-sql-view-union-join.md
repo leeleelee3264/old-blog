@@ -3,14 +3,14 @@ layout: post
 title: "[SQL] View and a little bit of UNION/JOIN"
 date: 2020-10-27
 excerpt: "How to use VIEW and what's difference between UNION and JOIN. Finally, UNION performance!"
-tags: [Back, Java, Spring-boot, Redis, Ubuntu, leeleelee3264]
+tags: [Back, MySql]
 feature: /assets/img/spring.png
 comments: false
 ---
 
 # MySQL view and a little bit of union and join
 
-Today, I faced my big mistake with new updated funtion which is made by me as well. The situtaion is something like this. We have a message service firing with multiple condition such as accomplish of today's step count or tag reminder of today's goal. When we designed tables, we seperate to act_message and goal_message. (Obiously, it's design error. I was supposed to create one table for these two). And there is mp3 file table music_list becuase the message will be playing designated mp3 file when it gets fired. In act_message and goal_message, voice_id is recorded and it stands for the id of music in music_list. To be short, 
+Today, I faced my big mistake with new updated function which is made by me as well. The situation is something like this. We have a message service firing with multiple condition such as accomplish of today's step count or tag reminder of today's goal. When we designed tables, we separate to act_message and goal_message. (Obviously, it's design error. I was supposed to create one table for these two). And there is mp3 file table music_list because the message will be playing designated mp3 file when it gets fired. In act_message and goal_message, voice_id is recorded and it stands for the id of music in music_list. To be short, 
 
 - act_message
 - goal_message (structure is the same with act_message)
@@ -37,7 +37,7 @@ Today, I faced my big mistake with new updated funtion which is made by me as we
 
 So, the new updated function was that delete mp3 file in music_list. What I forgot was that messages will not send when they cannot find recorded voice_id in music_list. Finally, mp3 file was removed clearly and messages which were supposed to be sent just stay calm. 
 
-I should have checked the mp3 usage before removing. For this, I thought about how to gather voice id in all the seperated message tables. (I didn't mention it, but it were more message tables than two). As you can predict, I decided to go with UNION query. But the query statement won't be short due to combine many message tables. At that moment my project manager recommanded me to use View! 
+I should have checked the mp3 usage before removing. For this, I thought about how to gather voice id in all the separated message tables. (I didn't mention it, but it were more message tables than two). As you can predict, I decided to go with UNION query. But the query statement won't be short due to combine many message tables. At that moment my project manager recommended me to use View! 
 
 # What is VIEW query?
 
@@ -47,7 +47,7 @@ I had never used VIEW command before. I did some research and found out VIEW is 
 - View table will be made when the view table called in query.
 - So you don't have to worry about updating data in View table. It will ne updated every single time you call the table.
 - There is no performance benefit of using view. It's the same with select query.
-- The good thing is that you don't have to excute complicated select query. It's already made with View.
+- The good thing is that you don't have to execute complicated select query. It's already made with View.
 
 ```sql
 CREATE VIEW v_voice_usage AS
@@ -109,7 +109,7 @@ There is an excellent explanation of JOIN and UNION over there.
 
 1. UNION ALL or UNION? 
 If I write UNION query, I wouldn't get duplicated value. UNION command will distinct the same values. It's pretty awesome function. However, it comes with price just like DISTINCT command. As you know DISTINCT is not cheap. It will make your program become quite slowly. If I don't care about duplicated values or you can handle it in server side, then I would go with UNION ALL. 
-It doesn't contain distinct prcess. Less work, faster query result. 
+It doesn't contain distinct process. Less work, faster query result. 
 2. where to use WHERE command 
 The worst case: use WHERE on the result of UNION. (all the distinct work and meaningless combine)
 Slightly better case: use WHERE before UNION. (at least query will sort the data which is suitable with condition)
