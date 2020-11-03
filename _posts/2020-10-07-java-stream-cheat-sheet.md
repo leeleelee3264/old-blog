@@ -191,3 +191,19 @@ We can say it's matter of memory and speed. Want less memory? Just go with two l
         return true;
     }
 ```
+
+## (1) Extract value from List and joining, (2) How to convert int to String in List  
+Collectors.joining() is very similar with String.join(). Both methods containing string values with inputed character.  
+And Sometime I have to change int value to string doing something like Collectors.joining() method. First map will extract value from the list and second map convert extracted int value to string.  
+```java
+public class StreamTest {
+
+    private List<PojoSample> sampleListContainer;
+
+    @Test
+    public void testJoiningAndConverting() {
+       String nameJoin = sampleListContainer.stream().map(PojoSample::getName).collect(Collectors.joining("/"));
+       String intConvertJoin = sampleListCOntainer.stream().map(PojoSample::getId).map(String::valueOf).collect(Collectors.joining("/"));
+    }
+}
+```
