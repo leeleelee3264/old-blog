@@ -1,6 +1,6 @@
 ---
 layout: post 
-title: "[Java] change Java Stream/Map/List cheat sheet for myself"
+title: "[Java] Java Stream/Map/List cheat sheet for myself"
 date: 2020-10-07
 excerpt: "Every Java Stream/Map/List command I use frequently"
 tags: [Back, Java, CheatSheet]
@@ -11,11 +11,11 @@ comments: false
 
 > computeIfPresent - update value with more style
 
-```java
-Map<String, Integer> test = new HashMap<String, Integer>() {{
+```
+Map<String, Integer> test = new HashMap<String, Integer>() 
 		put("ME", 25);
 		put("Mom", 67):
-}}:
+
 
 test.computeIfPresent("Me", (k, v) -> v + 1);
 ```
