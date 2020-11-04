@@ -11,7 +11,7 @@ comments: false
 
 > computeIfPresent - update value with more style
 
-```
+```javascript
 Map<String, Integer> test = new HashMap<>();
 		test.put("ME", 25);
 		test.put("Mom", 67);
@@ -21,13 +21,13 @@ test.computeIfPresent("Me", (k, v) -> v + 1);
 
 > computeIfAbsent - put k, v when the key is not there
 
-```
+```javascript
 test.computeIfAbsent("Sister", k -> 25);
 ```
 
 Once, I wanted to use computeIfPresent and computeIfAbsent at once. My intend was (1) put (key, value) in specific map when ther is no key.  And later, when the map meet the same key again, then update value. I missed the point. Thoese two method cannot be condition processer and operator at the same time. So I just gave a go with old fasioned way. 
 
-```
+```javascript
 // in this case, I had to extract keys to merge the list value.
 // in the meantime, I updated value as well. 
 
@@ -54,7 +54,7 @@ In Map built-in method, ComputeIfAbsent and PutIfAbsent are very much similar. M
 
 Let's say we spend high cost to make List. putIfAbsent make ("key", new ArrayList) at fisrt and go check the key. On the other hand, computeIfAbsent go check the key first and if there is no key, then make ("key", new ArrayList). No waste. 
 
-```
+```javascript
 public class MapTest {
 
     static Map<Integer, String> testMap;
@@ -87,7 +87,7 @@ I just thought init and insert at once without if was not possible but I found t
 Just write computeIfAbsent first to make init value container (in this case, List) and append the rest command that you need to save the value in the container.  
 It will execute computeIfAbsent when the container doesn't have a key after that, it will execute the rest code. If the container has code, it will just ignore the first command line. 
 
-```
+```javascript
 public class StreamTest {
 
     private List<PojoSample> sampleListContainer;
@@ -126,7 +126,7 @@ When I take a look at the method, it consists with (1) for loop (2) contains fro
 In an answer of StackOverFlow, if I need to search a large list, then I had better use <strong>HashSet</strong>
 More info is [here!](https://stackoverflow.com/questions/21830970/java-arraylist-contains-vs-for-loop)
 
-```
+```javascript
  List<Integer> rs1 = Arrays.asList(1,2,3,4,4);
  List<Integer> rs2 = Arrays.asList(5,6,7,8);
  System.out.println(Collections.disjoint(rs1, rs2));
