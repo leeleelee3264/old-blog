@@ -188,3 +188,13 @@ git rm -r --cached .
 git add . 
 git commit -m "RESOLVED: .gitignore is not working"
 ```
+ 
+ 
+ # git version update 
+ ```bash
+ # 1.version check 
+git --version
+
+ # 2. git version update 
+git update-git-for-windows
+ ```
