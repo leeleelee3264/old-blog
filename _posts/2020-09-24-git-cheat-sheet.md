@@ -177,7 +177,14 @@ git config --local user.email "local_absinthe4902@naver.com"
 # id name check
 git config user.name 
 
-# working directory 의 glo
+```
+
+# remote 
+```bash
+# 1. check name of remote branch 
+git remote -v 
+# 2. change url of remote branch
+git remote set-url origin https://github.com/leeleelee3264/leeleelee3264.github.io.git
 ```
 
 # cached 
