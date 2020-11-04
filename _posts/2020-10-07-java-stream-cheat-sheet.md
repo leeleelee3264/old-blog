@@ -12,23 +12,23 @@ comments: false
 > computeIfPresent - update value with more style
 
 ```
-Map<String, Integer> test = new HashMap<String, Integer>() 
+Map<String, Integer> test = new HashMap<String, Integer>() {{
 		put("ME", 25);
 		put("Mom", 67):
-
+}}:
 
 test.computeIfPresent("Me", (k, v) -> v + 1);
 ```
 
 > computeIfAbsent - put k, v when the key is not there
 
-```java
+```
 test.computeIfAbsent("Sister", k -> 25);
 ```
 
 Once, I wanted to use computeIfPresent and computeIfAbsent at once. My intend was (1) put (key, value) in specific map when ther is no key.  And later, when the map meet the same key again, then update value. I missed the point. Thoese two method cannot be condition processer and operator at the same time. So I just gave a go with old fasioned way. 
 
-```java
+```
 // in this case, I had to extract keys to merge the list value.
 // in the meantime, I updated value as well. 
 
@@ -55,7 +55,7 @@ In Map built-in method, ComputeIfAbsent and PutIfAbsent are very much similar. M
 
 Let's say we spend high cost to make List. putIfAbsent make ("key", new ArrayList) at fisrt and go check the key. On the other hand, computeIfAbsent go check the key first and if there is no key, then make ("key", new ArrayList). No waste. 
 
-```java
+```
 public class MapTest {
 
     static Map<Integer, String> testMap;
@@ -88,7 +88,7 @@ I just thought init and insert at once without if was not possible but I found t
 Just write computeIfAbsent first to make init value container (in this case, List) and append the rest command that you need to save the value in the container.  
 It will execute computeIfAbsent when the container doesn't have a key after that, it will execute the rest code. If the container has code, it will just ignore the first command line. 
 
-```java
+```
 public class StreamTest {
 
     private List<PojoSample> sampleListContainer;
@@ -127,7 +127,7 @@ When I take a look at the method, it consists with (1) for loop (2) contains fro
 In an answer of StackOverFlow, if I need to search a large list, then I had better use <strong>HashSet</strong>
 More info is [here!](https://stackoverflow.com/questions/21830970/java-arraylist-contains-vs-for-loop)
 
-```java
+```
  List<Integer> rs1 = Arrays.asList(1,2,3,4,4);
  List<Integer> rs2 = Arrays.asList(5,6,7,8);
  System.out.println(Collections.disjoint(rs1, rs2));
@@ -138,7 +138,7 @@ More info is [here!](https://stackoverflow.com/questions/21830970/java-arraylist
 
 If it is possible, think about use the first list to set in Collections.disjoint(). It will show better performance. It is in the official document! 
 We can say it's matter of memory and speed. Want less memory? Just go with two list. Want more speed? Go with one set one list.
-```java
+```
   public static boolean disjoint(Collection<?> c1, Collection<?> c2) {
         // The collection to be used for contains(). Preference is given to
         // the collection who's contains() has lower O() complexity.
@@ -195,7 +195,7 @@ We can say it's matter of memory and speed. Want less memory? Just go with two l
 ## (1) Extract value from List and joining, (2) How to convert int to String in List  
 Collectors.joining() is very similar with String.join(). Both methods containing string values with inputed character.  
 And Sometime I have to change int value to string doing something like Collectors.joining() method. First map will extract value from the list and second map convert extracted int value to string.  
-```java
+```
 public class StreamTest {
 
     private List<PojoSample> sampleListContainer;
