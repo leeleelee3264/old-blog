@@ -12,10 +12,9 @@ comments: false
 > computeIfPresent - update value with more style
 
 ```
-Map<String, Integer> test = new HashMap<String, Integer>() {{
-		put("ME", 25);
-		put("Mom", 67):
-}}:
+Map<String, Integer> test = new HashMap<>();
+		test.put("ME", 25);
+		test.put("Mom", 67);
 
 test.computeIfPresent("Me", (k, v) -> v + 1);
 ```
