@@ -1,6 +1,6 @@
 ---
 layout: post 
-title: "[Java] Java Stream/Map/List cheat sheet for myself"
+title: "[Java] change Java Stream/Map/List cheat sheet for myself"
 date: 2020-10-07
 excerpt: "Every Java Stream/Map/List command I use frequently"
 tags: [Back, Java, CheatSheet]
