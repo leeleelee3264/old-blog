@@ -9,15 +9,15 @@ comments: false
 ---
 
 # un-classified command 
-> KB로 되어있는 (default 값) 파일들 MB로 보기 
->
+ KB로 되어있는 (default 값) 파일들 MB로 보기 
+
 ```bash
 ls -alh
  ```
 
 # commit
 
-> commit 취소하기
+ commit 취소하기
 
 ```bash
 #1. commit 취소하고 add 파일까지 unstaged 하기
