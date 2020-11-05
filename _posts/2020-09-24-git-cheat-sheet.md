@@ -11,9 +11,7 @@ comments: false
 # un-classified command 
  KB로 되어있는 (default 값) 파일들 MB로 보기 
 
-```bash
-ls -alh
- ```
+
 
 # commit
 
