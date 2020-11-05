@@ -12,10 +12,10 @@ comments: false
 > computeIfPresent - update value with more style
 
 ```javascript
-Map<String, Integer> test = new HashMap<>();
+Map<String, Integer> test = new HashMap<>(){{
 		test.put("ME", 25);
 		test.put("Mom", 67);
-
+}};
 test.computeIfPresent("Me", (k, v) -> v + 1);
 ```
    

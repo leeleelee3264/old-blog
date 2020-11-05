@@ -9,13 +9,15 @@ comments: false
 ---
 
 # un-classified command 
- KB로 되어있는 (default 값) 파일들 MB로 보기 
-
-
+> KB로 되어있는 (default 값) 파일들 MB로 보기 
+>
+```bash
+ls -alh
+```
 
 # commit
 
- commit 취소하기
+> commit 취소하기
 
 ```bash
 #1. commit 취소하고 add 파일까지 unstaged 하기
@@ -194,6 +196,13 @@ git add .
 git commit -m "RESOLVED: .gitignore is not working"
 ```
  
+ # git init cancel 
+ ```bash
+# sometimes I make wrong directory to git repo. Then I have to cancel it. 
+# It's all about .git directory. When I init directory, I'll get git repo and it works like that.
+# Just remove the file and it will become normal directory 
+rm -r .git 
+ ```
  
  # git version update 
  ```bash
