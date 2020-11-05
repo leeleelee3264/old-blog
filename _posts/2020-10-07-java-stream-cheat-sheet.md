@@ -18,7 +18,7 @@ Map<String, Integer> test = new HashMap<>();
 
 test.computeIfPresent("Me", (k, v) -> v + 1);
 ```
-
+   
 > computeIfAbsent - put k, v when the key is not there
 
 ```javascript
