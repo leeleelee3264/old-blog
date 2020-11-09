@@ -11,20 +11,22 @@ comments: false
 # un-classified command 
 > KB로 되어있는 (default 값) 파일들 MB로 보기 
 
-
-ls -alh {: .notice}
+{% highlight bash %}
+ls -alh
+{% endhighlight %}
 
 
 # commit
 
 > commit 취소하기
 
+```bash
 #1. commit 취소하고 add 파일까지 unstaged 하기
 git reset --mixed HEAD^
 
 #2. commit 취소하나 add 파일은 여전히 staged 하기
-git reset --softed HEAD^ {: .notice}
-
+git reset --softed HEAD^
+```
 
 > commit message 변경하기
 
