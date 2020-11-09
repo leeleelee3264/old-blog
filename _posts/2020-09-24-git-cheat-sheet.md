@@ -7,6 +7,23 @@ tags: [Git, CheatSheet]
 feature: /assets/img/git.png
 comments: false
 ---
+## Code Snippets
+
+{% highlight css %}
+#container {
+  float: left;
+  margin: 0 -240px 0 0;
+  width: 100%;
+}
+{% endhighlight %}
+
+## Buttons
+
+Make any link standout more when applying the `.btn` class.
+
+{% highlight html %}
+<a href="#" class="btn btn-success">Success Button</a>
+{% endhighlight %}
 
 # un-classified command 
 KB로 되어있는 (default 값) 파일들 MB로 보기 
