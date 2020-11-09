@@ -10,7 +10,7 @@ comments: false
 
 # un-classified command 
 > KB로 되어있는 (default 값) 파일들 MB로 보기 
->
+
 ```bash
 ls -alh
 ```
@@ -58,7 +58,7 @@ git reset --hard HEAD^
 
 # add
 
-> add 취소하기
+> add 취소하기language-javascript
 
 ```bash
 git reset HEAD 파일경로
