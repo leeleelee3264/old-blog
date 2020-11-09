@@ -16,7 +16,6 @@ url: https://leeleelee3264.github.io
 # Jekyll
 permalink: /:title/
 markdown: kramdown
-highlighter: rouge
 kramdown:
     auto_ids: true
     footnote_nr: 1
