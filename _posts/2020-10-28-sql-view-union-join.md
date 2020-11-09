@@ -16,7 +16,8 @@ Today, I faced my big mistake with new updated function which is made by me as w
 - goal_message (structure is the same with act_message)
 - music_list
 
-```
+
+<pre><code>
 1. act_message, goal_message table
 
 | id | voice_id | message_type | is_active |
@@ -29,7 +30,7 @@ Today, I faced my big mistake with new updated function which is made by me as w
 |-----|--------------|--------------------|
 | 43  | Oh happy day | https://something1 |
 | 100 | 43           | https://something2 |
-```
+</code></pre>
 
 (I used table generator for those 
 
