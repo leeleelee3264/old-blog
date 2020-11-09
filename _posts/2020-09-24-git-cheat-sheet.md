@@ -9,31 +9,30 @@ comments: false
 ---
 
 # un-classified command 
-> KB로 되어있는 (default 값) 파일들 MB로 보기 
+KB로 되어있는 (default 값) 파일들 MB로 보기 
 
-{% highlight bash %}
+{% highlight yaml %}
 ls -alh
 {% endhighlight %}
 
 
 # commit
+commit 취소하기
 
-> commit 취소하기
-
-```bash
+{% highlight css %}
 #1. commit 취소하고 add 파일까지 unstaged 하기
 git reset --mixed HEAD^
 
 #2. commit 취소하나 add 파일은 여전히 staged 하기
 git reset --softed HEAD^
-```
+{% endhighlight %}
 
-> commit message 변경하기
+commit message 변경하기
 
-```bash
+{% highlight css %}
 #1. 제일 최근에 한 commit의 message 변경
 git commit --amend
-```
+{% endhighlight %}
 
 > 제일 최근에 한 commit에 새로운 파일 추가하기
 
