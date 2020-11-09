@@ -45,7 +45,7 @@ java.lang.Object
 					org.springframework.dao.DataAccessException
 ```
 
-> Change SQLException to DataAccessException
+
 
 Now it's a trend to change checked exception to unchecked exception in standard spec and open source framework. Most of time, we can't react to checked exception right away. Because Java stepped into server area, we have to go through couple of step to fix exceptions. (coding, building, uploading, running...) People changed mind. If we can't fix exceptions fast, then at least we can make exceptions not too critical. Let's make checked exception to unchecked exception! It's bad hobby but sometimes we just ignore runtime exception and got ugly exception notification. I'll summarize it. 
 
