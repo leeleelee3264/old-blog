@@ -15,9 +15,9 @@ pagination:
 </div>
 
 <div class="wrapper">
-    <a href="{{ post.url }}"></a>
-    <a href="{{ site.baseurl }}"></a>
-<ul class="post-list">
+    <a class="post-link" href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+
+    <ul class="post-list">
   {% for post in paginator.posts %}
   <li>
     <h2>
