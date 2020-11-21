@@ -21,7 +21,7 @@ description: >
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "https://leeleelee3264.github.io" # the base hostname & protocol for your site
 cover: "/assets/img/banff.jpg"
-logo: "/assets/img/mylog.png"
+logo: "/assets/img/mylogo.png"
 
 # Build settings
 markdown: kramdown
@@ -81,25 +81,25 @@ social:
     username: TheBenCentra
     url: https://twitter.com/TheBenCentra
     desc: Follow me on Twitter
-    share: true
+    share: false
 
   - name: Facebook
     icon: facebook
-    username: Jamie Seungmin Lee
+    username: Jamie Lee
     url: https://facebook.com/seungminjamie.lee
     desc: Friend me on Facebook
     share: true
 
   - name: GitHub
     icon: github
-    username: Jamie Seungmin Lee
+    username: leeleelee3264
     url: https://github.com/leeleelee3264
     desc: Fork me on GitHub
     share: false
 
   - name: LinkedIn
     icon: linkedin
-    username: Jamie Seungmin Lee
+    username: Seungmin Lee
     url: https://www.linkedin.com/in/seungmin4035/
     desc: Connect with me on LinkedIn
     share: true
