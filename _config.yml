@@ -9,19 +9,19 @@ exclude:
   - "/vendor/"
 
 # Site settings
-title: Centrarium
-subtitle: "A simple yet classy theme for your Jekyll website or blog"
-email: blcentra@gmail.com
-name: Ben Centra
+title: Logging
+subtitle: "Logging of computer science"
+email: jamieseungminlee@gmail.com
+name: Seungmin Jamie Lee
 description: >
-  A simple yet classy theme for your Jekyll website or blog.
+  Logging of computer science by Seungmin Jamie Lee
 # Base URL of site (i.e. /blog). It should always start with a slash,
 # and never end with a slash. Set it to a blank value if hosting at the
 # root of your server.
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "" # the base hostname & protocol for your site
-cover: "/assets/header_image.jpg"
-logo: "/assets/logo.png"
+cover: "/assets/img/banff.jpg"
+logo: "/assets/img/mylog.png"
 
 # Build settings
 markdown: kramdown
@@ -85,22 +85,22 @@ social:
 
   - name: Facebook
     icon: facebook
-    username: thebencentra
-    url: ""
+    username: Jamie Seungmin Lee
+    url: https://facebook.com/seungminjamie.lee
     desc: Friend me on Facebook
     share: true
 
   - name: GitHub
     icon: github
-    username: bencentra
-    url: https://github.com/bencentra
+    username: Jamie Seungmin Lee
+    url: https://github.com/leeleelee3264
     desc: Fork me on GitHub
     share: false
 
   - name: LinkedIn
     icon: linkedin
-    username: Ben Centra
-    url: https://www.linkedin.com/pub/ben-centra/47/769/60a
+    username: Jamie Seungmin Lee
+    url: https://www.linkedin.com/in/seungmin4035/
     desc: Connect with me on LinkedIn
     share: true
 
@@ -109,7 +109,7 @@ social:
     username: ""
     url: ""
     desc: Add me to your Circles
-    share: true
+    share: false
 
   - name: YouTube
     icon: youtube
@@ -192,13 +192,14 @@ social:
 # These are for automatically generating sharing metadata for FB and Twitter
 # OS Protocol is for sharing the source of your site, if you're interested. For more, see osprotocol.com
 protocols:
-    fb_image: "/assets/logo.png"
+    fb_image: "/assets/img/mylogo.png"
     fb_image_width: 612
     fb_image_height: 605
     fb_image_type: "image/png"
 
-    twitter_image: "/assets/logo.png"
+    twitter_image: "/assets/img/mylogo.png"
 
-    os_repo: "https://github.com/bencentra/centrarium.com"
+    os_repo: "https://github.com/leeleelee3264/leeleelee3264.github.io"
     os_rcs_type: "git"
-    os_src: "git@github.com:bencentra/centrarium.com.git"
+
+    os_src: "git@github.com:leeleelee3264/leeleelee3264.github.io.git"
