@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="50bdf30e-fa8f-4403-9f30-eaf57edabf6c" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1hdccl19SWWwe3MZAgxvJqgFU2Q" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../test/Moon" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\study\absinthe4902.github.io\assets\img\demo" />
+      <recent name="C:\study\absinthe4902.github.io\assets\img\post_img" />
+      <recent name="C:\study\absinthe4902.github.io\assets\img" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JavaScript Debug.dragdrop.html">
+    <configuration name="dragdrop.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/absinthe4902.github.io/projects/staticDemo/dragdrop.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="home.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/absinthe4902.github.io/_layouts/home.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JavaScript Debug.home.html" />
+        <item itemvalue="JavaScript Debug.dragdrop.html" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="50bdf30e-fa8f-4403-9f30-eaf57edabf6c" name="Default Changelist" comment="" />
+      <created>1600344490176</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1600344490176</updated>
+      <workItem from="1600344492854" duration="4873000" />
+      <workItem from="1600430055366" duration="2423000" />
+      <workItem from="1600516409172" duration="234000" />
+      <workItem from="1600517465255" duration="5860000" />
+      <workItem from="1600952150603" duration="602000" />
+      <workItem from="1601205710341" duration="33000" />
+      <workItem from="1601205809090" duration="1774000" />
+      <workItem from="1601261398309" duration="972000" />
+      <workItem from="1601371750891" duration="12000" />
+      <workItem from="1602078080064" duration="1877000" />
+      <workItem from="1602157441698" duration="2301000" />
+      <workItem from="1602331757627" duration="600000" />
+      <workItem from="1602588838408" duration="3374000" />
+      <workItem from="1602592242698" duration="13448000" />
+      <workItem from="1603894615835" duration="231000" />
+      <workItem from="1604106493098" duration="2233000" />
+      <workItem from="1604320954653" duration="3570000" />
+      <workItem from="1604406901154" duration="27000" />
+      <workItem from="1604406969973" duration="6000" />
+      <workItem from="1604406997565" duration="1201000" />
+      <workItem from="1604495666870" duration="3102000" />
+      <workItem from="1604498853083" duration="295000" />
+      <workItem from="1604576637720" duration="2350000" />
+      <workItem from="1604579065355" duration="1673000" />
+      <workItem from="1604838994372" duration="1356000" />
+      <workItem from="1604925649909" duration="5161000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="-1158" y="241" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603713788715">
+      <screen x="-1920" y="-72" width="1920" height="1050" />
+    </state>
+    <state x="-1158" y="241" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.689/-1920.-72.1920.1050@-1920.-72.1920.1050" timestamp="1603713788715" />
+    <state x="592" y="222" key="FileChooserDialogImpl" timestamp="1604932171273">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="-1180" y="207" key="FileChooserDialogImpl/0.0.1280.689/-1920.-72.1920.1050@-1920.-72.1920.1050" timestamp="1602160157618" />
+    <state x="493" y="183" key="FileChooserDialogImpl/0.0.1280.689@0.0.1280.689" timestamp="1601371759120" />
+    <state x="592" y="222" key="FileChooserDialogImpl/0.0.1536.834@0.0.1536.834" timestamp="1604932171273" />
+    <state x="170" y="0" key="SettingsEditor" timestamp="1604407161764">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="-1707" y="-72" key="SettingsEditor/0.0.1280.689/-1920.-72.1920.1050@-1920.-72.1920.1050" timestamp="1603709302037" />
+    <state x="142" y="0" key="SettingsEditor/0.0.1280.689@0.0.1280.689" timestamp="1601262008692" />
+    <state x="170" y="0" key="SettingsEditor/0.0.1536.834@0.0.1536.834" timestamp="1604407161764" />
+    <state x="250" y="213" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1604498877384">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="250" y="213" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.834@0.0.1536.834" timestamp="1604498877384" />
+    <state x="722" y="238" width="613" height="592" key="find.popup" timestamp="1604931577928">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="-1746" y="323" width="766" height="630" key="find.popup/0.0.1280.689/-1920.-72.1920.1050@-1920.-72.1920.1050" timestamp="1603709857700" />
+    <state x="640" y="129" width="640" height="560" key="find.popup/0.0.1280.689/-1920.-72.1920.1050@0.0.1280.689" timestamp="1602078265266" />
+    <state x="116" y="129" width="637" height="560" key="find.popup/0.0.1280.689@0.0.1280.689" timestamp="1602771311932" />
+    <state x="722" y="238" width="613" height="592" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1604931577928" />
+    <state x="792" y="185" width="672" height="539" key="search.everywhere.popup" timestamp="1604323868541">
+      <screen x="0" y="0" width="1536" height="834" />
+    </state>
+    <state x="-930" y="161" width="672" height="678" key="search.everywhere.popup/0.0.1280.689/-1920.-72.1920.1050@-1920.-72.1920.1050" timestamp="1603709999295" />
+    <state x="660" y="153" width="672" height="445" key="search.everywhere.popup/0.0.1280.689/-1920.-72.1920.1050@0.0.1280.689" timestamp="1601210650981" />
+    <state x="661" y="153" width="672" height="445" key="search.everywhere.popup/0.0.1280.689@0.0.1280.689" timestamp="1602681954725" />
+    <state x="792" y="185" width="672" height="539" key="search.everywhere.popup/0.0.1536.834@0.0.1536.834" timestamp="1604323868541" />
+  </component>
+</project>
