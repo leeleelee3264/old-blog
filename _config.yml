@@ -13,15 +13,16 @@ title: Logging
 subtitle: "Log of computer science"
 email: jamieseungminlee@gmail.com
 name: Seungmin Jamie Lee
-description: >
-  Logging of computer science by Seungmin Jamie Lee
 # Base URL of site (i.e. /blog). It should always start with a slash,
 # and never end with a slash. Set it to a blank value if hosting at the
 # root of your server.
-baseurl:  # the subpath of your site, e.g. /blog/
+baseurl: "/posts" # the subpath of your site, e.g. /blog/
 url: "http://leeleelee3264.github.io" # the base hostname & protocol for your site
 cover: "/assets/img/banff.jpg"
 logo: "/assets/img/mylogo.png"
+
+description: >
+  Logging of computer science by Seungmin Jamie Lee
 
 # Build settings
 markdown: kramdown
