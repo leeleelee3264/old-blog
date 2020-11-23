@@ -6,6 +6,8 @@ author: Jamie Lee
 categories: General
 tags:	Git
 cover:  "/assets/img/git.png"
+pagination: 
+  enabled: true
 ---
 
 

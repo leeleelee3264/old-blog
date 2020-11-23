@@ -6,6 +6,8 @@ author: Jamie Lee
 categories: Backend
 tags:	Java
 cover:  "/assets/img/Java_logo_icon.png"
+pagination: 
+  enabled: true
 ---
 
 # Map

@@ -6,6 +6,8 @@ author: Jamie Lee
 categories: Backend
 tags:	sql
 cover:  "/assets/img/spring.png"
+pagination: 
+  enabled: true
 ---
 
 

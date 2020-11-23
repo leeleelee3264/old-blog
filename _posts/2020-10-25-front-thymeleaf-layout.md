@@ -6,6 +6,8 @@ author: Jamie Lee
 categories: Frontend
 tags:	Frontend
 cover:  "/assets/img/front-end-log.png"
+pagination: 
+  enabled: true
 ---
 
 > How do I feel about not divide html layout. Suffocating with 2000 line!

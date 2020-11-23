@@ -6,6 +6,8 @@ author: Jamie Lee
 categories: General
 tags:	Git
 cover:  "/assets/img/git.png"
+pagination: 
+  enabled: true
 ---
 
 It's been a graceful four days since starting one day one commit project. But something weird happen with yesterday commit data. I certainly updated a repo for [github.io](http://github.io). I could see the record of it in the repo. However the commit wasn't recording in the contribution table in overview page. This contribution table is everything about one day one commit, so I have to dig in to see what's going wrong. 

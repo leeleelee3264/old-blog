@@ -29,5 +29,5 @@ Blog for logging my stuff during challenging <b>one day one commit
 
 ## You may also want to checkout... 
  
-[github](https://github.com/leeleelee3264){: .btn}
+[github](https://github.com/leeleelee3264){: .btn} <br>
 [korean blog](https://calgaryhomeless.tistory.com){: .btn}

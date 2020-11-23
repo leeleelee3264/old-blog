@@ -6,6 +6,8 @@ author: Jamie Lee
 categories: Frontend
 tags:	Frontend
 cover:  "/assets/img/front-end-logo.png"
+pagination: 
+  enabled: true
 ---
 
 # drag and drop (front)
