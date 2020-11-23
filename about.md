@@ -5,14 +5,29 @@ permalink: /about/
 main_nav: true
 ---
 
-![alt text]({{ site.baseurl }}/assets/profile-placeholder.gif "Profile Picture"){:.profile}
+![alt text]({{ site.baseurl }}/assets/img/mylogo.png "Profile Picture"){:.profile}
 
-Centrarium is a custom theme for Jekyll, made by [Ben Centra][bencentra] for his own blog. He'd be humbled if you liked it enough to use it as well! Installation and configuration instructions can be found in the [GitHub repository](https://github.com/bencentra/centrarium).
+Blog for logging my stuff during challenging <b>one day one commit
 
-This page is a good place to write about yourself, your project, your product, or whatever it is your site is for. You can replace the image above, or you can get rid of it entirely. 
+## Usage of the blog
+* Summarize what I learned today.
+* Archiving references while coding.
+* Queuing useful resources.
+* Managing my portfolio.
+* Maybe communicate with other developers too!
+* etc...
 
-You can find out more info about customizing your Jekyll theme, as well as basic Jekyll usage documentation at [jekyllrb.com](http://jekyllrb.com/). And you can find the source code for Jekyll at [github.com/jekyll/jekyll](https://github.com/jekyll/jekyll)
 
-[centrarium]: https://github.com/bencentra/centrarium
-[bencentra]: http://bencentra.com
-[jekyll]: https://github.com/jekyll/jekyll
+## About myself
+
+* Bachelor degree of Computer Science.
+* Junior front end, a little bit of backend developer.
+* Mostly using Java with Spring and Python with Django.
+* Additional: Mysql for DB, Git for version control, aws Linux for server. 
+* Have intermediate knowledge of HTML, CSS, Javascript. 
+* Slowly practicing React.js.
+
+## You may also want to checkout... 
+ 
+[github](https://github.com/leeleelee3264){: .btn}
+[korean blog](https://calgaryhomeless.tistory.com){: .btn}
