@@ -2,9 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50bdf30e-fa8f-4403-9f30-eaf57edabf6c" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/20202-10-25-front-thymeleaf-layout.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2020-10-25-front-thymeleaf-layout.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,7 +96,7 @@
       <workItem from="1604838994372" duration="1356000" />
       <workItem from="1604925649909" duration="5161000" />
       <workItem from="1605925292875" duration="7083000" />
-      <workItem from="1606131743217" duration="2450000" />
+      <workItem from="1606131743217" duration="2768000" />
     </task>
     <servers />
   </component>
