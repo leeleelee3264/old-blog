@@ -232,3 +232,12 @@ I'm gonna leave a link about thymeleaf layout library document here. You can fig
 
 I'm writing this post to remind myself of importance of dividing html layout that I had not known about before. After writing and writing, now I slowly think about how important to find uniformity and extract that part as a single function to reduce code and usability. In the future, when I have to create new function or manage the code, it will be way better in this way, because I don't have to look around all 2000 line code. It's in the one file. 
 I'll re-think before coding to build better program to manage.
+
+{% highlight javascript %}
+function demo(string, times) {
+  for (var i = 0; i < times; i++) {
+    console.log(string);
+  }
+}
+demo("hello, world!", 10);
+{% endhighlight %}
