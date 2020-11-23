@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="50bdf30e-fa8f-4403-9f30-eaf57edabf6c" name="Default Changelist" comment="" />
+    <list default="true" id="50bdf30e-fa8f-4403-9f30-eaf57edabf6c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/_config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/20202-10-25-front-thymeleaf-layout.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2020-10-25-front-thymeleaf-layout.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -93,7 +97,7 @@
       <workItem from="1604838994372" duration="1356000" />
       <workItem from="1604925649909" duration="5161000" />
       <workItem from="1605925292875" duration="7083000" />
-      <workItem from="1606131743217" duration="628000" />
+      <workItem from="1606131743217" duration="2450000" />
     </task>
     <servers />
   </component>
@@ -121,13 +125,13 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="250" y="213" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.834@0.0.1536.834" timestamp="1604498877384" />
-    <state x="722" y="238" width="613" height="592" key="find.popup" timestamp="1605936280986">
+    <state x="722" y="238" width="613" height="592" key="find.popup" timestamp="1606133126169">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="-1746" y="323" width="766" height="630" key="find.popup/0.0.1280.689/-1920.-72.1920.1050@-1920.-72.1920.1050" timestamp="1603709857700" />
     <state x="640" y="129" width="640" height="560" key="find.popup/0.0.1280.689/-1920.-72.1920.1050@0.0.1280.689" timestamp="1602078265266" />
     <state x="116" y="129" width="637" height="560" key="find.popup/0.0.1280.689@0.0.1280.689" timestamp="1602771311932" />
-    <state x="722" y="238" width="613" height="592" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1605936280986" />
+    <state x="722" y="238" width="613" height="592" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1606133126169" />
     <state x="425" y="189" key="run.anything.popup" timestamp="1606131499839">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
