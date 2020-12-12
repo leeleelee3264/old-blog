@@ -10,6 +10,22 @@ pagination:
   enabled: true
 ---
 
+
+### sftp connection 
+```git
+    # 접속 
+    sftp hostId@hostName
+ 
+    # 파일 받아오기 
+    get file
+ 
+    #파일 올리기 
+    put file
+ 
+    #디렉터리 작업 (linux 에서 자주 보이는 옵션 -r은 recursion이다. 디렉터리 속으로 들어가서 재귀적으로 다 가져온다는 뜻인가봄
+    get -r file 
+    put -r file 
+```
 ### **  
 1\. cd -**
 
