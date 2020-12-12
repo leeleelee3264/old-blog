@@ -33,7 +33,8 @@ pagination:
 
 작업을 하다보면 cd를 써서 디렉토리를 옮기는 일이 정말 많다. 그런데 방금 있었던 디렉토리로 돌아가야 할 때 cd 경로를 다시 치는 것 보다 cd - 를 사용하면 손 쉽게 갈 수 있다. 
 
-[##_Image|kage@MqY2w/btqCD7WXspd/xPTxYUxaYfRvhGHrMJhAGK/img.png|alignCenter|data-filename="cd.PNG" data-origin-width="317" data-origin-height="151" data-ke-mobilestyle="widthContent"|cd -||_##]
+![drag%20and%20drop%20(front)%203bbcb41524264640801dce23e80eb29e/dragdrop.png](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FMqY2w%2FbtqCD7WXspd%2FxPTxYUxaYfRvhGHrMJhAGK%2Fimg.png)
+
 
 ### **2\. !!**
 
@@ -43,7 +44,8 @@ pagination:
 
 history 커맨드를 사용하면 내가 여태까지 사용한 커맨드들의 기록을 보여준다. 그때 만약 다시 실행하고 싶은 커맨드가 있다면 !12 (실행하고 싶은 커맨드 번호)를 쓰면된다. 예를 들어 보겠다.
 
-[##_Image|kage@dkG65l/btqCF6C80cC/d8zRzdzeegML0HLpK9NbW1/img.png|alignCenter|data-filename="cdnumber.PNG" data-origin-width="420" data-origin-height="692" width="283" height="467" data-ke-mobilestyle="widthContent"|!28||_##]
+![drag%20and%20drop%20(front)%203bbcb41524264640801dce23e80eb29e/dragdrop.png](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FdkG65l%2FbtqCF6C80cC%2Fd8zRzdzeegML0HLpK9NbW1%2Fimg.png)
+
 
 history에 나와있던 28번째 커맨드를 다시 실행하고 싶어서 !28을 쳤더니 28번째 커맨드가 실행되었다! 지금 내가 사용하는 커맨드는 짧은게 많지만 나중에 긴 커맨드를 실행하고 싶을 때 아주 유용하다.
 
@@ -51,7 +53,8 @@ history에 나와있던 28번째 커맨드를 다시 실행하고 싶어서 !28�
 
 아까 !12와 비슷하다. 단, 여기서는 history를 볼 필요가 없다. !cd (내가 제일 마지막으로 실행했던 cd) 라는 뜻이다. 결국 !뒤에 써진 커맨드는 내가 제일 최근에 실행했던 커맨드를 다시 실행해달라는 뜻이다.
 
-[##_Image|kage@skTVE/btqCGRltr9s/aMXtyt1LOlnr2aVRCDrfj0/img.png|alignCenter|data-filename="!cd.PNG" data-origin-width="294" data-origin-height="75" data-ke-mobilestyle="widthContent"|!touch||_##]
+![drag%20and%20drop%20(front)%203bbcb41524264640801dce23e80eb29e/dragdrop.png](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FskTVE%2FbtqCGRltr9s%2FaMXtyt1LOlnr2aVRCDrfj0%2Fimg.png)
+
 
 ### **5\. ctrl + u**
 
@@ -69,7 +72,8 @@ top에서 shift+ p는 cpu 많이 잡아먹는 순으로 보여주고 shift + m �
 
 사실 이건 고수 커맨드는 아니고 내가 자꾸 깜빡깜빡해서 넣어놨다. 운영체제 안의 몇 번 포트들이 어느 프로세스와 연결되어 열려있는지를 볼 수 있다.
 
-[##_Image|kage@o39R0/btqCEOpqMVd/vkogOiVLhgqh056fkZH4F0/img.png|alignCenter|data-filename="netstat.PNG" data-origin-width="895" data-origin-height="105" data-ke-mobilestyle="widthContent"|로컬 말고 연결된 포트가 없음||_##]
+![drag%20and%20drop%20(front)%203bbcb41524264640801dce23e80eb29e/dragdrop.png](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2Fo39R0%2FbtqCEOpqMVd%2FvkogOiVLhgqh056fkZH4F0%2Fimg.png)
+
 
 ### **8\. screen**
 
@@ -97,7 +101,8 @@ screen -X -S name quit : name이라는 이름의 screen을 없애버림
 
 이렇게만 알고 있어도 사용에 크게 지장이 없다.
 
-[##_Image|kage@bfTDSr/btqCEOXiQdn/kJgFokbYtVjOKHyx9H0UA1/img.png|alignCenter|data-filename="screenEx.PNG" data-origin-width="696" data-origin-height="232" data-ke-mobilestyle="widthContent"|screen example||_##]
+![drag%20and%20drop%20(front)%203bbcb41524264640801dce23e80eb29e/dragdrop.png](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbfTDSr%2FbtqCEOXiQdn%2FkJgFokbYtVjOKHyx9H0UA1%2Fimg.png)
+
 
 그리고 screen의 환경설정을 .screenrc에서 하는데 이때 화면을 보다 보기 쉽게 만들어 줄 수 있다. 나의 추천은 아래 링크로 세팅하는 것이다. 간결해서 보기 편하다. 적용하면 밑에 그림처럼 screen창이 만들어진다.
 
@@ -115,7 +120,8 @@ gist.github.com
 
 ](https://gist.github.com/ChrisWills/1337178)
 
-[##_Image|kage@oyDdq/btqCEOiKEZT/bcMTNqm9lmeF4zBTftz5kK/img.png|alignCenter|data-filename="screenset.PNG" data-origin-width="916" data-origin-height="452" data-ke-mobilestyle="widthContent"|.screenrc 세팅됨||_##]
+![drag%20and%20drop%20(front)%203bbcb41524264640801dce23e80eb29e/dragdrop.png](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FoyDdq%2FbtqCEOiKEZT%2FbcMTNqm9lmeF4zBTftz5kK%2Fimg.png)
+
 
 ---
 
@@ -155,7 +161,8 @@ session window 새로 만들기: ctrl+b, c
 
 화면 사이 이동하기: ctrl+b, 방향키
 
-[##_Image|kage@bS8PXw/btqEo6PRJEO/DhF5pnlCsYHfPH0CSSbrHK/img.png|alignCenter|data-filename="배경.PNG" data-origin-width="1435" data-origin-height="908" data-ke-mobilestyle="widthContent"|tmux 사용 화면||_##]
+![drag%20and%20drop%20(front)%203bbcb41524264640801dce23e80eb29e/dragdrop.png](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbS8PXw%2FbtqEo6PRJEO%2FDhF5pnlCsYHfPH0CSSbrHK%2Fimg.png)
+
 
 새로운 운도우 만드는 커맨드가 정말 너무 안 외워져서 쓸 때마다 검색하는데 지금보니 ctrl+b, c 였던 이유가 create의 c가 아니었을까 싶다.
 
@@ -169,7 +176,8 @@ sudo nginx -t 를 하면 잘 썼을 경우 ok가 나오는데 그때 systemctl r
 
 ss에 대한 포스트를 읽다보니 ss가 new netstat 라는 말을 봤는데 그런것 같다. 열린 포트를 보려고 netstat을 해야하는데 정말 안 외워지는 커맨드 같다. ss가 조금더 사용이 쉽다고 한다.
 
-[##_Image|kage@cBUuD6/btqEq62ra5q/9mf7Xel1BWHUeEWJy5KAXk/img.png|alignCenter|data-origin-width="0" data-origin-height="0" data-ke-mobilestyle="widthContent"|ss 커맨드 결과||_##]
+![drag%20and%20drop%20(front)%203bbcb41524264640801dce23e80eb29e/dragdrop.png](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcBUuD6%2FbtqEq62ra5q%2F9mf7Xel1BWHUeEWJy5KAXk%2Fimg.png)
+
 
 ss: 연결된 포트가 다 나온다
 

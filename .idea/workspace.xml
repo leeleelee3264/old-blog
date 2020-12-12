@@ -1,7 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="50bdf30e-fa8f-4403-9f30-eaf57edabf6c" name="Default Changelist" comment="" />
+    <list default="true" id="50bdf30e-fa8f-4403-9f30-eaf57edabf6c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2020-12-12-linux-cheat-sheet.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2020-12-12-linux-cheat-sheet.md" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -94,7 +97,7 @@
       <workItem from="1604925649909" duration="5161000" />
       <workItem from="1605925292875" duration="7083000" />
       <workItem from="1606131743217" duration="5170000" />
-      <workItem from="1607753225775" duration="350000" />
+      <workItem from="1607753225775" duration="1069000" />
     </task>
     <servers />
   </component>
