@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="50bdf30e-fa8f-4403-9f30-eaf57edabf6c" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/_posts/2021-01-05-linux-writing-shell-script.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2020-10-08-front-dropdown-file.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2020-10-08-front-dropdown-file.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_posts/2020-12-12-linux-cheat-sheet.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2020-12-12-linux-cheat-sheet.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -97,7 +99,8 @@
       <workItem from="1604925649909" duration="5161000" />
       <workItem from="1605925292875" duration="7083000" />
       <workItem from="1606131743217" duration="5170000" />
-      <workItem from="1607753225775" duration="1069000" />
+      <workItem from="1607753225775" duration="1833000" />
+      <workItem from="1609845622375" duration="3853000" />
     </task>
     <servers />
   </component>
@@ -105,10 +108,11 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="-1158" y="241" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1603713788715">
-      <screen x="-1920" y="-72" width="1920" height="1050" />
+    <state x="610" y="249" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1609846708162">
+      <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="-1158" y="241" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1280.689/-1920.-72.1920.1050@-1920.-72.1920.1050" timestamp="1603713788715" />
+    <state x="610" y="249" key="#com.intellij.fileTypes.FileTypeChooser/0.0.1536.834@0.0.1536.834" timestamp="1609846708162" />
     <state x="592" y="222" key="FileChooserDialogImpl" timestamp="1604932171273">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
@@ -125,13 +129,13 @@
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="250" y="213" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1536.834@0.0.1536.834" timestamp="1604498877384" />
-    <state x="723" y="236" width="613" height="592" key="find.popup" timestamp="1606142316996">
+    <state x="723" y="236" width="613" height="592" key="find.popup" timestamp="1609845822878">
       <screen x="0" y="0" width="1536" height="834" />
     </state>
     <state x="-1746" y="323" width="766" height="630" key="find.popup/0.0.1280.689/-1920.-72.1920.1050@-1920.-72.1920.1050" timestamp="1603709857700" />
     <state x="640" y="129" width="640" height="560" key="find.popup/0.0.1280.689/-1920.-72.1920.1050@0.0.1280.689" timestamp="1602078265266" />
     <state x="116" y="129" width="637" height="560" key="find.popup/0.0.1280.689@0.0.1280.689" timestamp="1602771311932" />
-    <state x="723" y="236" width="613" height="592" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1606142316996" />
+    <state x="723" y="236" width="613" height="592" key="find.popup/0.0.1536.834@0.0.1536.834" timestamp="1609845822878" />
     <state x="425" y="189" key="run.anything.popup" timestamp="1606131499839">
       <screen x="0" y="0" width="1536" height="834" />
     </state>

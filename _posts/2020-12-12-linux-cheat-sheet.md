@@ -10,6 +10,32 @@ pagination:
   enabled: true
 ---
 
+# Linux command 2021 
+
+## service related command 
+```git
+1. show installed service 
+service --status-all 
+
+2. show running service 
+systemctl --type=service 
+```
+
+Linux commands related to service are mostly start as 'Systemctl'. 'Service' is kind of out-dated command, so it had better using 'systemctl'
+
+## ubuntu 18 network connection 
+```git
+cd /etc/netplan
+sudo vi 01-network-manager-all.yaml
+~ change setting ~ 
+sudo netplan apply
+```
+
+In Ubuntu 18 version, network connection setting is quite different with order versions. 
+Now setting file is located in /etc/netplan. It means netplan is now the commander of netwokring. 
+I had not known about applying command, so I just rebooted the os when I changed something. But you'd better just using 'netplan apply' command. 
+<hr>
+# Linux command 2020 
 
 ### sftp connection 
 ```git
@@ -107,18 +133,6 @@ screen -X -S name quit : name이라는 이름의 screen을 없애버림
 그리고 screen의 환경설정을 .screenrc에서 하는데 이때 화면을 보다 보기 쉽게 만들어 줄 수 있다. 나의 추천은 아래 링크로 세팅하는 것이다. 간결해서 보기 편하다. 적용하면 밑에 그림처럼 screen창이 만들어진다.
 
 [https://gist.github.com/ChrisWills/1337178](https://gist.github.com/ChrisWills/1337178)
-
-[
-
-A nice default screenrc
-
-A nice default screenrc. GitHub Gist: instantly share code, notes, and snippets.
-
-gist.github.com
-
-
-
-](https://gist.github.com/ChrisWills/1337178)
 
 ![drag%20and%20drop%20(front)%203bbcb41524264640801dce23e80eb29e/dragdrop.png](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FoyDdq%2FbtqCEOiKEZT%2FbcMTNqm9lmeF4zBTftz5kK%2Fimg.png)
 
