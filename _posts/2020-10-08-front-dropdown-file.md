@@ -55,16 +55,73 @@ I want to show the status of service at the last part of execution for making su
 
 <hr> 
 
-
-/// TODO: 여기부터는 내일하면 될 것 같으다~~ 
-1. option 의미들이 무엇인지 찾아보고 
-2. 로그 로테이트 하는거 팀장님꺼랑은 뭐가 다른지 보고 
-3. slack 에 올려둔  bash 영상 보기 (아마 오늘 할듯) 
 To be honest, I already use bash command to deploy jar file and manage log file. Thoese are what I'm using now. (need to improve and do more customize later.)
 
 ```git
-
+    #!/bin/bash
+   
+    DATE=`date +'%Y%m%d'`
+    echo $DATE
+   
+    ETC_JAVA_OPTS=-XX:+UseStringDeduplication
+   
+    nohup java -Xms128m -Xmx128m -XX:NewRatio=1 -XX:+PrintGCDetails -XX:+PrintGCTimeStamps     -XX:+PrintGCDateStamps -Xloggc:./gc.log -Dspring.profiles.active=prod $* -jar file_name.jar >> ./server.log &
+    tail -F server.log
 ```
 
+This one is for deployment of Spring project. There are several java running option(will study later). It should be running in background. Unless, it will get stopped when I close a terminal which is running jar.  
+So I had better use nohup command. 
+The file is not just about running jar file. It makes log file keep going. '>>' command means stdout will be remained in a file located right behind the command. Tail is just to make sure the jar file is successfully built. 
+
+
+```git
+  #!/bin/bash
+ 
+  DATE=`date +'%Y%m%d'`
+  DATE2=`date +'%Y%m'`
+ 
+  LOG_FILENAME=backup_server$DATE.log
+  LOG_DIRNAME="backup_server${DATE2}_log"
+ 
+ 
+  if [ -e $LOG_FILENAME ]
+  then
+      echo "$LOG_FILENAME exist"
+  else
+      echo "cp server.log $LOG_FILENAME"
+      cp server.log $LOG_FILENAME
+      cp -f /dev/null server.log
+ 
+      echo "now tail.."
+  fi
+ 
+  # moving log to dir file script
+  if [ -e $LOG_DIRNAME ]
+  then
+   :
+  else
+   mkdir $LOG_DIRNAME
+ 
+  fi
+ 
+  mv $LOG_FILENAME $LOG_DIRNAME
+ 
+  tail -F server.log
+```
+This one is for managing log file. These two main process are like that. (1) make current log file to backup file and make new log file to be used soon, (2) move freshly made backup log file to 
+proper log file directory. (Mostly manage by year and month. YYYYMD)
+
+## /dev/null 
+What is /dev/null in the bash command? It's like official empty file of Linux. /dev/null file is always empty. It has to be. 
+In the bash, I didn't delete server.log file, because I'll keep using it after moving all contents in file to backup file. In this purpose, /dev/null is best choice.
+Think like this. 
+
+1. /dev/null is always empty 
+2. Copy content in /dev/null to server.log
+3. It means content(which is empty) is copied to server.log. Basically, server.log file should be empty too. 
+4. You can also use 'cat /dev/null > server.log'
+5. cat will print /dev/null content(which is empty) and '>' will pass the content to specific file(server.log).
+
+Using this command makes so easy to remove data and make file size to zero. I have a feeling it will be super usful managing linux server memory!
 
  
