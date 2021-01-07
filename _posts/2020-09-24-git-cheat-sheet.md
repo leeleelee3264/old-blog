@@ -10,7 +10,14 @@ pagination:
   enabled: true
 ---
 
-# get removed file back 
+# file modify with git! 
+
+## get removed file back 
+```bash
+
+# 1.When you didn't commit 
+checkout HEAD file_you_removed
+```
 
 
 # un-classified command 
