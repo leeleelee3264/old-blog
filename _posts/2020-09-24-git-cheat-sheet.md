@@ -10,16 +10,40 @@ pagination:
   enabled: true
 ---
 
+# Git command 2021
+<hr>
 # file modify with git! 
 
 ## get removed file back 
 ```bash
 
 # 1.When you didn't commit 
+# Freshly made file will be tracked after adding, 
+# but in terms of removing, not thing will remain. I cannot even add the change. I can only commit the removing. 
 checkout HEAD file_you_removed
 ```
 
+## reset(revert) file to specific commit version 
+Let's say you wrote something on A file but you were supposed to write the thing on B file. 
+So you just copy the content in A to B. Now B is fine. How about A? You should get the previous content back to A. 
+This command will be lifesaver. 
 
+```bash
+# 1. Want to revert the file to specific commit version 
+git checkout commit_number -- file_you_should_revert
+
+# 2. Want to revert the file to before the specific commit version 
+git checkout commit_number~1 -- file_you_should_revert
+```
+
+The second way works like this. If you change a file a lot in the latest commit and before that, the file was modified age ago. 
+Then you can just revert the file before the latest commit. 
+
+
+
+
+<hr>
+<hr>
 # un-classified command 
 > KB로 되어있는 (default 값) 파일들 MB로 보기 
 

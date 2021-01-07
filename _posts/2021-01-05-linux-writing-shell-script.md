@@ -16,13 +16,12 @@ So I decided to making shell script containing the command! (I've wanted to lear
 
 The most important beginning of shell script!
 
-```git
+```bash
 #!/bin/bash
 ```
 As far as I remember, all the shell script is working with 'bash' file in bin directory. To execute shell script, do not forget to wirte #!/bin/bash line. 
 
-```git
-
+```bash
 touch test_bash.sh 
 ~ editing bash file ~
 
@@ -31,7 +30,7 @@ chmod +x test_bash.sh
 
 Give the bash file you were writing execution roll. Bash file is for execution after all. This is almost everything I know about shell script. Now let's take a look at the bash file I wrote today. 
 
-```git
+```bash
 #!/bin/bash 
 
 # add some comment to let people know what this bash file for. 
@@ -57,15 +56,18 @@ I want to show the status of service at the last part of execution for making su
 
 To be honest, I already use bash command to deploy jar file and manage log file. Thoese are what I'm using now. (need to improve and do more customize later.)
 
-```git
+```bash
     #!/bin/bash
    
     DATE=`date +'%Y%m%d'`
     echo $DATE
    
     ETC_JAVA_OPTS=-XX:+UseStringDeduplication
-   
-    nohup java -Xms128m -Xmx128m -XX:NewRatio=1 -XX:+PrintGCDetails -XX:+PrintGCTimeStamps     -XX:+PrintGCDateStamps -Xloggc:./gc.log -Dspring.profiles.active=prod $* -jar file_name.jar >> ./server.log &
+
+    # supposed to be one line.    
+    nohup java -Xms128m -Xmx128m -XX:NewRatio=1 -XX:+PrintGCDetails -XX:+PrintGCTimeStamps  
+    -XX:+PrintGCDateStamps -Xloggc:./gc.log -Dspring.profiles.active=prod $* -jar file_name.jar >> ./server.log &
+
     tail -F server.log
 ```
 
@@ -74,7 +76,7 @@ So I had better use nohup command.
 The file is not just about running jar file. It makes log file keep going. '>>' command means stdout will be remained in a file located right behind the command. Tail is just to make sure the jar file is successfully built. 
 
 
-```git
+```bash
   #!/bin/bash
  
   DATE=`date +'%Y%m%d'`
