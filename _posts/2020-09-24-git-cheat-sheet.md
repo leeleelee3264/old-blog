@@ -10,6 +10,8 @@ pagination:
   enabled: true
 ---
 
+# get removed file back 
+
 
 # un-classified command 
 > KB로 되어있는 (default 값) 파일들 MB로 보기 
