@@ -12,6 +12,26 @@ pagination:
 
 # Linux command 2021 
 
+## Run Java file in Linux 
+I usually works with windows. But mostly, our server env is Linux. Because of this, I have to test in local(windows) and Linux both. 
+Everything is quite same, however just like downloading/making file AKA involved with path makes things harder. 
+Today(2021-01-08) I have to check project dir in both env, so I wrote a short java code to run in Linux as well. 
+
+```java
+    String currnetPath = System.getProperty("user.dir"); // it will return a currnet working dir
+```
+
+```bash
+    # let's say I made CurrnetPath.java which contains class CurrentPath.
+    
+    # compile
+    javac CurrnetPath.java
+
+    # after compiling, I'm able to find CurrnetPath.class file. It's the result of compiling and I'll run it. Basically, I run class file to execute java code. 
+    java CurrnetPath
+```
+
+
 ## service related command 
 ```git
 1. show installed service 

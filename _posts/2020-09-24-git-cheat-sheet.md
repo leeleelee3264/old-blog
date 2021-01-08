@@ -20,7 +20,7 @@ pagination:
 # 1.When you didn't commit 
 # Freshly made file will be tracked after adding, 
 # but in terms of removing, not thing will remain. I cannot even add the change. I can only commit the removing. 
-checkout HEAD file_you_removed
+git checkout HEAD file_you_removed
 ```
 
 ## reset(revert) file to specific commit version 
