@@ -12,8 +12,17 @@ pagination:
 
 # Git command 2021
 <hr>
-# file modify with git! 
 
+# git ERRPR! :bomb:
+> fatal: refusing to merge unrelated histories 
+I saw this error when I had tried to change commit with --amend but didn't finish properly. 
+People say it will show up when trying to merge two different projects with no history about each others. 
+```bash
+git pull origin branch_name --allow-unrelated-histories 
+```
+
+
+# file modify with git! 
 ## get removed file back 
 ```bash
 
@@ -186,6 +195,11 @@ git cherry-pick --abort
 ```
 
 # config
+
+> git 기본 편집기 vim 으로 설정하기 
+```bash
+git config --global core.editor "vim" 
+```
 
 > git 계정 등록
 

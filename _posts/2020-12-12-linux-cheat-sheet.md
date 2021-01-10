@@ -12,6 +12,25 @@ pagination:
 
 # Linux command 2021 
 
+# vim related command 
+> setting number 
+```bash
+: set number
+
+# remove number 
+: set nonumber 
+
+# set number to vim permanently 
+vim ~/.vimrc 
+# type set number in .vimrc file 
+set number 
+```
+
+# shutdown linux 
+```bash
+    shutdown -h now 
+```
+
 ## Run Java file in Linux 
 I usually works with windows. But mostly, our server env is Linux. Because of this, I have to test in local(windows) and Linux both. 
 Everything is quite same, however just like downloading/making file AKA involved with path makes things harder. 
