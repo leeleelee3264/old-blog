@@ -14,6 +14,8 @@ pagination:
 
 # vim related command 
 > setting number 
+<br>
+
 ```bash
 : set number
 
