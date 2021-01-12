@@ -192,6 +192,7 @@ screen -X -S name quit : name이라는 이름의 screen을 없애버림
 
 다른 분이 알려주신 커멘드인데 정말 너무너무 잘 쓰고 있다. 예전에 이거 없이 어떻게 살았나 싶을 정도.. screen 커맨드와 비슷한데 훨씬 더 좋다. session으로 이전 작업을 기억할 뿐 아니라 화면을 나눌 수 있다.
 
+scroll 하기 : ctrl + b + pageUp [more tmux scroll command](https://superuser.com/questions/209437/how-do-i-scroll-in-tmux)
 새로운 session 열기: tmux new -s session\_name
 
 session 목록 확인: tmux ls
