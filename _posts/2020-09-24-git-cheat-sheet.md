@@ -13,13 +13,55 @@ pagination:
 # Git command 2021
 <hr>
 
-# git ERRPR! :bomb:
+# git ERROR
 > fatal: refusing to merge unrelated histories 
 I saw this error when I had tried to change commit with --amend but didn't finish properly. 
 People say it will show up when trying to merge two different projects with no history about each others. 
 ```bash
 git pull origin branch_name --allow-unrelated-histories 
 ```
+
+
+# Adjust branch 
+
+Show branches
+```bash
+# local
+git branch
+# remote 
+git branch -r 
+# all 
+git branch -a 
+```
+
+Check merged branch in Local
+```bash
+git branch --merged
+
+# check no merged branch in Local
+git branch --no-merged
+```
+
+Check merged branch in Remote
+```bash
+git branch -r --merged
+```
+
+Delete remote branch (not working sometimes)
+```bash
+git branch origin --delete branch_name 
+
+# If you see does not exist, it would be occuered because the remote branch you want to delete is so out-dated. 
+# Using this command will automatically delete some of them. 
+git fetch -p 
+
+# difference between pull and fetch 
+# pull = fetch + merge 
+# fetch = only fetching. If you want, you can check first and merge later for safety.
+```
+
+
+
 
 
 # file modify with git! 
