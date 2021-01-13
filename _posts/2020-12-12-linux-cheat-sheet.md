@@ -12,6 +12,27 @@ pagination:
 
 # Linux command 2021 
 
+# Useful command from Linux Pocket Guide
+```bash
+# file line count 
+wc -l file_name
+
+# find difference between two files
+diff file1 file2
+
+# cat with number 
+cat -n file_name 
+
+# less with number 
+less -N file_name 
+
+# get dir info, not files info in the dir 
+ls -d dir_name 
+
+# try to read binary file with human eyes
+strings file 
+```
+
 # vim related command 
 > setting number 
 <br>
