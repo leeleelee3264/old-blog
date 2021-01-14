@@ -29,6 +29,26 @@ Nowadays the file use to find host name which is not registered in DNS. For exam
 # /etc/hosts
 127.0.0.1 localhost
 ```
+Like localhost, I wanted to make own host name for this inner server. These were what I did. 
+
+```yaml
+# /etc/hosts in Linux  
+127.0.0.1 api_call_server
+
+# application.properties in Spring boot 
+api.server.domain=http://api_call_server 
+
+# code in Spring boot and I use RestTemplate to send a request
+@Value("${api.server.domain}")
+private String serverDomain
+```
+
+But it turned out I did something wrong. I kept getting 400 Bad request from api server. You may get `unknown host exception` when you send a request to a host which is not in /etc/hosts file. But I already added! 
+On my second thought, maybe the reason for the exception is DNS caching. But it was not that. 
+
+## Reason for the  
+
+
 
 # 로컬호스트처럼 아이피 등록해서 쓰려소 했다 
 # 근데 계속  400 에러가 나더라 

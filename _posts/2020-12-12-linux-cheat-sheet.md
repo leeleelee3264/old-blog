@@ -32,6 +32,11 @@ ls -d dir_name
 # try to read binary file with human eyes
 strings file 
 ```
+`less -N file_name` is fascinating command indeed. I usually use vi to see a whole file, if I try to 
+access the file from different terminal I have to conflict .swp problem. I can solve it with less. Technically, Less does not make the file open. 
+It just print all lines in the file using stream. Not like cat, less is a stream so I can go back and forth. 
+number + g event let you go to the number directly. `100g` means go to 100 th lines in the file. 
+
 
 # vim related command 
 > setting number 
