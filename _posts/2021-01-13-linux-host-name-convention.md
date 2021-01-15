@@ -44,16 +44,28 @@ private String serverDomain
 ```
 
 But it turned out I did something wrong. I kept getting 400 Bad request from api server. You may get `unknown host exception` when you send a request to a host which is not in /etc/hosts file. But I already added! 
-On my second thought, maybe the reason for the exception is DNS caching. But it was not that. 
+On my second thought, maybe the reason for the exception is DNS caching. But it was not that. <br>
+Reason for the exception : I used not allowed character in host name.
+At that time, I should have known about host name convention better. you see, my home made host name is `api_call_server` now let's see what characters are allowed for naming host.
 
-## Reason for the  
+### The allowed Characters in Host Name convention 
+1. a-z, A-Z  
+2. 0-9 
+3. - 
+These are all. No others. I'll keep in mind I cannot use under bar in Url. Only Hyphen would work. So I change host name from `api_call_server` to `api-call-server. After changing, I no longer saw 400 bad request.
+Before finishing the post, I'd like to adjust convention for url too. 
 
+### The allowed Characters in Url Name convention 
+Always safe to use: `  A-Z a-z 0-9 - . _ ~ ( ) ' ! * : @ , ;` 
+Not safe to use: (below image from [stackOverFlow](https://stackoverflow.com/questions/695438/what-are-the-safe-characters-for-making-urls))
+![url convention](https://user-images.githubusercontent.com/35620531/104724934-bc2fbc80-5774-11eb-8e14-834e49730680.png)
+In not safe, there are two concepts. Reserved and unsafe. 
+1. Reserved: literally reserved for system. You can see those letters in Linux env a lot. Safety of Url is not static when url containing reserved character. I think I'd better not use them. 
+2. Unsafe: just do not use them. If I want to use one of them, I have to percent encoding and it's on RFC. 
 
-
-# 로컬호스트처럼 아이피 등록해서 쓰려소 했다 
-# 근데 계속  400 에러가 나더라 
-# 알고보니 hostname에 허용되지 않은 _ 을 써서 그랬다. 
-https://stackoverflow.com/questions/1133424/what-are-the-valid-characters-that-can-show-up-in-a-url-host
-# 한 김에 url convention 도 
-# 어지간하면 allowed 하고 safe 한 것만 쓰자. unsafe 랑 system 적으로 reserved 된거 말고 
-https://stackoverflow.com/questions/695438/what-are-the-safe-characters-for-making-urls
+### PLUS: only use lower case in Url 
+Lowercase and Uppercase are both in the list, but we had better use Lowercase when it comes to making urls. Lowercase is more traditional way and considering UX, users don't have to press shift. 
+And don't mix them too. (It called safe approach) 
+With SEO(search engine optimize), google consider lowercase url and uppercase url are the same. For example, http://love.pizza.com/HOME.html and http://lova.pizza.com/home.html are the same. 
+Data won't be able to have detail we wait for. Even though it's not critical, they recommend (1) stick to one version (2) use 301 redirect. 
+I'm not so familiar with concept of SEO that I don't understand all of things. I'll leave the link and will read later again. [SEO and lower/upper matters](https://www.searchenginejournal.com/url-capitalization-seo/343369/#close)
