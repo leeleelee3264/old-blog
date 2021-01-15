@@ -1,7 +1,7 @@
 ---
 layout: post 
 title: "[Java] Regex cheat sheet for myself"
-date: 2021-01-11 20:43:59
+date: 2020-09-24 08:43:59
 author: Jamie Lee
 categories: Backend
 tags:	Regex
@@ -15,6 +15,7 @@ pagination:
 > case 1: Extracting before and after of specific character
 <br>
 
+=======
 Let's say I get string with static prefix and I only need string after the prefix. For example, "A:COME_IN". "A" is prefix and I only need "COME_IN". 
 I could guess prefix is only one character, however it wouldn't be general to many case. So I will set wild care before and after of the prefix.
 
@@ -51,5 +52,6 @@ Pattern pattern = Pattern.compile("\\((.*?)\\)");
             System.out.println(matcher.group(1)); // Love
         }
 ```
+
 '\\' (twice of \) is escape for '(' and ')'. It is well known fact that some characters can cause confusion to computer, so it's like safety lock for those kind of letters. 
 Leave the link about group for later. I think I'll confused by the concept again [what is group in java regex](https://www.tutorialspoint.com/javaregex/javaregex_capturing_groups.htm)
