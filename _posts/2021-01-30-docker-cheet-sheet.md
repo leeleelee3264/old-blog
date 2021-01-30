@@ -1,11 +1,11 @@
 ---
 layout: post
 title: "[Docker] Docker cheat sheet (img)"
-date: 2020-09-24 08:43:59
+date: 2021-01-30 08:43:59
 author: Jamie Lee
-categories: General
-tags:	Git
-cover:  "/assets/img/git.png"
+categories: Backend
+tags:	docker
+cover:  "/assets/img/docker.png"
 pagination:
   enabled: true
 ---
