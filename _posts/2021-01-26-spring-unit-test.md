@@ -5,7 +5,7 @@ date: 2021-01-26 22:00:59
 author: Jamie Lee
 categories: Backend
 tags:	spring
-cover:  "/assets/img/ubuntu.png"
+cover:  "/assets/img/spring.png"
 pagination: 
   enabled: true
 ---
