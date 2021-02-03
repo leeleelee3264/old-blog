@@ -10,6 +10,49 @@ pagination:
   enabled: true
 ---
 
+# UPDATE VERSION OF SHELL SCRIPT WITH PASSWORD
+One month ago, I make this shall script with hard coded user password and I knew that was a bad idea.  
+It's is well known fact that leaving password somewhere or some files can be a huge problem with security later. So I decided to fix it. 
+
+<br>
+<br>
+
+```bash
+#!/bin/bash
+
+
+# url : tpi.dnx.kr/aiv/
+# This file is for deployment  aiv site to latest version. 
+# Please pull newest version of the project from git before deploying. 
+
+echo enter the password for ${USER} and press enter
+IFS= read -rs PASSWD
+sudo -k 
+
+if sudo -lS &> /dev/null <<EOF
+$PASSWD
+EOF
+
+then 
+	sudo systemctl reload shiny-server
+	sleep .9
+	sudo systemctl status shiny-server | cat
+	echo "Successfully updated aiv" 
+else 
+	echo "The password is wrong. Please check again" 
+fi
+
+```
+<br>
+In this way, I don't have to hard code password. It will check the password and then do other thing. It deletes the password after that, so if I want to do one more, I have to enter the password again.     
+I didn't know that but I can also check sudo permission log in `/var/log/auth.log` file. Very interesting!  
+
+
+<hr>
+<br>
+<br>
+<br>
+
 Today, I handed over a project to a teammate I took over from a colleague who was about to quit the job. The one thing I was concerning is the fact that the team mate 
 will take over whole part of the project. It means she is going to do deploy as well and she is quite new with Linux.  I didn't think it is a good idea to let her know all the command using for deplyoment.
 So I decided to making shell script containing the command! (I've wanted to learn about shell script too)
