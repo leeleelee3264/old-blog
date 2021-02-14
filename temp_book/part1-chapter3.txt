@@ -230,4 +230,227 @@ public class ExFunction {
 
 이것이 모이면 결국 자원낭비라서 그냥 기본형으로 함수형인터페이스를 사용한다면 기본형 특화를 쓰는게 좋다. 
 
-> 자바에서 미리 만들어둔 함수형 인터페이스 말고도 우리가 원하는 함수형 인터페이스는 언제든 만들 수 있다.
+> 자바에서 미리 만들어둔 함수형 인터페이스 말고도 우리가 원하는 함수형 인터페이스는 언제든 만들 수 있다.   
+
+
+## 3.5 형식 검사, 형식 추론, 제약
+
+### 다이아몬드 연산자
+
+람다 표현식으로 함수형 인터페이스의 인스턴스를 만드는 것은 일종의 추론이라고 할 수 있다. 함수형 인터페이스의 유일한 추상 메서드의 파라메터 값과 반환값 형태와 동일한 람다 형식을 쓰면 아~ 그건가보다~ 하고 납득을 하기 때문에.
+
+그런데 이런 경우가 하나 더 있다. 바로 다이아몬드 연산자 이다. 
+
+```java
+List<String> listOfStrings = new ArrayList<>();
+List<Integer> listOfIntegers = new ArrayList<>();
+```
+
+이렇게 다이아몬드 연산자를 사용해서 콘텍스트에 따라 제네릭 형식을 추론하고 있다. 
+
+### 3.5.3 형식추론
+
+사실 이미 간단한 형태의 람다를 더 간단한 형태로 만들수 있다면? 람다 생성은 완전히 자바 컴파일러가 추론을 하는 형태로 이루어져있다. 결과적으로 컴파일러는 람다 표현식의 파라미터 형식에 접근을 할  수 있어서 람다 문법에서는 사실 파라미터를 생략해도 된다. 
+
+```java
+ public static void main(String[] args) {
+
+        List<Integer> test = Arrays.asList(1,2,3);
+        doSomething(test, (Integer i) -> System.out.println(i/2));
+    }
+
+// 파라미터 제거 
+ public static void main(String[] args) {
+
+        List<Integer> test = Arrays.asList(1,2,3);
+        doSomething(test, (i) -> System.out.println(i/2));
+    }
+
+```
+
+두 개의 코드는 완전히 동일한 코드이다. 상황에 따라 명시적으로 형식을 포함하는 것이 좋을 때도 있고 형식을 배제하는 것이 가독성을 향상시킬 때고 있다. 어떤 방법을 해야 할지는 역시나 개발자 스스로가 직접 판단을 해야 한다. 
+
+### 3.5.4 지역 변수 사용
+
+람다 표현식에서는 다른 메서드들과 마찬가지로 자유 변수(파라메터로 넘겨진 변수 말고 외부에서 선언이 된 변수)를 활용할 수 있다. → 람다 캡쳐링 
+
+그런데 이렇게 람다에서 외부에서 선언된 변수에 접근을 하려면 그 변수는 딱 한 번 만 값을 넣을 수 있는 final 변수여야 한다. 이름에서부터 알 수 있는 것처럼 '캡처링'이니까 값이 바뀌면 캡쳐의 개념이 아니게 되는 것.  아니면 Effective final 이라고 그냥 그 변수가 선언이 되고 딱 한 번만 할당이 되었으면 final이라고 명시를 안 해도 컴파일러가 알아서 final 처럼 취급을 해준다. 
+
+> 이런 제약이 있는 이유는 인스턴스 변수와 지역 변수가 태생부터 다르기 때문이다.
+
+인스턴스 변: 힙에 저장이 된다.  (조금 더 오래 살아남는 값들이 힙에 저장이 되는 편) 
+
+지역변수: 스택에 저장이 된다. (기본타입과, 참조타입들의 이름들이 여기에 저장이 되는 편) 
+
+특정 메소드에서 사용이 되는 변수가 지역변수이다. 얘들은 메소드가 호출이 되었을 때 스택에 값이 차곡차곡 쌓였다가 메소드 연산이 끝나면 순서대로 다 팝팝팝 해서 터진다. 
+
+<자바 메모리 관리 - 스택 & 힙>
+
+[자바 메모리 관리 - 스택 & 힙](https://yaboong.github.io/java/2018/05/26/java-memory-management/)
+
+<Java memory include meta> 
+
+[JVM의 메모리 구조 및 할당과정](https://inspirit941.tistory.com/294)
+
+<Java stack and heap>
+
+[Stack Memory and Heap Space in Java | Baeldung](https://www.baeldung.com/java-stack-heap)
+
+그리고 사실은! 람다에서 접근을 하는 외부 선언 변수는 람다가 그 외부 선언 변수 값 자체에 접근을 하는 게 아니고, 외부 선언 변수 값의 복사본에 접근을 하는 것이다. (call-by-value 형식이라고 할 수 있음). 그래서 그 복사본의 값이 바뀌지 않아야 해서 값을 한 번 만 할당하게 하는 것. 
+
+애초에 이런 형식으로 된 이유는 스레드 세이프하게 만들기 위해서. 람다가 스레드(1)에서 실행된다면 변수를 할당한 다른 스레드(2)가 사라져버려 변수 할당이 해제 되었는데도 람다에서는 계속 그 변수에 접근을 하려고 할 수 있다. 
+
+따라서, 람다는 자신이 정의된 메서드의 지역 변수의 값은 바꿀 수 없다. 람다가 정의된 메서드의 지역 변수닶은 final 변수기 때문에. → 람다는 변수가 아닌 값에 국한되어 어떤 동작들을 수행한다. 
+
+그리고 지역변수 값은 스택에 존재하기 때문에 자신을 정의한 스레드와 생존을 같이 해야 한다. 
+
+## 3.6 메서드 참조
+
+---
+
+메서드 참조를 이용하면 기존의 메서드 정의를 재활용해서 람다처럼 전달을 할 수 있다. (동작 파라메터). 때때로 람다 표현식을 쓰는 것보다 메서드 참조를 사용하는 게 더 가독성이 좋고 자연스러울 수 있다. 왜냐하면 메서드 참조는 `어떤클래스.어떤메소드` 형태로 넘기기 때문에 확실히 명시된다는 느낌이 있다. 
+
+```java
+static List<Apple> filterApples(List<Apple> inventory, Predicate<Apple> p) {
+    List<Apple> result = new ArrayList<>();
+    for(Apple apple: inventory) {
+        if(p.test(apple)) {
+            result.add(apple);
+        }
+    }
+    return result;
+}
+
+List<Apple> result1 = filterApples(apples, Apple::isHeavyApple);
+List<Apple> result2 = filterApples(apples, Apple::isGreenApple);
+```
+
+어떤 메소드를 실행해야 하는지 대놓고 이름을 가져와서 보여주고 있다. 훨씬 더 명시된 모습. 그런데 **실제로 메서드를 호출하는 건 아니고** 람다에서 이렇게이렇게 동작을 하세요! 하고 코드를 짜서 넘겨주는 것처럼 실제로 실행을 할 때 이 메서드를 호출하세요~ 의 뜻이라서 **메서드 참조를 할 때 메서드 뒤에 ()을 쓰지 않아도 된다.** 
+
+메서드 참조 유형
+
+1. 정적 메서드 참조 Integer::parseInt (parseInt는 static 메서드) 
+2. 인스턴스 메서드 참조 String::length (length는 일반 메서드) 
+3. 기존 객체의 인스턴스 메서드 참조
+
+```java
+String test = new String("hello");
+
+someMethod(test::length);
+```
+
+3번의 형태를 쓰는 경우는 람다 외부에서 (final로) 생성이 된 변수들의 메서드를 람다 안에서 사용을 할 때 쓰는 형태라고 한다. 이런식은 비공개 본 클래스 전용 핼퍼 메서드를 정의한 상황에서 유용하게 쓸 수 있다고 한다. 
+
+컴파일러는 람다 표현식의 형식을 검사하던 방식과 비슷한 과정으로 메서드 참조가 주어진 함수형 인터페이스와 호환하는지 확인한다. 메서드 참조는 콘텍스트의 형식과 일치해야 한다. 
+
+```java
+Supplier<Apple> c1 = Apple:new;
+Apple a1 = c1.get();
+```
+
+위 방식처럼 생성자 참조도 사용을 할 수 있는데 아직은 어떻게 사용을 해야 하는지 느낌이 잘 오지 않는다. 대신에 Map으로 카테고리별로 생성자 참조를 해놔서 값 맵핑해서 객체 만드는 건 좋아보인다. 근데 생성자로 객체를 만들었다고 해도 기본 생성자로 객체를 만들고, 값을 넣어주는 것은 다 따로 해야 하지 않을까 들어가는 인수들이 다르니까. 그리고 값 세팅은 Function이나 BiFunction으로 하는데 이러면 많아봐야 값 두 개 까지만 넣어서 생성을 할 수 있다. 
+
+## 3.8 람다 표현식을 조합할 수 있는 유용한 메서드
+
+여러가지 유틸성 함수형 메서드들을 조합해서 사용을 할 수 있다. 한 마다로 간단한 여러개의 람다 표현식을 조합해서 복잡한 람다 표현식을 만들 수 있다. 
+
+함수형 인터페이스가 이렇게 만능으로 구현이 될 수 있는 이유는 default메서드로 발라져있기 때문이다. 미래를 생각해서 이것저것 다 넣어놓고 구현 안 해도 되는 default를 추가한 것 같다. 
+
+심지어 이렇게 람다 표현식을 복잡하게 조합을 해도 코드 자체가 문제를 잘 설명한다고 한다. 
+
+> 이는 결국 내가 함수형 메서드를 만들었을 때도 미래지향적으로 핼퍼 메서드를 이거저거 만들어 놓으면 연결연결연결 해서 쓸 수 있다는 얘기다.
+
+### Comperator 연결
+
+```java
+// 역정렬
+inventory,sort(comparing(Apple:getWeight).reversed());
+
+/**
+ * Returns a comparator that imposes the reverse ordering of this
+ * comparator.
+ *
+ * @return a comparator that imposes the reverse ordering of this
+ *         comparator.
+ * @since 1.8
+ */
+default Comparator<T> reversed() {
+    return Collections.reverseOrder(this);
+}
+
+// 값이 같다면 다른 조건 하나 더 넣어서 비교
+inventory.sort(comparing(Apple:getWeight).reversed()
+					.thenComparing(Apple:getCountry));
+
+default Comparator<T> thenComparing(Comparator<? super T> other) {
+     Objects.requireNonNull(other);
+     return (Comparator<T> & Serializable) (c1, c2) -> {
+         int res = compare(c1, c2);
+         return (res != 0) ? res : other.compare(c1, c2);
+     };
+ }
+
+```
+
+### Predicate 연결
+
+```java
+// and 조건 
+Predicate<Apple> redAntHeavyApple = redApple.and(apple -> apple.getWeight() >150);
+
+// or 조건
+Predicate<Apple> redAndHeavyAppleOrGreen = readApple.and(apple -> apple.getWeight() > 150)
+		.or(apple -> GREEN.equals(a.getColor())); 
+
+default Predicate<T> or(Predicate<? super T> other) {
+        Objects.requireNonNull(other);
+        return (t) -> test(t) || other.test(t);
+    }
+
+default Predicate<T> and(Predicate<? super T> other) {
+        Objects.requireNonNull(other);
+        return (t) -> test(t) && other.test(t);
+    }
+```
+
+### Function 연결
+
+```java
+// andThen 주어진 함수를 먼저 적용한 결과를 다른 함수의 입력으로 전달 
+Function<Integer, Integer> f = x -> x + 1;
+Function<Integer, Integer> g = x -> x * 2;
+Function<Integer, Integer> h = f.andThen(g);
+
+int result = h.apply(1); //4가 나온다.
+
+// compose 인수로 주어진 함수를 먼저 실행한 다름에 결과를 외부 함수로 전달
+Function<Integer, Integer> f = x -> x + 1;
+Function<Integer, Integer> g = x -> x * 2;
+Function<Integer, Integer> h = f.compose(g);
+
+int result = h.apply(1); //3가 나온다.
+
+// 결국 andThen과 compose 의 차이는 앞을 먼저 계산하냐 뒤를 먼저 계산하냐의 차이 
+
+default <V> Function<V, R> compose(Function<? super V, ? extends T> before) {
+
+      Objects.requireNonNull(before);
+      return (V v) -> apply(before.apply(v));
+  }
+
+default <V> Function<T, V> andThen(Function<? super R, ? extends V> after) {
+    Objects.requireNonNull(after);
+    return (T t) -> after.apply(apply(t));
+}
+```
+
+*이렇게 람다로 호출을 바로 못하고 함수형 메서드로 여러개를 만들어서 체인을 걸어야 하는 이유는 저 메서드들이 함수형 메서드에 들어있는 애들이다 보니까 확실하게 함수형 메서드로 객체 선언이 되어야 한다. 저렇게 만들어놓으면 람다로 던지지 않고 그냥 redAndHeavyApple 이렇게 자체를 던져서 사용을 하면 되겠다. 
+
+실제 호출 모습 
+
+```java
+Predicate<Apple> redApple = apple -> apple.getColor().equals(Color.RED);
+ Predicate<Apple> redAntHeavyApple = redApple.and(apple -> apple.getWeight() >150);
+ List<Apple> finalResult = filterApples(apples, redAntHeavyApple);
+ System.out.println(finalResult);
+```
