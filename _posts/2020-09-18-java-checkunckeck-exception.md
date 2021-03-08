@@ -20,6 +20,7 @@ A week ago, I felt maybe I need to adjust exception of sql. At that time, I just
 
 Java use Throwable type when something goes wrong. The highest type Throwable then separate to three pieces. Error, Checked Exception and Unchecked Exception. Error is just error. We cannot actually do something with error. It means, we don't have to (and can't) handle error. Then what about unchecked exception and checked exception? 
 
+<br>  
 > Checked Exception at Compile time, Unchecked Exception at Run time.
 
 ## Checked Exception
@@ -32,6 +33,7 @@ On the other hand, compiler can't catch unchecked exception which will happen in
 
 And here is the point! Can you see SQLException under Exception tree? SQLException is one of checked exception. And it's today's topic. Now let's dig in to SQLException.
 
+<br>  
 # SQLException and DataAccessException
 
 I was a bit confused about the fact SQLException is checked exception. What I understand is that checked exception always pop up at compiler time. But in my ordinary code, exception related to sql pop up run time and compiler time both. When I miss or don't configure setting about sql, compiler give me lots of error and stop right there. It were mostly about connection with spring and sql. On the other hand, If I made bad sql grammar or try to use invalid value in sql sentence, then I got runtime exception. I didn't get value I'd expected, but program was still running. I did some research and found out there are **SQLException and DataAccessException** in spring. SQLException is checked exception and DataAccessException implements RuntimeException.
@@ -47,6 +49,7 @@ java.lang.Object
 					org.springframework.dao.DataAccessException
 ```
 
+<br>
 > Change SQLException to DataAccessException
 
 Now it's a trend to change checked exception to unchecked exception in standard spec and open source framework. Most of time, we can't react to checked exception right away. Because Java stepped into server area, we have to go through couple of step to fix exceptions. (coding, building, uploading, running...) People changed mind. If we can't fix exceptions fast, then at least we can make exceptions not too critical. Let's make checked exception to unchecked exception! It's bad hobby but sometimes we just ignore runtime exception and got ugly exception notification. I'll summarize it. 
@@ -66,6 +69,7 @@ Now it's a trend to change checked exception to unchecked exception in standard 
 - **it called abstraction of exception. make low level to high level.**
 - with high level exception, we can get more detail about the occurred exception.
 
+<br>
 # Finally! Exception code of Mybatis
 
 When I wrote this code, it looked decent. But I feel like I have to change couple of things to improve. It's prototype anyway. Now the code's flow is very simple. Meeting exception, logging exception. I might need to handle individual case of exception later. At that moment, I'll use this code quite useful. And for good measure, I separate exception from mybatis and general concept of sql exception. Just in case. 

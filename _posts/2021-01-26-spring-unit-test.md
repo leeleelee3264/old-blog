@@ -23,7 +23,8 @@ There are three parts of testing code. I'll cover step-by-step. I got a lot of h
 2. Service test
 3. Controller test 
 
-> Basic libs for test in spring boot     
+> Basic libs for test in spring boot 
+ 
 <br>
 ```yaml
  testImplementation('org.springframework.boot:spring-boot-starter-test') {
@@ -39,7 +40,8 @@ There are so many options of test function include assertThat and assert. I'm qu
 
 ## Repository test 
 
-> original code UserRepository.java
+> original code UserRepository.java 
+
 <br>
 ```java
 @Repository
@@ -171,6 +173,7 @@ public class UsersServiceImp implements UsersService {
 ```
 <br>
 > test code UsersServiceTest.java
+
 ```java
 @ExtendWith(SpringExtension.class)
 class UsersServiceImpTest {
@@ -223,7 +226,8 @@ class UsersServiceImpTest {
         assertThat(saved.getName()).isEqualTo(test.getName());
     }
 }
-```
+``` 
+
 <br>
 Service layer depends on Repository (aka persistence layer) but in test, service layer don't have to know how it works. 
 It means we have to make full service test code without wiring repository and we can do it with 'Mocking' function. It literally mock repository. 
@@ -293,6 +297,7 @@ public class ApiController {
 <br>
 
 > test code ApiControllerTest.java 
+
 <br>
 ```java
 // @SpringBootTest 이 어노테이션을 쓰면 통합 테스트가 된다. unit 테스트에서 지향해야 함. 그리고 이건 실제 db 가 엑세스가 된다.
@@ -411,6 +416,7 @@ public class ApiControllerTestNotUnit extends ControllerTestFrame {
 ```
 <br>
 > ControllerTestFrame.class
+
 <br>
 ```java
 @SpringBootTest
@@ -440,4 +446,40 @@ public abstract class ControllerTestFrame {
     }
 
 }
+``` 
+
+<br>
+
+## Get result with mockMvc
+I'm not familiar with assert function. Until getting used to it, I decide to check result with my eyes. It means I want to 
+print the response on console window. 
+Spring already got a solution. In Integerate test, I mock request with mockMvc. With mockMvc, I can ues mvcResult trans result to printable Object. Here is what I do. 
+<br>
+```java
+
+import org.springframework.test.web.servlet.MockMvc;
+
+ @Test
+    void logout() throws Exception {
+ 
+        String targetUrl = String.format("%s%s", contextPath, "/logout");
+        Map<String, String> sessionMap = new HashMap<>();
+        sessionMap.put("session_key", "inputed_session_key");
+ 
+        //when
+        MvcResult resultMock = mockMvc.perform(post(targetUrl)
+                .requestAttr(XCConstant.REQ_APP_LANG, testLang)
+                .requestAttr(XCConstant.REQ_AUTH_TOKEN, "")
+                .contentType(MediaType.APPLICATION_JSON)
+                .content(asJsonString(sessionMap)))
+                .andReturn();
+ 
+        // then
+        String result = resultMock.getResponse().getContentAsString();
+        log.info("#### {} test ####", targetUrl);
+        log.info(result);
+    }
 ```
+
+<br> 
+Do not forget to attach @WebMvcTest or @AutoConfigureMockMvc to autowired mockMvc Object in your class. This will let you call mockMvc without any configuration or statement. 

@@ -46,6 +46,12 @@ Check merged branch in Remote
 ```bash
 git branch -r --merged
 ```
+Delete remote branch new version (work fine)
+```bash
+(1) git push repo_name --delete branch_name 
+(2) git branch -d branch_name 
+    git push orign branch_name 
+``` 
 
 Delete remote branch (not working sometimes)
 ```bash
@@ -145,7 +151,7 @@ git reset --hard HEAD^
 
 # add
 
-> add 취소하기language-javascript
+> add 취소하기
 
 ```bash
 git reset HEAD 파일경로
@@ -236,8 +242,7 @@ git cherry-pick 커밋아이디
 git cherry-pick --abort
 ```
 
-# config
-
+# config  
 > git 기본 편집기 vim 으로 설정하기 
 ```bash
 git config --global core.editor "vim" 
@@ -280,7 +285,6 @@ git remote set-url origin https://github.com/leeleelee3264/leeleelee3264.github.
 ```
 
 # cached 
-
 > .gitginore 가 안 먹힐 때 AKA tracking 하지 말아야 할 파일을 트래킹 할 때 
 ```bash
 git rm -r --cached .
