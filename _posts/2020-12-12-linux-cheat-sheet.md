@@ -12,6 +12,36 @@ pagination:
 
 # Linux command 2021 
 
+## watch 
+```bash
+    watch ss -tlp
+
+    # 한 번에 여러개 보기 
+    watch "ss -tlp;df"
+```
+규칙적으로 값을 갱신해서 화면에 보여준다. default 값은 2초인 거 같다. 한마디로 이 커맨드를 쓰면 서버 상태를 계속 모니터링 할 수 있는 거다. 
+아예 고정을 해놓고 실시간으로 업데이트를 해서 모여주니까 모니터링하기 편하다. 약간 top과 비슷하다고 할 수 있다. 
+
+## tree 
+```bash
+    tree tc-admin 
+    
+    # 디렉터리들 지정해서 tree 만들기 
+    tree tc-admin tc-admin-prod
+```
+이건 작업할 때 많이 쓴다기 보다는 블로그에 포스팅할 때 디렉터리 구조 보여주는데 더 많이 쓰는 것 같다. 
+원래의 용도는 한 디렉터리의 구조를 deep down 하게 들어가 tree 를 만들어 보여주는 것이다. 디렉터리를 한 눈에 파악하기 좋다. 
+
+## grep 
+```bash
+    
+    # 키워드가 있는 문장을 제외하고 보여준다. 
+    # -v 는 invert의 v 이다. 단어 그대로 결과 값을 뒤집는 것.
+    grep -v "keyword" test.txt 
+```
+ 
+
+
 # Useful command from Linux Pocket Guide
 ```bash
 # file line count 
