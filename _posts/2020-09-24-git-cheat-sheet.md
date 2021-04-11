@@ -13,6 +13,16 @@ pagination:
 # Git command 2021
 <hr>
 
+<br>
+# switching branch hack
+> going back to previous branch with one second. 
+> Quite similar with going back to previous directory in Linux. 
+```bash
+git switch - 
+```
+
+<br> 
+
 # git ERROR
 > fatal: refusing to merge unrelated histories 
 I saw this error when I had tried to change commit with --amend but didn't finish properly. 
