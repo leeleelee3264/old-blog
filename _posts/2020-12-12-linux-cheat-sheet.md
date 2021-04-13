@@ -12,16 +12,38 @@ pagination:
 
 # Linux command 2021 
 
+## pgrep 
+AKA process grep 
+
+```nashorn js
+pgrep -a "query"
+ex) pgrep -a java
+```
+
+with this, I don't have to do `ps -ef | grep java`. pgrep is ps with grep function.
+<hr>
+<br>
+
+## type 
+Getting more info with command. It will let you know about command such as alias, shell embeded 
+```nashorn js
+type "query"
+ex) type ls
+```
+
+
 ## Related with network 
 ```nashorn js
 route
 ```
+
 머신의 라우팅 테이블을 보여준다. 어떤 네트워크들이 열려있는지, 그 네트워크들의 브로드케스팅과 넷마스크, 인터페이스를 볼 수 있다. 
 <br> 
 
 ```nashorn js
 ip a
 ```
+
 제일 많이 사용하는 네트워크 정보 커맨드는 ifconfig인데 ifconfig는 net-tools를 설치해야 사용을 할 수 있다. 
 ip a 를 사용하면 비슷한 정보들을 뽑아낼 수 있다. 오히려 ifconfig 보다 ip 커맨드가 더 기능이 많아보인다. 
 
@@ -34,6 +56,7 @@ go to the top of file : gg
 go to the bottom of file : ctrl + g
 ```
 
+
 여태 vi 조작을 할 때 문장의 맨끝과 맨앞을 쉽게 가는 방법을 몰라서 방향키를 열심히 눌렀는데 
 home 키를 누르면 문장의 바로 앞으로, end 키를 누르면 문장의 끝으로 손쉽게 갈 수 있다. 
 
@@ -44,6 +67,7 @@ home 키를 누르면 문장의 바로 앞으로, end 키를 누르면 문장의
     # 한 번에 여러개 보기 
     watch "ss -tlp;df"
 ```
+
 규칙적으로 값을 갱신해서 화면에 보여준다. default 값은 2초인 거 같다. 한마디로 이 커맨드를 쓰면 서버 상태를 계속 모니터링 할 수 있는 거다. 
 아예 고정을 해놓고 실시간으로 업데이트를 해서 모여주니까 모니터링하기 편하다. 약간 top과 비슷하다고 할 수 있다. 
 
@@ -56,6 +80,7 @@ home 키를 누르면 문장의 바로 앞으로, end 키를 누르면 문장의
     # 디렉터리들 지정해서 tree 만들기 
     tree tc-admin tc-admin-prod
 ```
+
 이건 작업할 때 많이 쓴다기 보다는 블로그에 포스팅할 때 디렉터리 구조 보여주는데 더 많이 쓰는 것 같다. 
 원래의 용도는 한 디렉터리의 구조를 deep down 하게 들어가 tree 를 만들어 보여주는 것이다. 디렉터리를 한 눈에 파악하기 좋다. 
 
@@ -69,6 +94,7 @@ home 키를 누르면 문장의 바로 앞으로, end 키를 누르면 문장의
     grep -v "keyword" test.txt 
 ```
  
+
 
 <br>
 
@@ -92,6 +118,7 @@ ls -d dir_name
 # try to read binary file with human eyes
 strings file 
 ```
+
 `less -N file_name` is fascinating command indeed. I usually use vi to see a whole file, if I try to 
 access the file from different terminal I have to conflict .swp problem. I can solve it with less. Technically, Less does not make the file open. 
 It just print all lines in the file using stream. Not like cat, less is a stream so I can go back and forth. 
@@ -114,12 +141,14 @@ vim ~/.vimrc
 # type set number in .vimrc file 
 set number 
 ```
+
 <br>
 
 # shutdown linux 
 ```bash
     shutdown -h now 
 ```
+
 
 <br>
 
@@ -132,6 +161,7 @@ Today(2021-01-08) I have to check project dir in both env, so I wrote a short ja
     String currnetPath = System.getProperty("user.dir"); // it will return a currnet working dir
 ```
 
+
 ```bash
     # let's say I made CurrnetPath.java which contains class CurrentPath.
     
@@ -141,6 +171,7 @@ Today(2021-01-08) I have to check project dir in both env, so I wrote a short ja
     # after compiling, I'm able to find CurrnetPath.class file. It's the result of compiling and I'll run it. Basically, I run class file to execute java code. 
     java CurrnetPath
 ```
+
 
 <br>
 
@@ -152,6 +183,7 @@ service --status-all
 2. show running service 
 systemctl --type=service 
 ```
+
 
 Linux commands related to service are mostly start as 'Systemctl'. 'Service' is kind of out-dated command, so it had better using 'systemctl'
 
@@ -188,6 +220,7 @@ I had not known about applying command, so I just rebooted the os when I changed
     get -r file 
     put -r file 
 ```
+
 <br>
 <br>
 
@@ -255,6 +288,7 @@ ctrl + u
 top 
 htop 
 ```
+
 가끔 리눅스 안에서 실행되는 프로세스들을 확인하고 싶을 때가 생긴다. 예를 들어 실행한 jar 파일이 잘 돌고 있는지, 지금 막 db 배치를 돌렸는데 일을 잘 하고 있는지 등등. 프로세스 확인에는 ps -ef를 제일 많이 사용하겠지만 mysql, java 등등 돌아가는게 한 눈에 보기 좋은 커맨드는 top 이다.
 
 top에서 shift+ p는 cpu 많이 잡아먹는 순으로 보여주고 shift + m 은 메모리 많이 잡아먹는 순으로 보여준다.
@@ -301,6 +335,7 @@ ctrl + a + p: 이전 tab으로 넘어가기
 screen -X -S name quit : name이라는 이름의 screen을 없애버림
 ```
 
+
 이렇게만 알고 있어도 사용에 크게 지장이 없다.
 <br>
 
@@ -319,6 +354,7 @@ screen -X -S name quit : name이라는 이름의 screen을 없애버림
 ```nashorn js
 tail
 ```
+
 tail (옵션들 알아보기 -n -f -F 등등) -f는 파일이 달라지는 걸 모른는데(포인터가 달라지는 둥) -F는 파일의 변화를 안다. 내용이 바뀐다는 것보다는 파일의 포인터가 달라진다는 얘기를 하는 것 같음.
 
 <hr>
@@ -327,6 +363,7 @@ tail (옵션들 알아보기 -n -f -F 등등) -f는 파일이 달라지는 걸 �
 ```nashorn js
 head
 ```
+
 tail 과 비슷한 커맨드인데, tail이 파일의 끝을 조작한다면 head는 파일의 시작을 조작한다. 
 
 <hr>
@@ -335,6 +372,7 @@ tail 과 비슷한 커맨드인데, tail이 파일의 끝을 조작한다면 hea
 ```nashorn js
 touch
 ```
+
 
 그냥 시간 업데이트 한다고 생각했는데 컴파일러와 상관이 있다. 컴파일러는 안의 내용이 바뀌지 않아도 시간이 갱신되면 아 얘 새로운 변경사항이 있구나~ 하고 다시 컴파일을 해준다. 그래서 컴파일을 다시 하고 싶은데 번거롭게 뭘 따로 하고 싶지 않으면 touch를 써서 쉽게 시간을 바꿔주면 컴파일이 된다.
 <br>
@@ -381,6 +419,7 @@ session window 새로 만들기: ctrl+b, c
 
 화면 사이 이동하기: ctrl+b, 방향키
 ```
+
 <br>
 
 ![drag%20and%20drop%20(front)%203bbcb41524264640801dce23e80eb29e/dragdrop.png](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FbS8PXw%2FbtqEo6PRJEO%2FDhF5pnlCsYHfPH0CSSbrHK%2Fimg.png)
@@ -429,5 +468,6 @@ ss -n : 연결된 포트를 보는데 n: numeric 옵션이라서 포트 번호�
 
 ss dst 특정 ip : 연결된 특정 ip에 대한 정보 (ip는 peer address의 ip이다.)
 ```
+
 <hr>
 <br>
