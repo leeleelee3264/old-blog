@@ -13,9 +13,10 @@ pagination:
 # Linux command 2021 
 
 ## pgrep 
-AKA process grep 
+AKA process grep  
 
-```nashorn js
+
+```bash
 pgrep -a "query"
 ex) pgrep -a java
 ```
@@ -26,21 +27,21 @@ with this, I don't have to do `ps -ef | grep java`. pgrep is ps with grep functi
 
 ## type 
 Getting more info with command. It will let you know about command such as alias, shell embeded 
-```nashorn js
+```bash
 type "query"
 ex) type ls
 ```
 
 
 ## Related with network 
-```nashorn js
+```bash
 route
 ```
 
 머신의 라우팅 테이블을 보여준다. 어떤 네트워크들이 열려있는지, 그 네트워크들의 브로드케스팅과 넷마스크, 인터페이스를 볼 수 있다. 
 <br> 
 
-```nashorn js
+```bash
 ip a
 ```
 
@@ -48,7 +49,7 @@ ip a
 ip a 를 사용하면 비슷한 정보들을 뽑아낼 수 있다. 오히려 ifconfig 보다 ip 커맨드가 더 기능이 많아보인다. 
 
 ## Related with vi 
-```nashorn js
+```bash
 go to end point of sentance : home key 
 go to start point of sentance : end key
 
@@ -225,7 +226,7 @@ I had not known about applying command, so I just rebooted the os when I changed
 <br>
 
 ## ** Command from previous blog posting  
-```nashorn js
+```bash
 cd -**
 ```
 
@@ -238,7 +239,7 @@ cd -**
 
 <br>
 
-```nashorn js
+```bash
 !!
 ```
 
@@ -246,7 +247,7 @@ cd -**
 <hr>
 <br>
 
-```nashorn js
+```bash
 !number 
 ex) !120
 ```
@@ -262,7 +263,7 @@ history에 나와있던 28번째 커맨드를 다시 실행하고 싶어서 !28�
 <br>
 
 
-```nashorn js
+```bash
 ! previous command 
 ex) !cd
 ```
@@ -273,7 +274,7 @@ ex) !cd
 <br>
 
 
-```nashorn js
+```bash
 ctrl + u
 ```
 
@@ -284,7 +285,7 @@ ctrl + u
 <br>
 
 
-```nashorn js
+```bash
 top 
 htop 
 ```
@@ -295,7 +296,7 @@ top에서 shift+ p는 cpu 많이 잡아먹는 순으로 보여주고 shift + m �
 <hr>
 <br>
 
-```nashorn js
+```bash
 netstat -ntlp
 ```
 
@@ -307,7 +308,7 @@ netstat -ntlp
 <hr>
 <br>
 
-```nashorn js
+```bash
 screen
 ```
 
@@ -317,7 +318,7 @@ screen
 
  이렇게 스크린을 만들어 두면 작업 도중에 회사에서 집으로 옮겼을 경우 detached된 screen을 attached해서 사용하면 회사에서 하던 작업을 그대로 할 수 있다.
 
-```nashorn js
+```bash
 screen -ls: 현재 만들어져있는 screen의 list를 보여줌
 
 screen -S name: name이란 이름의 screen을 만들어서 실행시켜줌
@@ -351,7 +352,7 @@ screen -X -S name quit : name이라는 이름의 screen을 없애버림
 <hr>
 <br>
 
-```nashorn js
+```bash
 tail
 ```
 
@@ -360,7 +361,7 @@ tail (옵션들 알아보기 -n -f -F 등등) -f는 파일이 달라지는 걸 �
 <hr>
 <br>
 
-```nashorn js
+```bash
 head
 ```
 
@@ -369,7 +370,7 @@ tail 과 비슷한 커맨드인데, tail이 파일의 끝을 조작한다면 hea
 <hr>
 <br>
 
-```nashorn js
+```bash
 touch
 ```
 
@@ -383,14 +384,14 @@ touch
 
 
 ## Command with tmux 
-```nashorn js
+```bash
 tmux 
 ```
 
 다른 분이 알려주신 커멘드인데 정말 너무너무 잘 쓰고 있다. 예전에 이거 없이 어떻게 살았나 싶을 정도.. screen 커맨드와 비슷한데 훨씬 더 좋다. session으로 이전 작업을 기억할 뿐 아니라 화면을 나눌 수 있다.
 <br>
 
-```nashorn js
+```bash
 scroll 하기 : ctrl + b + pageUp [more tmux scroll command](https://superuser.com/questions/209437/how-do-i-scroll-in-tmux)
 
 새로운 session 열기: tmux new -s session_name
@@ -429,7 +430,7 @@ session window 새로 만들기: ctrl+b, c
 <hr>
 <br>
 
-```nashorn js
+```bash
 nginx -t
 ```
 
@@ -440,7 +441,7 @@ sudo nginx -t 를 하면 잘 썼을 경우 ok가 나오는데 그때 systemctl r
 <br>
 
 
-```nashorn js
+```bash
 ss
 ```
 
@@ -449,7 +450,7 @@ ss에 대한 포스트를 읽다보니 ss가 new netstat 라는 말을 봤는데
 ![drag%20and%20drop%20(front)%203bbcb41524264640801dce23e80eb29e/dragdrop.png](https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Fblog.kakaocdn.net%2Fdn%2FcBUuD6%2FbtqEq62ra5q%2F9mf7Xel1BWHUeEWJy5KAXk%2Fimg.png)
 <br>
 
-```nashorn js
+```bash
 ss: 연결된 포트가 다 나온다
 
 ss -t : 연결된 tcp 포트
