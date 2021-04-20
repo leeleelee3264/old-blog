@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Backend] Github action으로 트위터 봇 만들기"
+title: "[Project] Github action으로 트위터 봇 만들기"
 date: 2021-04-16 08:43:59
 author: Jamie Lee
 categories: Backend
@@ -21,25 +21,35 @@ enabled: true
 
 간단한 리액트 프로젝트나 이것처럼 주기적으로 스케쥴링이 되기만 하면 프로젝트는 깃허브 액션을 쓰면 충분하다 판단이 되어 이번에는 깃허브 액션만 이용하고 서버리스로 구현을 했다. 프로젝트의 전반적인 플로우는 아래의 그림과 같다.
 
-![%E1%84%80%E1%85%B5%E1%86%BA%E1%84%92%E1%85%A5%E1%84%87%E1%85%B3%20%E1%84%8B%E1%85%A2%E1%86%A8%E1%84%89%E1%85%A7%E1%86%AB%E1%84%8B%E1%85%B3%E1%84%85%E1%85%A9%20%E1%84%82%E1%85%A6%E1%86%BA%E1%84%91%E1%85%B3%E1%86%AF%E1%84%85%E1%85%B5%E1%86%A8%E1%84%89%E1%85%B3%20%E1%84%90%E1%85%B3%E1%84%8B%E1%85%B1%E1%86%BA%E1%84%87%E1%85%A9%E1%86%BA%20%E1%84%86%E1%85%A1%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%E1%84%80%E1%85%B5%209767097e180d410fa5aa6e741675844f/twitter_flow.png](%E1%84%80%E1%85%B5%E1%86%BA%E1%84%92%E1%85%A5%E1%84%87%E1%85%B3%20%E1%84%8B%E1%85%A2%E1%86%A8%E1%84%89%E1%85%A7%E1%86%AB%E1%84%8B%E1%85%B3%E1%84%85%E1%85%A9%20%E1%84%82%E1%85%A6%E1%86%BA%E1%84%91%E1%85%B3%E1%86%AF%E1%84%85%E1%85%B5%E1%86%A8%E1%84%89%E1%85%B3%20%E1%84%90%E1%85%B3%E1%84%8B%E1%85%B1%E1%86%BA%E1%84%87%E1%85%A9%E1%86%BA%20%E1%84%86%E1%85%A1%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%E1%84%80%E1%85%B5%209767097e180d410fa5aa6e741675844f/twitter_flow.png)
+![twitter flow](/assets/img/post/twitter_flow.png)
 
 
 
 ---
 
-[개발 스텍 ](https://www.notion.so/c7a23ef3c3754e7b8174484e2ff6dadf)
+### dev stack 
+| stack      | info |
+|-----------------|------------|
+| Backend language       |   python         |
+| Backend api | twitter api |  
+| Server | server less |  
+| Scheduler | github action |
 
 
 
 ---
 
-[리소스 스텍](https://www.notion.so/ebf2a6b04ed846059ac8a87f957f1781)
+### resource stack 
+| stack      | info |
+|-----------------|------------|
+| twitter api       |   https://developer.twitter.com/en/docs/twitter-api/v1       |
+| tweepy lib | https://docs.tweepy.org/ko/latest/api.html |  
+| daum netflix | https://movie.daum.net/premovie/netflix?flag=Y |  
 
 이 프로젝트를 통해 처음으로 트위터 api를 써봤는데 생각보다 문서가 보기 어렵게 되어있었다. 원래는 직접 api를 사용하려고 했는데 이번에는 tweepy 파이썬 라이브러리를 사용했다. 다음번에는 공연중인 뮤지컬/연극을 자동트윗하는 트윗봇을 만들려고 하는데 그때는 직접 api를 쓸 예정이다.
 
 # 트위터 api와 tweepy로 트윗하기
 
-![%E1%84%80%E1%85%B5%E1%86%BA%E1%84%92%E1%85%A5%E1%84%87%E1%85%B3%20%E1%84%8B%E1%85%A2%E1%86%A8%E1%84%89%E1%85%A7%E1%86%AB%E1%84%8B%E1%85%B3%E1%84%85%E1%85%A9%20%E1%84%82%E1%85%A6%E1%86%BA%E1%84%91%E1%85%B3%E1%86%AF%E1%84%85%E1%85%B5%E1%86%A8%E1%84%89%E1%85%B3%20%E1%84%90%E1%85%B3%E1%84%8B%E1%85%B1%E1%86%BA%E1%84%87%E1%85%A9%E1%86%BA%20%E1%84%86%E1%85%A1%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%E1%84%80%E1%85%B5%209767097e180d410fa5aa6e741675844f/Untitled.png](%E1%84%80%E1%85%B5%E1%86%BA%E1%84%92%E1%85%A5%E1%84%87%E1%85%B3%20%E1%84%8B%E1%85%A2%E1%86%A8%E1%84%89%E1%85%A7%E1%86%AB%E1%84%8B%E1%85%B3%E1%84%85%E1%85%A9%20%E1%84%82%E1%85%A6%E1%86%BA%E1%84%91%E1%85%B3%E1%86%AF%E1%84%85%E1%85%B5%E1%86%A8%E1%84%89%E1%85%B3%20%E1%84%90%E1%85%B3%E1%84%8B%E1%85%B1%E1%86%BA%E1%84%87%E1%85%A9%E1%86%BA%20%E1%84%86%E1%85%A1%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%E1%84%80%E1%85%B5%209767097e180d410fa5aa6e741675844f/Untitled.png)
 
 트위터 api 계정을 만들고 대시보드에 들어가면 총 네개의 인증키를 받을 수 있다. 현재 트위터 api에서는 Oauth1, 2와 기본인증법 여러개의 인증을 지원하기 때문에 사용할 인증법을 선택해주면 된다. 트위터 auth에 대한 더 자세한 사항은 여기서 확인이 가능하다. [https://developer.twitter.com/en/docs/authentication/overview](https://developer.twitter.com/en/docs/authentication/overview)
 
@@ -56,7 +66,8 @@ enabled: true
 
 ### tweepy 라이브러리 인증 구현 코드
 
-[auth.py](http://auth.py)
+<details>
+ <summary>auth.py</summary>
 
 ```python
 # Tweepy
@@ -240,10 +251,15 @@ class AppAuthHandler(AuthHandler):
     def apply_auth(self):
         return OAuth2Bearer(self._bearer_token)
 ```
+</details>
+
 
 <br>
 
-oauth1_session1.py
+
+<details>
+ <summary>oauth1_session1.py</summary>
+
 
 ```python
 from __future__ import unicode_literals
@@ -641,6 +657,7 @@ class OAuth1Session(requests.Session):
             prepared_request.prepare_auth(self.auth)
         return
 ```
+</details>
 
 ### tweepy를 사용해서 인증받는 코드
 
@@ -691,7 +708,7 @@ def post_tweet(container: dict, date):
 
 깃허브 공식 가이드에 secret을 등록하는 방법이 나와있다. 따라해보다 보면 사진처럼 repo에 노출하지 않아도 사용할 수 있는 secret key들이 만들어진다.
 
-![%E1%84%80%E1%85%B5%E1%86%BA%E1%84%92%E1%85%A5%E1%84%87%E1%85%B3%20%E1%84%8B%E1%85%A2%E1%86%A8%E1%84%89%E1%85%A7%E1%86%AB%E1%84%8B%E1%85%B3%E1%84%85%E1%85%A9%20%E1%84%82%E1%85%A6%E1%86%BA%E1%84%91%E1%85%B3%E1%86%AF%E1%84%85%E1%85%B5%E1%86%A8%E1%84%89%E1%85%B3%20%E1%84%90%E1%85%B3%E1%84%8B%E1%85%B1%E1%86%BA%E1%84%87%E1%85%A9%E1%86%BA%20%E1%84%86%E1%85%A1%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%E1%84%80%E1%85%B5%209767097e180d410fa5aa6e741675844f/Untitled%201.png](%E1%84%80%E1%85%B5%E1%86%BA%E1%84%92%E1%85%A5%E1%84%87%E1%85%B3%20%E1%84%8B%E1%85%A2%E1%86%A8%E1%84%89%E1%85%A7%E1%86%AB%E1%84%8B%E1%85%B3%E1%84%85%E1%85%A9%20%E1%84%82%E1%85%A6%E1%86%BA%E1%84%91%E1%85%B3%E1%86%AF%E1%84%85%E1%85%B5%E1%86%A8%E1%84%89%E1%85%B3%20%E1%84%90%E1%85%B3%E1%84%8B%E1%85%B1%E1%86%BA%E1%84%87%E1%85%A9%E1%86%BA%20%E1%84%86%E1%85%A1%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%E1%84%80%E1%85%B5%209767097e180d410fa5aa6e741675844f/Untitled%201.png)
+![git secret](/assets/img/post/git_secret.png)
 
 key 까지는 잘 등록을 했는데 github action에서는 어떻게 써줘야 하고, 실제 돌아가는 코드인 파이썬에서는 어떻게 접근을 할 수 있는지 몰랐는데 간단하게 1) 액션을 등록할 때 secret을 넘겨주고 2) 실행시에 코드로 환경변수에 접근해서 3) 받아오면 사용을 할 수 있었다. 자바에서 main 실행할 때 args들을 주고 실행을 하면 코드단에서 받아오는 것과 완전 동일한 개념이었다.
 
@@ -780,11 +797,13 @@ jobs:
 
 ### 실제 동작 화면
 
-![%E1%84%80%E1%85%B5%E1%86%BA%E1%84%92%E1%85%A5%E1%84%87%E1%85%B3%20%E1%84%8B%E1%85%A2%E1%86%A8%E1%84%89%E1%85%A7%E1%86%AB%E1%84%8B%E1%85%B3%E1%84%85%E1%85%A9%20%E1%84%82%E1%85%A6%E1%86%BA%E1%84%91%E1%85%B3%E1%86%AF%E1%84%85%E1%85%B5%E1%86%A8%E1%84%89%E1%85%B3%20%E1%84%90%E1%85%B3%E1%84%8B%E1%85%B1%E1%86%BA%E1%84%87%E1%85%A9%E1%86%BA%20%E1%84%86%E1%85%A1%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%E1%84%80%E1%85%B5%209767097e180d410fa5aa6e741675844f/Untitled%202.png](%E1%84%80%E1%85%B5%E1%86%BA%E1%84%92%E1%85%A5%E1%84%87%E1%85%B3%20%E1%84%8B%E1%85%A2%E1%86%A8%E1%84%89%E1%85%A7%E1%86%AB%E1%84%8B%E1%85%B3%E1%84%85%E1%85%A9%20%E1%84%82%E1%85%A6%E1%86%BA%E1%84%91%E1%85%B3%E1%86%AF%E1%84%85%E1%85%B5%E1%86%A8%E1%84%89%E1%85%B3%20%E1%84%90%E1%85%B3%E1%84%8B%E1%85%B1%E1%86%BA%E1%84%87%E1%85%A9%E1%86%BA%20%E1%84%86%E1%85%A1%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%E1%84%80%E1%85%B5%209767097e180d410fa5aa6e741675844f/Untitled%202.png)
+![twitter flow](/assets/img/post/newflix_account.png)
+<br>
+![work1](/assets/img/post/netflix_work1.png)
+<br>
+![work2](/assets/img/post/netflix_work2.png)
 
-![%E1%84%80%E1%85%B5%E1%86%BA%E1%84%92%E1%85%A5%E1%84%87%E1%85%B3%20%E1%84%8B%E1%85%A2%E1%86%A8%E1%84%89%E1%85%A7%E1%86%AB%E1%84%8B%E1%85%B3%E1%84%85%E1%85%A9%20%E1%84%82%E1%85%A6%E1%86%BA%E1%84%91%E1%85%B3%E1%86%AF%E1%84%85%E1%85%B5%E1%86%A8%E1%84%89%E1%85%B3%20%E1%84%90%E1%85%B3%E1%84%8B%E1%85%B1%E1%86%BA%E1%84%87%E1%85%A9%E1%86%BA%20%E1%84%86%E1%85%A1%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%E1%84%80%E1%85%B5%209767097e180d410fa5aa6e741675844f/Untitled%203.png](%E1%84%80%E1%85%B5%E1%86%BA%E1%84%92%E1%85%A5%E1%84%87%E1%85%B3%20%E1%84%8B%E1%85%A2%E1%86%A8%E1%84%89%E1%85%A7%E1%86%AB%E1%84%8B%E1%85%B3%E1%84%85%E1%85%A9%20%E1%84%82%E1%85%A6%E1%86%BA%E1%84%91%E1%85%B3%E1%86%AF%E1%84%85%E1%85%B5%E1%86%A8%E1%84%89%E1%85%B3%20%E1%84%90%E1%85%B3%E1%84%8B%E1%85%B1%E1%86%BA%E1%84%87%E1%85%A9%E1%86%BA%20%E1%84%86%E1%85%A1%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%E1%84%80%E1%85%B5%209767097e180d410fa5aa6e741675844f/Untitled%203.png)
 
-![%E1%84%80%E1%85%B5%E1%86%BA%E1%84%92%E1%85%A5%E1%84%87%E1%85%B3%20%E1%84%8B%E1%85%A2%E1%86%A8%E1%84%89%E1%85%A7%E1%86%AB%E1%84%8B%E1%85%B3%E1%84%85%E1%85%A9%20%E1%84%82%E1%85%A6%E1%86%BA%E1%84%91%E1%85%B3%E1%86%AF%E1%84%85%E1%85%B5%E1%86%A8%E1%84%89%E1%85%B3%20%E1%84%90%E1%85%B3%E1%84%8B%E1%85%B1%E1%86%BA%E1%84%87%E1%85%A9%E1%86%BA%20%E1%84%86%E1%85%A1%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%E1%84%80%E1%85%B5%209767097e180d410fa5aa6e741675844f/Untitled%204.png](%E1%84%80%E1%85%B5%E1%86%BA%E1%84%92%E1%85%A5%E1%84%87%E1%85%B3%20%E1%84%8B%E1%85%A2%E1%86%A8%E1%84%89%E1%85%A7%E1%86%AB%E1%84%8B%E1%85%B3%E1%84%85%E1%85%A9%20%E1%84%82%E1%85%A6%E1%86%BA%E1%84%91%E1%85%B3%E1%86%AF%E1%84%85%E1%85%B5%E1%86%A8%E1%84%89%E1%85%B3%20%E1%84%90%E1%85%B3%E1%84%8B%E1%85%B1%E1%86%BA%E1%84%87%E1%85%A9%E1%86%BA%20%E1%84%86%E1%85%A1%E1%86%AB%E1%84%83%E1%85%B3%E1%86%AF%E1%84%80%E1%85%B5%209767097e180d410fa5aa6e741675844f/Untitled%204.png)
 
 ---
 
