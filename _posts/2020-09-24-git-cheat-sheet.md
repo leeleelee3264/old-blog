@@ -14,6 +14,15 @@ pagination:
 <hr>
 
 <br>
+# making branch with specific commit  
+```bash
+git branch branch_name commit_version 
+
+ex) git branch 2021_0422_add a9f5fc39c52dd362f99eb58fc1a011a6a12f9b1a
+```
+
+
+<br>
 # switching branch hack
 > going back to previous branch with one second. 
 > Quite similar with going back to previous directory in Linux. 
