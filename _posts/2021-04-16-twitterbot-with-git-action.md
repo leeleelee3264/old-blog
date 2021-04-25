@@ -20,6 +20,7 @@ enabled: true
 
 
 간단한 리액트 프로젝트나 이것처럼 주기적으로 스케쥴링이 되기만 하면 프로젝트는 깃허브 액션을 쓰면 충분하다 판단이 되어 이번에는 깃허브 액션만 이용하고 서버리스로 구현을 했다. 프로젝트의 전반적인 플로우는 아래의 그림과 같다.
+<br>
 
 ![twitter flow](/assets/img/post/twitter_flow.png)
 
@@ -28,6 +29,7 @@ enabled: true
 ---
 
 ### dev stack 
+
 | stack      | info |
 |-----------------|------------|
 | Backend language       |   python         |
@@ -40,6 +42,7 @@ enabled: true
 ---
 
 ### resource stack 
+
 | stack      | info |
 |-----------------|------------|
 | twitter api       |   https://developer.twitter.com/en/docs/twitter-api/v1       |
@@ -47,6 +50,8 @@ enabled: true
 | daum netflix | https://movie.daum.net/premovie/netflix?flag=Y |  
 
 이 프로젝트를 통해 처음으로 트위터 api를 써봤는데 생각보다 문서가 보기 어렵게 되어있었다. 원래는 직접 api를 사용하려고 했는데 이번에는 tweepy 파이썬 라이브러리를 사용했다. 다음번에는 공연중인 뮤지컬/연극을 자동트윗하는 트윗봇을 만들려고 하는데 그때는 직접 api를 쓸 예정이다.
+
+<br>
 
 # 트위터 api와 tweepy로 트윗하기
 
@@ -67,7 +72,8 @@ enabled: true
 ### tweepy 라이브러리 인증 구현 코드
 
 <details>
- <summary>auth.py</summary>
+ <summary>auth.py</summary> 
+
 
 ```python
 # Tweepy
@@ -258,7 +264,8 @@ class AppAuthHandler(AuthHandler):
 
 
 <details>
- <summary>oauth1_session1.py</summary>
+ <summary>oauth1_session1.py</summary>  
+
 
 
 ```python
@@ -659,6 +666,8 @@ class OAuth1Session(requests.Session):
 ```
 </details>
 
+<br> 
+
 ### tweepy를 사용해서 인증받는 코드
 
 ---
@@ -700,6 +709,8 @@ def post_tweet(container: dict, date):
 
 ---
 
+<br>
+
 ### github action secret with python
 
 실제 사용 코드를 보면 'TWITTER_API_KEY', 'TWITTER_API_SECRET' 등 environ 을 이용해 환경에서 받아온 변수들이 있다. 트위터 api를 사용하려면 여러개의 인증키가 필요한데 코드를 프라이빗 repo로 올려도 되지만 github action secret 으로 인증키들을 등록하는 방법을 선택했다.
@@ -708,7 +719,7 @@ def post_tweet(container: dict, date):
 
 깃허브 공식 가이드에 secret을 등록하는 방법이 나와있다. 따라해보다 보면 사진처럼 repo에 노출하지 않아도 사용할 수 있는 secret key들이 만들어진다.
 
-![git secret](/assets/img/post/git_secret.png)
+![git secret](/assets/img/post/git_secret.PNG)
 
 key 까지는 잘 등록을 했는데 github action에서는 어떻게 써줘야 하고, 실제 돌아가는 코드인 파이썬에서는 어떻게 접근을 할 수 있는지 몰랐는데 간단하게 1) 액션을 등록할 때 secret을 넘겨주고 2) 실행시에 코드로 환경변수에 접근해서 3) 받아오면 사용을 할 수 있었다. 자바에서 main 실행할 때 args들을 주고 실행을 하면 코드단에서 받아오는 것과 완전 동일한 개념이었다.
 
@@ -782,6 +793,8 @@ jobs:
         TWITTER_ACCESS_TOKEN_SECRET: ${{ secrets.TWITTER_ACCESS_TOKEN_SECRET }}
 ```
 
+<br>
+
 매주 토요일 00:00시에 스케쥴러가 돌아가도록 작성했는데 시간대의 기준은 UTC이다. 스크립트의 workflow를 간략히 요약하면
 
 1. 파이썬 실행을 위해 플라스크와 requirements.txt 속의 라이브러리들을 설치
@@ -795,17 +808,21 @@ jobs:
 
 ---
 
+<br>
+
 ### 실제 동작 화면
 
-![twitter flow](/assets/img/post/newflix_account.png)
+![twitter flow](/assets/img/post/newflix_account.PNG)
 <br>
-![work1](/assets/img/post/netflix_work1.png)
+![work1](/assets/img/post/netflix_work1.PNG)
 <br>
-![work2](/assets/img/post/netflix_work2.png)
+![work2](/assets/img/post/netflix_work2.PNG)
 
 
 
 ---
+
+<br>
 
 ### 다음 프로젝트 기획
 
