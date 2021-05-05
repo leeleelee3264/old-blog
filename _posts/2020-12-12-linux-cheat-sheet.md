@@ -12,6 +12,27 @@ pagination:
 
 # Linux command 2021 
 
+
+## jar 파일 내부 보기 
+```bash
+jar -tf "jar_name"
+ex) jar -tf test.jar 
+``` 
+
+서버에 jar파일만 올리면 이 파일 안에 뭐가 들어있는지 알고 싶을 때가 있고 어떤 라이브러리의 어떤 버전을 쓰는지 알고 싶을 떄가 있다. 
+이때 해당 커맨드를 사용해주면 된다. 사실 jar 파일은 java + tar 로, 리눅스에서 사용하는 파일 묶음인 tar를 자바 버전으로 만들었다고 생각하면 된다. 
+단, tar 파일이 압축파일은 아니다. 그냥 여러 파일들을 한데 묶는 역할을 한다고 생각하면 된다. 
+
+
+
+## 설치된/설치할 apk 버전 확인하기 
+```bash
+apt-cache policy "apk_name"
+ex) apt-cache policy nginx 
+```
+이 커맨드를 쓰면 지금 서버에 설치된 apk의 버전도 볼 수 있고, 설치한다면 설치될 버전도 확인할 수 있다. 
+
+
 ## pgrep 
 AKA process grep  
 
