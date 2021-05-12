@@ -265,6 +265,48 @@ sudo apt-get install "java_version"
 이정도로 하면 초기에 기본으로 설정해줘야하는 세팅들이 어느정도 정리가 된다. 밑에는 서버 사용하면서 그때그때 생각나는 편의를 위한 세팅들을 기록할 예정이다.
 
 # 계속 이어나가야할 기본 세팅들
+<br>
 
-1. vi들어가면 줄번호 나오게 바꿔줘야 한다.
-2. 프롬프트 ip 주소 나오게 바꿔줘야 한다.
+## vi들어가면 줄번호 나오게
+<br> 
+
+```bash
+# open vim setting for user 
+vi ~/.vimrc 
+
+# add this in vimrc file
+set number
+```
+
+<br>
+
+
+## 프롬프트 ip 주소 나오게
+<br>
+
+`vi ~/.bashrc` 로 user별 설정 파일을 열어주고 PS1 있는 부분을 아래와 같이 수정해주면 된다. 
+그럼 `user_name@|ip_address|` 이런 형태로 프롬프트가 변한다.
+<br>
+
+
+```bash
+# Set the prompt to include the IP address instead of hostname
+function get_ip () {
+  IFACE=$(ip -4 route | grep default | head -n1 | awk '{print $5}')
+  if [ ! -z $IFACE ]; then
+    echo -n "|"; ip -4 -o addr show scope global $IFACE | awk '{gsub(/\/.*/, "|",$4); print $4}' | paste -s -d ""
+  else
+    echo -n "||"
+  fi
+}
+
+if [ "$color_prompt" = yes ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u\[\033[01;34m\]@\[\033[32m\]$(get_ip)\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+else
+    PS1='${debian_chroot:+($debian_chroot)}\u@$(get_ip):\w\$ '
+fi
+unset color_prompt force_color_prompt
+```
+
+
+

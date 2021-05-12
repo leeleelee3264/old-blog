@@ -12,6 +12,22 @@ pagination:
 
 # Linux command 2021 
 
+## grep with before/after num line 
+```bash
+# after
+grep -A num "key_word" "file_name"
+
+# before
+grep -B num "key_word" "file_name"
+
+ex)
+grep -A 2 POST server.log
+grep -B 2 POST server.log
+``` 
+
+grep을 쓰다 보면 딱 해당 사항의 문장들만 뽑아다 준다. 그래서 전후 상황을 알기가 어려운데 이때 -A와 -B 옵션으로 grep 조건에 맞는 문장 앞/뒤에 있는 문장들 n 행까지 출력을 할 수 있다. 
+
+
 
 ## jar 파일 내부 보기 
 ```bash
