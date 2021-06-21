@@ -16,6 +16,8 @@ index
 4. Related SQL Command with Indexes
 5. Reference
 
+<br> 
+
 > Clustered: 무리를 이룬
 ex) Cluster Star, 성단
 
@@ -23,10 +25,14 @@ ex) Cluster Star, 성단
 
 
 <hr> 
+<br> 
+<br> 
 
 # Clustered Index / Non-Clustered Index - Concept
 
 Clustered Index와 Non-Clustered Index 둘 다 테이블에 있는 데이터 엑세스를 빠르게 하기 위한 용도이지만 둘의 성격이 조금 다르다. 가장 큰 차이는 Clustered Index는 테이블 당 딱 1개만 만들어지고, Non-Clustered Index는 복수개가 만들어 질 수 있다는 점과 Clustered Index를 생성하는 Column은 중복을 허용하지 않지만 Non-Clustered Index는 중복을 허용한다는 점이라고 생각한다.
+
+<br>
 
 Clustered Index
 
@@ -36,6 +42,8 @@ Clustered Index
 - 테이블에서 데이터를 순서대로 저장하게 해준다.
 - 크기가 큰 테이블에서 데이터를 빠르게 찾아오게 하기 위해서 꼭 만들어주는 게 좋다.
 - 속도가 Non-Clustered Index 보다 빠르다.
+
+<br> 
 
 Non-Clustered Index
 
@@ -51,8 +59,12 @@ Non-Clustered Index
 - 속도가 Clustered Index 보다 느리다.
 
 <hr> 
+<br> 
+<br> 
 
 # Clustered Index / Non-Clustered Index - Structure and algorithm
+
+<br> 
 
 Clustered Index Structure
 
@@ -103,8 +115,10 @@ Index algorithm
   - [[R-Tree 알고리즘]](https://enterone.tistory.com/228)
 
 <hr> 
+<br> 
 
 # Side effects of Indexes
+<br> 
 
 - Clustered Index가 있으면 데이터를 Insert/update 할 때 마다 순서대로 다시 정렬을 해줘야 하기 때문에 속도가 느리다.
 - Non-Clustered Index는 디스크에 분산이 되어 저장이 되는데 인덱스를 만들 때 Column 값이 중복으로 저장이 되기 때문에 디스크 낭비가 발생할 수 있다.
@@ -114,6 +128,7 @@ Index algorithm
   - 이런 상태에서 B와 C를 조회한다면 INDEX 1,2 를 둘 다 사용해서 포인터를 찾고, 테이블에 있는 데이터를 찾기 시작한다.
 
 <hr> 
+<br> 
 
 # Related SQL Command with Indexes
 
@@ -157,6 +172,7 @@ Params of EXPLAIN
   - SUBQUERY: 서브쿼리 SELECT
   - DERIVED: FROM 절에 서브쿼리가 있는 SELECT
 
+<br> 
 
 - type
 
@@ -168,21 +184,25 @@ Params of EXPLAIN
   - REF: 조인을 할 때 Primary 나 Unique 가 아닌 Key로 매칭해서 조회했다.
   - CONST: 매칭되는 row가 단 한 건이며, Primary 나 Unique를 사용해서 조회했다.
 
+<br> 
 
 - possible_keys
   - 해당 Column을 찾기 위해 사용된 인덱스
   - 이 값이 NULL이라면 사용된 인덱스가 없는 것이다. (이걸 보고 인덱스를 타게 수정이 가능하다)
   - key
   - 최적화를 위해 Mysql 옵티마이저가 사용하기로 결정한 인덱스
-  
+
+<br> 
 
 - ref
   - 데이터를 추출하기 위해 키와 함께 사용된 컬럼 또는 상수
-  
+
+<br> 
 
 - rows
   - 쿼리를 수행하기 위해 검색해야 할 Row의 갯수
-  
+
+<br> 
 
 - Extra
   - Mysql 옵티마이저가 추가로 해석한 정보.
@@ -198,11 +218,8 @@ Params of EXPLAIN
 
 [[Clustered Vs Non Clustered Index]](https://medium.com/fintechexplained/clustered-vs-non-clustered-index-8efed55ed7b9)
 
-
 [[데이터베이스 인덱스는 왜 B-Tree를 선택하였는가]](https://helloinyong.tistory.com/296)
 
-
 [[R-tree 알고리즘]](https://enterone.tistory.com/228)
-
 
 [[Mysql Explain 실행계획 사용법 및 분석]](https://nomadlee.com/mysql-explain-sql/)
