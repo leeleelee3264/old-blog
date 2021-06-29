@@ -12,6 +12,17 @@ enabled: true
 
 <hr>
 
+# git tag 
+## make annotated tag 
+```bash
+git tag -a v1.0.0 -m "leave message here for tag"
+```
+
+<br> 
+<br> 
+<hr>
+
+
 # git log
 ## git log option
 ```bash
@@ -45,6 +56,7 @@ ex) diff 2021_0405_user..master -- build.gradle
 
 
 # git branch
+
 ## change branch name
 ```bash
 git branch -m "branch_name"
@@ -96,6 +108,22 @@ git branch --no-merged
 ```bash
 git branch -r --merged
 ```
+<br> 
+
+## Delete local branch 
+```bash
+git branch -d branch_name 
+
+# delete non merged branch 
+git branch -D branch_name 
+
+# delete merged branches (no specific command, have to use pipe
+# egrep is grep with regex expression
+# egpre -v find reverse result with regex. it will return without string contains master, tpi, gov 
+git branch --merged | egrep -v "(^\*|master|tpi|gov)" | xargs git branch -d
+```
+
+
 <br> 
 
 ## Delete remote branch new version (work fine)

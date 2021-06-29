@@ -8,6 +8,16 @@ tags:	sql
 pagination:
 enabled: true
 ---
+
+<br> 
+
+## 리뷰 후에 알게된 부분들
+1. Non-Clustered Index가 여러 개 생성이 가능하지만 무제한으로 만들 수 있는 것은 아니다.
+2. 조회는 Clustered Index가 빠르지만, 수정과 입력은 Non-Clustered Index가 빠르다. 왜냐하면 Non-Clustered Index는 물리적인 정렬을 가지고 있지 않아서 새 데이터가 들어와도 순서대로 정렬을 안 해도 된다.
+
+<br> 
+<hr> 
+
 index
 
 1. Clustered Index / Non-Clustered Index - Concept
