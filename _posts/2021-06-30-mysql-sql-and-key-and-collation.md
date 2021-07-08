@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[SQL] Structured Query Language and Key, Collation"
+title: "[SQL] (1)Structured Query Language & Key (2) Collation"
 date: 2021-06-30 08:43:59
 author: Jamie Lee
 categories: Backend
@@ -9,19 +9,45 @@ pagination:
 enabled: true
 ---
 
+
+<br> 
+
+## 리뷰 후에 알게된 부분들
+1. Primary Key가 들어간 column 의 이름도 아닌 제약조건에 이름을 만드는 이유 -> 주임님이 주신 의견: 기본키를 항상 하나의 column으로 만드는 건 아니고 여러가지 키를 섞어서 만들었을 때 보기 편하게 하기 위해.
+2. Charset = Symbol (A, B 등 plain text) + encoding
+3. mysql 에서 지원하는 Collation을 쿼리할 때 나오는 `pad-attribute`란 무엇인가? -> 가변형인 VARCHAR 말고 CHAR 형의 텍스트를 비교할 때 뒤에 공백을 넣어서 비교하는지 아닌지의 여부. 모든 DB가 그런것은 아니다.  
+   [[Reference: MySQL에서 ‘a’ = ‘a ‘가 true로 평가된다?]](https://techblog.woowahan.com/2559/)
+4. 테이블에 걸린 제약조건을 확인하는 방법 (테이블 하나씩 검색하는 방법은 없고 sql 서버 전체에 걸려있는게 나와서 where 절로 뽑아내야 한다)
+   <br>
+
+```sql
+select * from information_schema.table_constraints;
+
+# use where 
+select * from information_schema.table_constraints
+WHERE CONSTRAINT_SCHEMA = 'test'
+```
+<br>
+
+5. 외래키는 고유하게 식별이 가능한 데이터면 되기 때문에 꼭 primary key말고 unique key를 이용해서도 외래키를 만들 수 있다.
+   [Foreign key should be made with primary key?](https://stackoverflow.com/questions/18435065/foreign-key-to-non-primary-key)
+   <br>
+<hr> 
+
+
 <br>
 
 
 index
 
 1. Structured Query Language
-  1. DML
-  2. DDL
-  3. DCL (with TCL)
+  * DML
+  * DDL
+  * DCL (with TCL)
 
 2. Key
-  1. DBMS
-  2. Mysql
+  * DBMS
+  * Mysql
 
 3.  Collation
 4. Reference
