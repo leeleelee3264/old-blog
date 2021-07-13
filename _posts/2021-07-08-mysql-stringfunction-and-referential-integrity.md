@@ -15,7 +15,8 @@ enabled: true
 
 # 리뷰 후에 알게 된 부분들
 1. [[Markdown 각주/미주 달기]](https://lynmp.com/ko/article/nu86c16d8f09c9fbd8) <span>[1](#footnote_1)</span>
-2. `SUBSTRING_INDEX(문자열, 구분자, 가져올 구문 갯수)`
+2. `SUBSTRING_INDEX(문자열, 구분자, 가져올 구문 갯수)`  
+
 ```sql
 SELECT SUBSTRING_INDEX(addr, ' ', 2)
 FROM users;
