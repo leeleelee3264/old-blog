@@ -69,10 +69,12 @@ FROM users
 WHERE CHAR_LENGTH(NAME) > 3
 ```
 result
-| NAME | LENGTH(NAME) | CHAR_LENGTH(NAME) |
-| --- | ---: | ---: |
-| Peter | 5 | 5 |
-| 이승민 | 9 | 3 |
+
+| NAME | LENGTH(NAME) | CHAR_LENGTH(NAME) | 
+| --- | ---: | ---: | 
+| Peter | 5 | 5 | 
+| 이승민 | 9 | 3 | 
+ 
 
 <br>
 
@@ -111,6 +113,7 @@ WHERE LEFT(NAME, 1) = '이';
 
 ```
 result
+
 | concat(left(number,3), '-', MID(NUMBER, 4, 4), '-', RIGHT(NUMBER, 4)) | number |
 | --- | --- |
 | 010-8765-4321 | 01087654321 |
@@ -128,10 +131,12 @@ FROM users;
 ```
 
 result
-| INSERT(NAME, CHAR_LENGTH(NAME), CHAR_LENGTH(NAME), ' 고객님') |
-| --- |
-| Pete 고객님 |
-| 이승 고객님 |
+
+| INSERT(NAME, CHAR_LENGTH(NAME), CHAR_LENGTH(NAME), ' 고객님') | 
+| --- | 
+| Pete 고객님 | 
+| 이승 고객님 | 
+
 
 Peter 고객님과 이승민 고객님을 뽑고 싶었으나 내 의도대로 나오지 않았다. 받는 인자가 `INSERT(문자열, 시작위치, 길이, 새로운 문자열` 순서인데 길이가 어떤 역할을 하는지 잘 모르겠다. 스트링을 조작할 때는 INSERT()로 하려 하지 말고 `CONCAT()` 으로 간단하게 끝내야 할 것 같다.
 
@@ -146,6 +151,7 @@ FROM users;
 ```
 
 result
+
 | RPAD(NAME, 10, '*') | LPAD(NAME, 10, '&') |
 | --- | --- |
 | Peter***** | &&&&&Peter |
