@@ -51,12 +51,13 @@ At that time, I should have known about host name convention better. you see, my
 ### The allowed Characters in Host Name convention 
 1. a-z, A-Z  
 2. 0-9 
-3. - 
+3. - (Hyphen)
  These are all. No others. I'll keep in mind I cannot use under bar in Url. Only Hyphen would work. So I change host name from `api_call_server` to `api-call-server. After changing, I no longer saw 400 bad request.
 Before finishing the post, I'd like to adjust convention for url too. 
 
 ### The allowed Characters in Url Name convention 
-Always safe to use: `  A-Z a-z 0-9 - . _ ~ ( ) ' ! * : @ , ;` 
+Always safe to use: `  A-Z a-z 0-9 - . _ ~ ( ) ' ! * : @ , ;`  
+
 Not safe to use: (below image from [stackOverFlow](https://stackoverflow.com/questions/695438/what-are-the-safe-characters-for-making-urls))
 ![url convention](https://user-images.githubusercontent.com/35620531/104724934-bc2fbc80-5774-11eb-8e14-834e49730680.png)
 In not safe, there are two concepts. Reserved and unsafe. 
