@@ -3,7 +3,7 @@ layout: post
 title: "[Java] Regex cheat sheet for myself"
 date: 2020-09-24 08:43:59
 author: Jamie Lee
-categories: Backend
+categories: Cheat
 tags:	Regex
 cover:  "/assets/img/Java_logo_icon.png"
 pagination: 

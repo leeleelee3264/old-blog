@@ -243,13 +243,17 @@ mysql -uroot -p1234 -e "select * from test.user from age=20"
 
 <br>
 
-[[우아한-장애와 관련된 XtraBackup 적용기]]([https://techblog.woowahan.com/2576/](https://techblog.woowahan.com/2576/))
-[[Mariabackup을 이용한 증분 백업]]([https://velog.io/@tkfrn4799/mariadb-mariabackup](https://velog.io/@tkfrn4799/mariadb-mariabackup))
+[[우아한-장애와 관련된 XtraBackup 적용기]]([https://techblog.woowahan.com/2576/](https://techblog.woowahan.com/2576/)) 
+
+[[Mariabackup을 이용한 증분 백업]]([https://velog.io/@tkfrn4799/mariadb-mariabackup](https://velog.io/@tkfrn4799/mariadb-mariabackup)) 
+
 [[XtraBackup에서 Mariabackup로 변경해야 하는 이유]]([https://dung-beetle.tistory.com/75](https://dung-beetle.tistory.com/75))
 
 <br>
 ## 참고자료
 
 [[Mysqldump --single-transaction option]]([https://stackoverflow.com/questions/41683158/mysqldump-single-transaction-option](https://stackoverflow.com/questions/41683158/mysqldump-single-transaction-option))
+
 [[4.2.2.1 Using Options on the Command Line]]([https://dev.mysql.com/doc/refman/8.0/en/command-line-options.html](https://dev.mysql.com/doc/refman/8.0/en/command-line-options.html))
+
 [[Storage Engine (InnoDB vs MyISAM)]]([https://jobc.tistory.com/196](https://jobc.tistory.com/196))

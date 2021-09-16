@@ -3,7 +3,7 @@ layout: post
 title: "[Java] Modern Java In Action"
 date: 2021-02-14 08:43:59
 author: Jamie Lee
-categories: Backend
+categories: Book
 tags:	java-in-action
 cover:  "/assets/img/Java_logo_icon.png"
 pagination: 

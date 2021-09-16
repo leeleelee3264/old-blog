@@ -3,7 +3,7 @@ layout: post
 title: "[Project] Github action으로 트위터 봇 만들기"
 date: 2021-04-16 08:43:59
 author: Jamie Lee
-categories: Backend
+categories: Project
 tags:	project
 pagination:
 enabled: true

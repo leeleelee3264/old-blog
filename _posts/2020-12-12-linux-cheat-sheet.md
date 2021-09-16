@@ -3,7 +3,7 @@ layout: post
 title: "[Linux] Linux command cheat sheet"
 date: 2020-12-12 08:43:59
 author: Jamie Lee
-categories: Backend
+categories: Cheat
 tags:	linux
 cover:  "/assets/img/ubuntu.png"
 pagination: 
