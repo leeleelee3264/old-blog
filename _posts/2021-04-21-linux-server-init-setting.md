@@ -308,5 +308,17 @@ fi
 unset color_prompt force_color_prompt
 ```
 
+## 우분투 기본 shell 설정 변경 
+
+가끔 도커를 쓰거나 새로 서버를 만들면 쉘에 아무것도 나오지 않고 $ 표시만 나오는 떄가 있다. 우분투에서 기본으로 사용하는 쉘이 c shell로 되어있기 때문이고, 
+기본 쉘을 bash shell로 바꿔주면 익숙한 형태의 터미널 쉘이 된다. 
+
+<img src="/assets/img/post/bash.PNG" alt="drawing" width="500"/> 
+
+사용자에 따라 기본으로 설정된 쉘이 다른데, 이는 /etc/passwd 파일에서 확인을 할 수 있다. 
+위의 이미지처럼 사용하는 계정을 찾아 /bin 뒤의 부분을 바꿔주면 된다. 
+나는 dev라는 계정을 쓰고 있고, bash shell로 바꾸고 싶었기 때문에 /bin/bash 로 수정해주었다. 
+수정을 해주고 로그인을 다시 해주면 터미널이 변경된 쉘로 나온다! 
+
 
 
