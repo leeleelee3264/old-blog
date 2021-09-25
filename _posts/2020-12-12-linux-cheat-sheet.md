@@ -1,6 +1,6 @@
 ---
 layout: post 
-title: "[Linux] Linux command cheat sheet"
+title: "[Linux] Linux command & shell script cheat sheet"
 date: 2020-12-12 08:43:59
 author: Jamie Lee
 categories: Cheat
@@ -10,7 +10,41 @@ pagination:
   enabled: true
 ---
 
+
+# Linux Shell Script
+
+## if operation cheat sheet 
+
+![if](/assets/img/post/shellscript.jpg)
+
+
+
+<hr> 
+<br> 
+<br>
+
+
 # Linux command 2021 
+
+## 압축을 풀지 않고 압축 파일 확인하는 방법 
+(포스팅에는 zcat만 썼는데 찾아보니 zless도 있다고 한다). 
+가끔 압축되어있는 gz 파일을 확인할 일이 생긴다. 압축된 파일을 보려면 압축을 풀고, 그 다음에 조회를 해야 한다고 생각했지만 
+zcat 커맨드를 사용하면 압축을 풀지 않고도 확인을 할 수 있다. 더 자세한 사용법은 해당 포스팅을 참고하자. [[zcat 커맨드]](https://www.howtoforge.com/linux-zcat-command/)
+<br>
+
+```bash
+zcat test2.log.gz 
+
+# pagination with zcat 
+# cat 커맨드 처럼 less를 뒤에 써주면 된다. 
+zcat test2.log.gz | less 
+
+```
+
+## 우분투 버전 확인 
+```bash
+cat /etc/lsb-release 
+```
 
 ## grep with before/after num line 
 ```bash
@@ -214,7 +248,9 @@ Today(2021-01-08) I have to check project dir in both env, so I wrote a short ja
 <br>
 
 ## service related command 
-```git
+<br>
+
+```bash
 1. show installed service 
 service --status-all 
 
@@ -226,7 +262,9 @@ systemctl --type=service
 Linux commands related to service are mostly start as 'Systemctl'. 'Service' is kind of out-dated command, so it had better using 'systemctl'
 
 ## ubuntu 18 network connection 
-```git
+
+
+```bash
 cd /etc/netplan
 sudo vi 01-network-manager-all.yaml
 ~ change setting ~ 
@@ -244,7 +282,9 @@ I had not known about applying command, so I just rebooted the os when I changed
 <br>
 
 ## sftp connection 
-```git
+
+
+```bash
     # 접속 
     sftp hostId@hostName
  
