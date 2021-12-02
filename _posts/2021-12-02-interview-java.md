@@ -14,23 +14,28 @@ enabled: true
 > 2021 하반기 기술면접에서 나온 질문들과 소감을 정리한 포스팅입니다.
 >
 
+<br> 
+<br> 
+
 index
 
 1. Intro
 2. 기술면접 회고
 3. Java
-  1. Spring Boot reload changed properties on running
-  2. JDBC
-  3. 자바 직렬화
-  4. Interface와 abstract의 차이
-  5. DI, IOC
-  6. static
+   1. Spring Boot reload changed properties on running
+   2. JDBC
+   3. 자바 직렬화
+   4. Interface와 abstract의 차이
+   5. DI, IOC
+   6. static
 
 ---
+
+<br> 
+<br> 
 
 # Intro
 
----
 
 10월 달 부터 이직을 준비하기 시작하며 Resume 와 Cover Letter 를 썼고, 11월 달에는 면접을 보러 다녔다. 대부분의 면접들이 몇 단계로 이루어져있었는데 기술 면접에서 면접관들이 물어봤던 질문들을 기록해두고 공유하면 좋을 것 같아 포스팅을 하기로 했다.
 
@@ -38,11 +43,11 @@ index
 
 [https://github.com/Knowre-Dev/DevOpsCurriculum](https://github.com/Knowre-Dev/DevOpsCurriculum)
 
----
+<br> 
+<br> 
 
 # 기술면접 회고
 
----
 
 커리어를 시작하고 이렇다 할 면접들을 보러 다닌적이 없었는데 기술면접을 보고 나니 왜 공부를 더 열심히 해야 하는지 깨달았다. 이론적인 측면들은 지루해서 공부를 피하기 마련이었는데 기술면접에서 다 물어보는 것들이었고, 결국은 이 이론적인 측면들을 잘 알아야지만 더 좋은 코드를 만들 수 있다.
 
@@ -52,11 +57,11 @@ index
 
 빨리 사둔 디자인 패턴 책도 읽고 이팩티브 자바도 다시 읽어봐야겠다. 자바 빨리빨리 공부하고 파이썬으로 진짜 넘어가야지!
 
----
+<br> 
+<br> 
 
 # Java 질문
 
----
 
 이력서에 주로 사용하던 언어가 자바라고 썼기 때문에 자바 질문이 들어왔고 면접을 본 회사들은 대부분 파이썬을 사용하고 있었기 때문에 파이썬 질문도 많았다. 질문의 구성은 크게 아래와 같았다.
 
@@ -66,9 +71,10 @@ index
 
 이번 포스팅에서는 자바 질문과 답변을 다룬다.
 
+<br> 
+
 ## Spring Boot reload changed properties on running
 
----
 
 맨 처음에는 Spring boot에서 properties 를 적용하는 방법에 대한 질문인 줄 알고 Spring boot externalized properties 우선순위에 대해 답변했는데 아니었다. 이미 러닝중인 서버에 수정된 propreties를 재시작없이 어떻게 반영하냐에 대한 질문이었다.
 
@@ -89,9 +95,10 @@ index
 
 [Spring Cloud Config 2](https://multifrontgarden.tistory.com/237)
 
+<br> 
+
 ## JDBC
 
----
 
 Java Database Connectivity.  데이터베이스 연결을 관리하는 자바 API로, 쿼리와 커맨드를 발행하고 데이터베이스에서 건내주는 결과 셋을 처리한다. JDBC는 자바 어플리케이션이 데이터베이스 또는 RDBMS와 소통하기 위한 프로그래밍 레벨 인터페이스를 제공한다.
 
@@ -102,9 +109,10 @@ Java Database Connectivity.  데이터베이스 연결을 관리하는 자바 AP
 1. JDBC API는 자바 어플리케이션과 JDBC Manager 사이의 커뮤니케이션을 지원한다.
 2. JDBC Driver는 데이터베이스와 JDBC Manager 사이의 커뮤니케이션을 지원한다.
 
+<br> 
+
 ## 자바 직렬화 **Serialize**
 
----
 
 직렬화는 객체를 바이트 스트림으로 바꾸는 것이다. 이와 반대로 바이트 스트림을 객체로 바꾸는 것은 역직렬화라고 한다. 객체는 플랫폼에서 독립적이지 못하다. 그래서 파일, 메모리, 데이터베이스 처럼 다른 시스템으로 보내려고 할 때 플랫폼에서 독립적인 바이트 스트림으로 변환을 한다.
 
@@ -132,9 +140,9 @@ Java Database Connectivity.  데이터베이스 연결을 관리하는 자바 AP
 
 [자바 직렬화, 그것이 알고싶다. 훑어보기편 | 우아한형제들 기술블로그](https://techblog.woowahan.com/2550/)
 
-## Interface와 abstract의 차이
+<br> 
 
----
+## Interface와 abstract의 차이
 
 추상클래스는 A is B를 만족시킨다.  추상메서드를 만들 수 있고, 구현이 된 메서드를 만들 수 도 있다. 일반 클래스와 마찬가지로 필드도 가질 수 있다.
 
@@ -146,9 +154,9 @@ Java Database Connectivity.  데이터베이스 연결을 관리하는 자바 AP
 
 추상 클래스와 인터페이스 모두 선언만 가능하고, new 를 사용해서 인스턴스를 만드는 게 불가능하다. 실무에서 추상클래스를 사용했는데 상속관계를 제대로 고려하지 않았었기 때문에 모두 리팩토링을 해야 했다. 추상클래스를 사용을 할 때에는 super 클래스와 하위클래스의 관계를 잘 생각해서 구현을 해야 하고, 추상클래스 보다는 인터페이스 사용을 권장한다.
 
-## DI, IOC
+<br> 
 
----
+## DI, IOC
 
 Dependency Injection과 Inversion Of Control. Spring에서 처음 접한 개념인데, Spring 뿐만 아니라 다른 언어와 프레임워크에서도 널리 사용되는 개념이다. **IoC는 설계 원칙이고 DI 는 IoC 원칙을 지키기 위한 디자인 패턴이다.**  실제로 DI 말고도 IoC를 위한 다양한 패턴이 존재한다.
 
@@ -178,9 +186,10 @@ DI는 의존성 있는 객체의 생성을 class 외부에서 수행한 후, 다
 
 [Dependency Injection, IoC, DIP, IoC container정리](https://medium.com/sjk5766/dependency-injection-ioc-dip-ioc-container%EC%A0%95%EB%A6%AC-310885cca412)
 
+<br> 
+
 ## static
 
----
 
 
 
