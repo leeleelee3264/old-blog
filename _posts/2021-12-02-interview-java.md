@@ -4,7 +4,8 @@ title: "[Interview] 2021 Backend Engineer Interview - Java"
 date: 2021-12-02 08:43:59
 author: Jamie Lee
 categories: General
-tags:	sql
+tags:	interview
+cover:  "/assets/img/banff.jpg"
 pagination:
 enabled: true
 ---
@@ -138,7 +139,7 @@ Java Database Connectivity.  데이터베이스 연결을 관리하는 자바 AP
 
 저번에 FCM으로 보낼 푸시 메세지들을 직렬화해서 Redis 메모리에 넣어두어 어플리케이션 서버에서 큐 구조로 순차적으로 꺼내갈 수 있게 해뒀는데 이번에 직렬화를 찾아보니 JSON으로 바꾸는 방향으로 해야겠다..
 
-[자바 직렬화, 그것이 알고싶다. 훑어보기편 | 우아한형제들 기술블로그](https://techblog.woowahan.com/2550/)
+[자바 직렬화, 그것이 알고싶다. 훑어보기편](https://techblog.woowahan.com/2550/)
 
 <br> 
 
@@ -201,8 +202,12 @@ static은 메모리에 딱 한 번 할당이 된다. 일반적인 객체들이 H
 
 면접을 보고 나와서 static에 대해서 조금 더 찾아봤다. static의 핵심 구현 사항은 아래와 같다.
 
+<br>
+
 > 인스턴스 변수 (non-static) 를 사용하는 메서드는 인스턴스 메서드를 사용하고 클래스 변수 (static) 을 사용하는 메서드는 static 메서드를 사용한다.
 >
+
+<br> 
 
 1. 클래스를 설계할 때 인스턴스에 공통적으로 사용해야 하는 맴버변수에 static을 사용한다.
 2. static 메서드에서는 static이 아닌 맴버변수는 사용할 수 없다.
