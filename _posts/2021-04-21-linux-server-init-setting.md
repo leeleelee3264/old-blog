@@ -19,6 +19,10 @@ enabled: true
 
 사실 이전에 한가지 실수를 했는데 우분투 20 desktop 부팅 usb를 만들어서 서버를 설치했다. 노트북을 닫을때 운영체제에서 일어나는 동작을 컨트롤 할 수 있기 때문에 닫는 동작을 무시하면 서버가 계속 켜저있을 거라고 생각했는데 1주일 정도 노트북을 닫고 서버를 돌리니 서버가 다운되었다. 찾아보니 우분투를 서버로 돌릴 목적이라면 초반부터 꼭! 우분투 서버용을 사용해야 했다. [https://ubuntuhandbook.org/index.php/2020/05/lid-close-behavior-ubuntu-20-04/](https://ubuntuhandbook.org/index.php/2020/05/lid-close-behavior-ubuntu-20-04/) 이 포스팅에 노트북 닫을 때 우분투의 작동 제어 방법이 나와있다.
 
+리눅스를 설치할 노트북은 dell xps 14 2012 모델로  InsydeH20 bios를 사용하고 있다. 처음에는 이 bios 설정 사항들을 잘 몰라서 시간을 많이 썼는데 이 블로그를 보면서 
+따라할 수 있었다. https://moadi.tistory.com/235
+
+
 
 <br>
 <br>
@@ -319,6 +323,66 @@ unset color_prompt force_color_prompt
 위의 이미지처럼 사용하는 계정을 찾아 /bin 뒤의 부분을 바꿔주면 된다. 
 나는 dev라는 계정을 쓰고 있고, bash shell로 바꾸고 싶었기 때문에 /bin/bash 로 수정해주었다. 
 수정을 해주고 로그인을 다시 해주면 터미널이 변경된 쉘로 나온다! 
+
+<br>
+
+## 우분투에 Maria DB 설치하기 
+개인 프로젝트에서 DB를 사용하게 되어서 우분투에 마리아 DB를 설치했는데 MySQL과 중첩이 되는 둥 몇 번 잘못 설치를 해서 
+서버를 다시 밀고 설치하기를 반복했다. 결국은 이 포스팅을 보면서 무사히 DB 설치를 마쳤다. https://www.digitalocean.com/community/tutorials/how-to-install-mariadb-on-ubuntu-20-04
+
+```shell
+sudo apt update  
+sudo apt install mariadb-server 
+sudo mysql_secure_installation 
+```
+
+sudo mysql_secure_installation 을 실행하면 Maria DB에서 기본적으로 설정되는 보안 옵션을 조금 더 보완할 수 있게 옵션을 변경할 수 있다. 
+
+<br> 
+
+```shell
+# localhost 에서만 access 가능한 계정 
+GRANT ALL ON *.* TO 'admin'@'localhost' IDENTIFIED BY 'password' WITH GRANT OPTION;
+
+# 모든 IP에서 access가 가능하게 와일드카드를 부여한 계정 
+GRANT ALL ON *.* TO 'admin'@'%' IDENTIFIED BY 'password' WITH GRANT OPTION;
+
+# mysql 계정과 관련된 작업 후에는 꼭 flush를 해서 refresh 를 해주자! 
+FLUSH PRIVILEGES;
+```
+
+DB를 조작할 때는 되도록 ROOT를 사용하지 말아야 하기 때문에 DB 설치를 진행하면서 default로 사용할 계정도 함께 만들어줬다. 이 계정을 localhost 에서만 사용을 한다면 여기서 끝이지만 remote 환경에서 해당 계정으로 접속을 가능하게 하려면 몇가지 
+설정을 더 해줘야 한다. 
+
+### remote access to Maria DB 
+원격 환경에서 DB에 접속하기 위해서는 아래의 3가지 사항을 설정해야 한다. 
+1. mysql 계정을 만들 때 와일드 카드 %를 넣던가 access IP를 추가해준다. 
+2. mysql conf 파일에서 bind-access가 localhost로 되어있는데 0.0.0.0으로 변경 해 모두 허용해준다. 
+3. (2까지 해도 안된다면) 우분투에서도 mysql port인 3306 방화벽을 내려준다.
+4. 만약 aws와 같은 cloud 도 이용하고 있다면 cloud 의 설정도 변경해야 한다. 
+
+<br>
+mysql conf에서 bind-address 를 0.0.0.0으로 해두면 모든 remote IP에서 접속이 가능하기 때문에 보안상으로 문제가 있지는 않을까 찾아봤다. bind-access는
+mysql이 들을 수 있는(listen) 특정 네트워크들을 뜻한다. 이렇게 0.0.0.0 으로 열어버리면 역시나 보안상으로 좋지 않다고 한다. default 설정처럼 그냥 로컬 머신에서만 DB와 연결하는 게 제일 안전하다.
+
+<br>
+
+- If MySQL binds to 127.0.0.1, then only software on the same computer will be able to connect (because 127.0.0.1 is always the local computer).
+- If MySQL binds to 192.168.0.2 (and the server computer's IP address is 192.168.0.2 and it's on a /24 subnet), then any computers on the same subnet (anything that starts with 192.168.0) will be able to connect.
+- If MySQL binds to 0.0.0.0, then any computer which is able to reach the server computer over the network will be able to connect.
+
+
+> 외부에서 접속을 해야 해서 bind-address를 활짝 열어버렸는데 보안을 조금이라도 강화하려면 mysql user 설정을 할 때 와일드 카드로 모든 IP에서 access 할 수 있게 할 게 아니라 특정 IP에서만 access 할 수 있게 해야 겠다. 
+
+<br> 
+
+mysql conf를 변경하고 난 후 mysql을 재시작해주면 이제 외부에서도 방금 만든 계정으로 DB에 접속할 수 있다. 
+```shell
+sudo /etc/init.d/mysql restart
+```
+
+
+
 
 
 
