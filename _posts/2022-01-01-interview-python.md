@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Interview] 2021 Backend Engineer Interview - Java"
+title: "[Interview] 2021 Backend Engineer Interview - Python, General"
 date: 2021-12-02 08:43:59
 author: Jamie Lee
 categories: General
@@ -23,22 +23,22 @@ enabled: true
 index
 
 1. Python
-  1. 쓰레드
-  2. 동시성
-  3. Django 모듈 구조와 흐름
-  4. Django ORM
+   1. 쓰레드
+   2. 동시성
+   3. Django 모듈 구조와 흐름
+   4. Django ORM
 2. DevOps
-  1. Nginx load balancing 스케쥴링 알고리즘
-  2. 쿠버네티스 파드
-  3. 도커 컴포즈
+   1. Nginx load balancing 스케쥴링 알고리즘
+   2. 쿠버네티스 파드
+   3. 도커 컴포즈
 3. 개발 전반 상식
-  1. DDD
-  2. DAO와 DTO, ENTITY의 차이
-  3. Request에서 GET과 POST의 차이
-  4. Cross Origin Resource Sharing
-  5. 어센틱케이션과 어쏠리제이션의 차이
-  6. 스키마를 짤 때 하는 고민
-  7. 고수준 인터페이스와 저수준 인터페이스
+   1. DDD
+   2. DAO와 DTO, ENTITY의 차이
+   3. Request에서 GET과 POST의 차이
+   4. Cross Origin Resource Sharing
+   5. 어센틱케이션과 어쏠리제이션의 차이
+   6. 스키마를 짤 때 하는 고민
+   7. 고수준 인터페이스와 저수준 인터페이스
 
 ---
 <br> 
