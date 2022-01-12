@@ -21,11 +21,10 @@ Blog for logging my stuff during challenging <b>one day one commit
 ## About myself
 
 * Bachelor degree of Computer Science.
-* Junior front end, a little bit of backend developer.
+* Junior Backend Developer.
 * Mostly using Java with Spring and Python with Django.
-* Additional: Mysql for DB, Git for version control, aws Linux for server. 
-* Have intermediate knowledge of HTML, CSS, Javascript. 
-* Slowly practicing React.js.
+* Additional: Mysql for DB, Git for version control, aws Linux for server.  
+* Slowly practicing flutter.
 
 ## You may also want to checkout... 
  
