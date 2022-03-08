@@ -12,6 +12,8 @@ enabled: true
 
 ![Untitled](/assets/img/post/introducting_python.png)
 
+
+
 처음 시작하는 파이썬을 읽고 내용을 정리한 포스팅이다. 총 12 chapter로 되어있고, 정리가 필요한 Chapter를 선별하여 part1, part2 로 나누었다. 각 part에서 다루는 chapter는 아래와 같다.
 
 Part1
@@ -34,6 +36,10 @@ Part2는 아래의 링크에서 볼 수 있다.
 
 [[처음 시작하는 파이썬 Part2]](empty-link)
 
+
+<br>
+
+
 ---
 
 # 1장 파이 맛보기
@@ -41,6 +47,8 @@ Part2는 아래의 링크에서 볼 수 있다.
 파이썬은 인터프리터 언어다. 대표적인 인터프리터 언어는 자바 스크립트가 있다. 인터프리터는 소스코드를 바로 실행한다. 인터프리터의 반대는 컴파일 언어로, 자바가 이에 속한다. 컴파일 언어는 처음 프로그램을 시작할 때 모든 코드를 기계어로 바꾼다 (컴파일 한다). 그래서 처음에 프로그램을 실행할 때 시간이 오래 걸린다. 반면 인터프리터는 바로바로 실행을 하다보니 처음에 속도가 비교적 빠르다.
 
 하지만 한 번 컴파일을 하면 실행시 기계어를 불러와 더 빨리 실행을 할 수 있어 매번 실행시마다 번역을 거치는 인터프리터 언어보다 속도가 더 빨라진다. 파이썬이 개발을 빠르게 할 수 있다는 이유도 거대한 크기의 기계어를 만들어내지 않고 실행이 가능해서가 아닐까.
+
+<br> 
 
 ---
 
@@ -54,6 +62,8 @@ Part2는 아래의 링크에서 볼 수 있다.
 st = "eererewrvfgrhfos"
 re_st = st[::-1] # sofhrgfvrwereree
 ```
+
+<br>
 
 ---
 
@@ -202,6 +212,8 @@ a.issuperset((1)) # True
 a.issuperset(a) # True 
 ```
 
+<br>
+
 ---
 
 # 4장 파이 크러스트: 코드 구조
@@ -211,7 +223,7 @@ a.issuperset(a) # True
 내가 가끔 검색해보고는 하는 한줄로 for 문 돌리기와 유사하다. 하나 이상의 이터레이터로부터 파이썬 자료구조를 만드는 방법이다. 더 파이써닉한 용법이라니는데 간단한 할당문 말고는 컴프리헨션을 사용하면 더 헷갈릴 것 같다.
 
 > [표현식 for 항목 in 순회_가능_객체
->
+
 
 ```bash
 num = [i for i in range(1, 6)]
@@ -285,6 +297,8 @@ help(TestClass)
 TestClass.__doc__
 ```
 
+<br>
+
 ## 라인 유지하기
 
 PEP 에 따르면 파이썬은 한 줄에 80글자를 넘으면 안된다. 가독성이 제일 중요한 언어에서 가독성이 떨어지기 때문이다. 그래서 긴 문장을 사용해야 할 때에는 백슬래시로 라인을 끊어준다.
@@ -322,6 +336,8 @@ def add_args(arg1, arg2):
 - 파이썬에서 **괄호 ()는 함수를 호출**한다는 의미로 사용되고, **괄호가 없으면 함수를 객체**처럼 간주한다.
 - 예제에서 run_something_with_args로 전달된 add_args 는 func 매개변수로 할당된다.
 - 뒤에 괄호 () 가 붙은 func 는 전달 받은 arg1, arg2를 매개변수로 해 함수를 호출한다.
+
+<br>
 
 아래부터 나올 내부함수, 클로저, 데코레이터는 [[Real Python: adding behavior with inner functions decorators]]([https://realpython.com/inner-functions-what-are-they-good-for/#adding-behavior-with-inner-functions-decorators](https://realpython.com/inner-functions-what-are-they-good-for/#adding-behavior-with-inner-functions-decorators)) 를 많이 참고 삼아서 이해했다.
 
@@ -376,6 +392,8 @@ def _factorial(number):
 	return number * inner_factorial(number - 1)
 ```
 
+<br>
+
 ## 클로저
 
 클로저는 바깥 함수로부터 전달된 변수값을 저장하고, 변경을 할 수 있는 함수이다. 파이썬에서 함수를 변수에 할당할 수 있는 이유도 클로저 기능을 지원하기 때문이다.
@@ -396,6 +414,8 @@ raise_two = generate_power(2)
 >> raise_two(5) 
 25
 ```
+
+<br>
 
 클로저의 개념이 처음이다보니 제대로 이해가 가지 않아 print를 해가며 이해를 진행했다.
 
@@ -447,13 +467,18 @@ print(f'result of closure : {raise_twon(4)}')
 # 4. power 결과를 리턴한다. 
 ```
 
+<br>
+
 - 클로저를 구분할 수 있는 부분은 내부함수를 괄호() 로 호출하지 않다는 것이다. 예제에서 power를 리턴하기만 하는데, 이렇게 리턴을 하면 exponent 값을 저장한 **power 함수의 복사본을** 주게 된다.
 - 복사본을 할당 받은 변수 raise_two를 실제로 매개변수를 넣고 호출한다.
 - 매개변수는 내부함수인 power 의 base 와 맵핑이 된다.
 
 > 어떻게 내부함수를 호출할 때 외부함수의 값에 접근을 할까?
-> 클로저를 생성할 때 내부함수를 리턴하는데, 이때 외부함수의 상태 스냅샷을 함께 리턴해주기 때문이다.
->
+> 
+> > 클로저를 생성할 때 내부함수를 리턴하는데, 이때 외부함수의 상태 스냅샷을 함께 리턴해주기 때문이다.
+
+
+<br>
 
 Example 2 has_permission
 
@@ -531,6 +556,7 @@ def add(a, b):
 add(args: (5, 6), kwargs: {}) -> 11
 11
 ```
+<br>
 
 Example 2 generate_power 데코레이터 버전
 
@@ -559,6 +585,8 @@ def raise_three(n):
 >>> raise_three(5)
 125
 ```
+
+<br>
 
 Example 2 generate_power_with_debug
 
@@ -613,6 +641,8 @@ print(f'result of closure : {raise_two(7)}')
 # 3. inner_power 결과를 리턴한다.                                                                                
 ```
 
+<br>
+
 ## 이름에 _와 __사용
 
 [https://towardsdatascience.com/whats-the-meaning-of-single-and-double-underscores-in-python-3d27d57d6bd1](https://towardsdatascience.com/whats-the-meaning-of-single-and-double-underscores-in-python-3d27d57d6bd1)
@@ -643,6 +673,7 @@ _ = return_something()
 - 실 사용이 거의 없을 거 같다.  |
 
 
+<br>
 
 ---
 
@@ -693,6 +724,7 @@ Deque의 흥미로운 점
 
   ![스크린샷 2022-03-02 오후 4.03.53.png](/assets/img/post/python_deque.png)
 
+<br>
 
 Example 1 히스토리 예제 남기기:
 
@@ -722,6 +754,8 @@ pages.appendleft("twitter.com")
 >>> pages
 deque(['twitter.com', 'facebook.com', 'bing.com'], maxlen=3)
 ```
+
+<br>
 
 Example 2 Linux의 tail 모방하기:
 
