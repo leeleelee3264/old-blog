@@ -4,7 +4,7 @@ title: "[Java] Modern Java In Action"
 date: 2021-02-14 08:43:59
 author: Jamie Lee
 categories: Book
-tags:	java-in-action
+tags:	java
 cover:  "/assets/img/Java_logo_icon.png"
 pagination: 
   enabled: true
