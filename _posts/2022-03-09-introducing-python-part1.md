@@ -5,7 +5,6 @@ date: 2022-03-09 08:43:59
 author: Jamie Lee
 categories: Book
 tags:	python
-cover:  "/assets/img/python_logo.png"
 pagination:
 enabled: true
 ---
