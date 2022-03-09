@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[Python] Introducing Python - Part1"
-date: 2022-03-09 08:43:59
+date: 2022-03-08 08:43:59
 author: Jamie Lee
 categories: Book
 tags:	python
