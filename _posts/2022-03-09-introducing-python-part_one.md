@@ -3,8 +3,9 @@ layout: post
 title: "[Python] Introducing Python - Part 1"
 date: 2022-03-09 08:43:59
 author: Jamie Lee
-categories: Book
-tags:	python
+categories: General
+tags:	interview
+cover:  "/assets/img/banff.jpg"
 pagination:
 enabled: true
 ---
@@ -656,13 +657,14 @@ __foo__ # double leading and trailing underscore
 __foo # double leading underscore 
 ```
 
-| name | e.g. | usage |
-| --- | --- | --- |
-| single leading underscore | _foo | - private(internally) 하게 사용이 됨을 나타낸다.
-- 여전히 외부에서 접근이 가능하기 때문에 문맥적 힌트에 가깝다. |
-| single trailing underscore | foo_ | - 파이썬에서 이미 선점한 키워드를 사용할 때 혼선을 피하기 위한 방법이다.
-e.g. type_, from_  |
-| single underscore | _  | - 사용하지 않은 변수들을 담아두는 용도로 쓴다.
+| name                                 | e.g. | usage                                      |
+|--------------------------------------|------|--------------------------------------------|
+| single leading underscore            | _foo | - private(internally) 하게 사용이 됨을 나타낸다.      |
+| - 여전히 외부에서 접근이 가능하기 때문에 문맥적 힌트에 가깝다. |      |                                            |
+| single trailing underscore           | foo_ | - 파이썬에서 이미 선점한 키워드를 사용할 때 혼선을 피하기 위한 방법이다. |
+| e.g. type_, from_                    |      |                                            |
+| single underscore                    | _    | - 사용하지 않은 변수들을 담아두는 용도로 쓴다.                |
+
 _ = return_something()
 - 숫자가 길어질 때 혼선을 방지하기 위해 쓴다.
   e.g. 1000 → 1_000   |
