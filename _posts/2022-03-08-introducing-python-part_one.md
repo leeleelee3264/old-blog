@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Python] Introducing Python - Part1"
+title: "[Python] Introducing Python - Part 1"
 date: 2022-03-08 08:43:59
 author: Jamie Lee
 categories: Book
@@ -14,7 +14,10 @@ enabled: true
 
 
 
-처음 시작하는 파이썬을 읽고 내용을 정리한 포스팅이다. 총 12 chapter로 되어있고, 정리가 필요한 Chapter를 선별하여 part1, part2 로 나누었다. 각 part에서 다루는 chapter는 아래와 같다.
+<br>
+
+> 처음 시작하는 파이썬을 읽고 내용을 정리한 포스팅이다. 총 12 chapter로 되어있고, 정리가 필요한 Chapter를 선별하여 part1, part2 로 나누었다. 각 part에서 다루는 chapter는 아래와 같다.
+
 
 Part1
 
@@ -32,9 +35,8 @@ Part2
 - Chatper 11 병행성과 네트워크
 - Chapter 12 파이 환경 설정 및 도구: 파이써니스타 되기
 
-Part2는 아래의 링크에서 볼 수 있다.
 
-[[처음 시작하는 파이썬 Part2]](empty-link)
+[[Introducing Python - Part 2]](empty-link)
 
 
 <br>
@@ -75,17 +77,19 @@ re_st = st[::-1] # sofhrgfvrwereree
 
 자료구조에서 항목을 삭제하는 커맨드는 del 인데, 이 del은 자료구조의 함수가 아닌 파이썬 구문이다. del은 객체로부터 이름을 분리하고 객체의 메모리를 비워준다.
 
-```bash
+```python
 del full[2]
 
 # full.del(2) 처럼 쓰지 못한다.
 ```
 
+<br>
+
 ## 리스트
 
 리스트는 변경 가능하다. 항목을 할당하고, 자유롭게 수정 삭제를 할 수 있다.
 
-```bash
+```python
 # 생성 
 empty = []
 empyt2 = list()
@@ -109,11 +113,13 @@ full.sort()
 new_sort = full.sorted() 
 ```
 
+<br>
+
 ## 튜플
 
 튜플은 불변한다. 튜플에 항목을 할당하고 나서는 바꿀 수 없다. 때문에 튜플을 상수 리스트라 볼 수 있다.
 
-```bash
+```python
 # 생성 
 empty_tuple = ()
 # 콤마로 값을 나열해도 튜플을 만들 수 있다. 
@@ -135,9 +141,11 @@ password, icecream = icecream, password
 - 네임드 튜플 은 객체의 대안이 될 수 있다. — 네임드 토플이 뭔지 아래에 정리**
 - 함수의 인자들은 튜플로 전달된다.
 
+<br>
+
 ## 딕셔너리
 
-```bash
+```python
 # 생성 
 empty_dict = {}
 
@@ -171,11 +179,12 @@ em.values()
 em.items() 
 ```
 
+<br>
 ## 셋
 
 어떤 것이 존재하는지 여부만 판단하기 위해서 셋을 사용한다. 중복을 허용하지 않는다. 셋은 수학시간에 배웠던 집합과 아주 유사하다.
 
-```bash
+```python
 # 생성 
 # 그냥 {} 는 딕셔너리 생성자에 선점되었다. 
 empty_set = set() 
@@ -225,15 +234,17 @@ a.issuperset(a) # True
 > [표현식 for 항목 in 순회_가능_객체
 
 
-```bash
+```python
 num = [i for i in range(1, 6)]
 ```
+
+<br>
 
 ## 인자
 
 다른 언어들과 마찬가지로, 값을 순서대로 상응하는 매개변수에 복사하는 것이 위치인자이다. 키워드인자는 위치인자의 혼동을 피하기 위해 상응하는 이름을 인자 안에 지정한 것이다.
 
-```bash
+```python
 # 위치 인자 
 def menu(wine, entree, dessert): 
 	pass 
@@ -249,7 +260,7 @@ def menu(wine, entree, dessert='pie'):
 
 ## 인자모으기
 
-```bash
+```python
 # 위치 인자 모으기 * 
 def print_args(one, two, three, *args): 
 	pass 
@@ -265,6 +276,8 @@ print_keyword(one=1, two=2, three=3, four=4, five=5)
 ```
 
 여러가지 종류의 인자들을 섞어서 사용하려면 함수를 정의할 때 위치인자, 키워드 인자, *args, **kwargs 순으로 정의를 해줘야한다.
+
+<br>
 
 ## docstring
 
@@ -315,6 +328,8 @@ test += "is very very"
 test += "long long line"
 ```
 
+<br>
+
 ## 일등 시민: 함수
 
 > 함수는 뷸변하기 때문에 딕셔너리의 키로 사용할 수 있다.
@@ -339,7 +354,7 @@ def add_args(arg1, arg2):
 
 <br>
 
-아래부터 나올 내부함수, 클로저, 데코레이터는 [[Real Python: adding behavior with inner functions decorators]]([https://realpython.com/inner-functions-what-are-they-good-for/#adding-behavior-with-inner-functions-decorators](https://realpython.com/inner-functions-what-are-they-good-for/#adding-behavior-with-inner-functions-decorators)) 를 많이 참고 삼아서 이해했다.
+> 아래부터 나올 내부함수, 클로저, 데코레이터는 [[Real Python: adding behavior with inner functions decorators]]([https://realpython.com/inner-functions-what-are-they-good-for/#adding-behavior-with-inner-functions-decorators](https://realpython.com/inner-functions-what-are-they-good-for/#adding-behavior-with-inner-functions-decorators)) 를 많이 참고 삼아서 이해했다.
 
 ## 내부 함수
 
@@ -504,6 +519,8 @@ check_admin_page_permision = has_permission("Admin Page")
 > difference bwteern clousre and decorator? No! Decorators return a closure. A closure is what is returned by a decorator.
 >
 
+<br>
+
 ## 데코레이터
 
 데코레이터는 callable(함수, 메소드, 클래스)를 인자로 받고, 다른 callable을 리턴한다(내부함수). 생김새와 위치는 자바의 어노테이션과 동일하다. 데코레이션을 사용하면 이미 존재하고 있던 original callable에 별도의 수정사항없이 액션을 추가 할 수 있다.
@@ -645,7 +662,7 @@ print(f'result of closure : {raise_two(7)}')
 
 ## 이름에 _와 __사용
 
-[https://towardsdatascience.com/whats-the-meaning-of-single-and-double-underscores-in-python-3d27d57d6bd1](https://towardsdatascience.com/whats-the-meaning-of-single-and-double-underscores-in-python-3d27d57d6bd1)
+[What’s the Meaning of Single and Double Underscores In Python?](https://towardsdatascience.com/whats-the-meaning-of-single-and-double-underscores-in-python-3d27d57d6bd1)
 
 ```python
 _foo # single leading underscore 
@@ -657,21 +674,14 @@ __foo__ # double leading and trailing underscore
 __foo # double leading underscore 
 ```
 
-| name                                 | e.g. | usage                                      |
-|--------------------------------------|------|--------------------------------------------|
-| single leading underscore            | _foo | - private(internally) 하게 사용이 됨을 나타낸다.      |
-| - 여전히 외부에서 접근이 가능하기 때문에 문맥적 힌트에 가깝다. |      |                                            |
-| single trailing underscore           | foo_ | - 파이썬에서 이미 선점한 키워드를 사용할 때 혼선을 피하기 위한 방법이다. |
-| e.g. type_, from_                    |      |                                            |
-| single underscore                    | _    | - 사용하지 않은 변수들을 담아두는 용도로 쓴다.                |
+| name                                 | e.g.     | usage                                                                                                        |
+|--------------------------------------|----------|--------------------------------------------------------------------------------------------------------------|
+| single leading underscore            | `_foo`     | - private(internally) 하게 사용이 됨을 나타낸다. <br>  - 여전히 외부에서 접근이 가능하기 때문에 문맥적 힌트에 가깝다.                             |
+| single trailing underscore           | `foo_`     | - 파이썬에서 이미 선점한 키워드를 사용할 때 혼선을 피하기 위한 방법이다.<br>  e.g. type_, from_                                            |
+| single underscore                    | `_`        | - 사용하지 않은 변수들을 담아두는 용도로 쓴다. <br>  e.g. _ = return_something(),  <br> - 숫자가 길어질 때 혼선을 방지하기 위해 쓴다. <br>  e.g. 1000 → 1_000 
+| double leading and trailing underscore  | `__foo__` | - dunder method 라고 한다. <br>  - 파이썬에서 이미 선점한 특수 목적 전역 클레스 메소드다.
+| double leading underscore | `__foo`    | - 부모-자식 필드 이름을 구분하기 위해 사용되는 것으로 파악했다.   <br> - 실 사용이 거의 없을 거 같다.
 
-_ = return_something()
-- 숫자가 길어질 때 혼선을 방지하기 위해 쓴다.
-  e.g. 1000 → 1_000   |
-  | double leading and trailing underscore  | __foo__ | - dunder method 라고 한다.
-- 파이썬에서 이미 선점한 특수 목적 전역 클레스 메소드다.  |
-  | double leading underscore | __foo | - 부모-자식 필드 이름을 구분하기 위해 사용되는 것으로 파악했다.
-- 실 사용이 거의 없을 거 같다.  |
 
 
 <br>
@@ -685,9 +695,11 @@ _ = return_something()
 
 ## 패키지
 
-파이썬을 좀 더 확장 가능한 어플리케이션으로 만들기 위해서는 모듈을 패키지라는 파일 계층구조로 구성해야 한다.  **__init__.py** 는 파일 내용을 비워놔도 되지만, 파이썬은 이 파일을 포함하는 디렉터리를 패키지로 간주하기 때문에 패키지로 사용하고 싶다면 꼭 만들어둬야 한다.
+파이썬을 좀 더 확장 가능한 어플리케이션으로 만들기 위해서는 모듈을 패키지라는 파일 계층구조로 구성해야 한다.  **__init__.py** 는 파일 내용을 비워놔도 되지만, **파이썬은 이 파일을 포함하는 디렉터리를 패키지로 간주**하기 때문에 패키지로 사용하고 싶다면 꼭 만들어둬야 한다.
 
 파이썬에서 batteries included 철학은 유용한 작업을 처리하는 많은 표준 라이브러리 모듈들이 내장이 되어있다는 뜻이다.
+
+<br>
 
 ### Stack + Queue == Deque
 
@@ -715,6 +727,8 @@ deque([3,4])
 >>> numbers
 deque([1,2,3,4])
 ```
+
+<br>
 
 Deque의 흥미로운 점
 
@@ -778,8 +792,8 @@ def tail(filename, lines=10):
   > CPyton은 C로 구현한 파이썬으로, 가장 많이 사용되고 있는 파이썬 구현체다. 오픈소스로 관리가 되고 있기 때문에 모든 코드를 https://github.com/python/cpython 에서 볼 수 있다.
 
 
-더 많은 Deque 사용법은 아래 링크에서 볼 수 있다.
+<br>
 
-[https://docs.python.org/3/library/collections.html#deque-recipes](https://docs.python.org/3/library/collections.html#deque-recipes)
+[더 많은 Deque 사용법](https://docs.python.org/3/library/collections.html#deque-recipes)
 
 ---
