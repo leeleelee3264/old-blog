@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Python] Introducing Python - Part 1"
+title: "[Python] Introducing Python - Part1"
 date: 2022-03-09 08:43:59
 author: Jamie Lee
 categories: Book
