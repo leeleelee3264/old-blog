@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "[Git] 여러 개의 깃허브 계정 쓰기"
-date: 2022-03-20 08:43:59
+title: "[Python] Effective python Chapter 1"
+date: 2022-06-15 08:43:59
 author: Jamie Lee
 categories: Book
 tags:	Git
@@ -11,8 +11,6 @@ enabled: true
 ---
 
 
-> 목표: 하루에 better way 하나씩 요약하기
->
 
 # Chapter 1 파이썬답게 생각하기
 
