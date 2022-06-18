@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "[Python] Effective python Chapter 1"
+title: "[Security] Digital Certificate"
 date: 2022-06-15 08:43:59
 author: Jamie Lee
-categories: Backend
+categories: Infra
 tags:	SSL
 pagination:
 enabled: true
@@ -18,6 +18,7 @@ enabled: true
 3. 인증서와 관련된 개념
 
 ---
+<br>
 
 # 인증서에 대해 잘못 알고 있던 점들
 
@@ -25,21 +26,27 @@ enabled: true
 
 처음으로 인증서를 생성하려고 했을 때 인증서가 web에서 HTTPS 통신을 하기 위해 사용하는 web secure용 인증서 AKA SSL 인증서와 digital signature(디지털 서명) 를 하기 위한 인증서가 따로 존재한다고 생각했다. 때문에 디지털 서명을 하기 위해서는 code signing 인증서를 발급받으려 했다.
 
-하지만 **SSL 인증서도 디지털 서명을 할 수 있었고, 목표인 server to server 커뮤니케이션에서 신원 보장을 위해 디지털 서명을 하기 위해서는 SSL 인증서를 발급해야 했다.** 아래와 같은 분류는 적합하지 않다.****
+하지만 **SSL 인증서도 디지털 서명을 할 수 있었고, 목표인 server to server 커뮤니케이션에서 신원 보장을 위해 디지털 서명을 하기 위해서는 SSL 인증서를 발급해야 했다.** 아래와 같은 분류는 적합하지 않다.
+<br>
 
 ![certificate simple](/assets/img/post/certificate/hand_drawing_certificate_simple.png)
+<br>
 
 발급받으려 했던 code signing 인증서는 어플리케이션에 사인을 해서 해당 어플리케이션 publisher의 신원을 보장하는데 사용하기 때문에 내가 필요했던 server to server 커뮤니케이션에서 사용되는 인증서가 아니다.
 
 code signing 인증서로 어플리케이션에 서명을 하게 되면 아래와 같이 사용자에게 어플리케이션 publisher 에 대한 정보가 추가로 제공이 된다.
+<br>
 
 ![code signing](/assets/img/post/certificate/code_signing_certificate.png)
+<br>
 
 SSL 인증서도 웹사이트에 한정해서 사용한다고 생각했는데 이는 너무 한정적인 생각이었다. SSL 인증서는 두 개의 시스템 (browser to server / server to server) 가 데이터를 주고 받을 때 암호화를 하기 위해 쓰이기 때문에 웹사이트에 한정적이지 않으며, 네트워크 전반에 걸쳐 광범위하게 사용되고 있다.
 
 결국 인증서는 아래처럼 분류를 해야 한다.
+<br>
 
 ![certificate full](/assets/img/post/certificate/hand_drawing_certificate.png)
+<br>
 
 ## CSR 생성하기
 
@@ -48,6 +55,7 @@ SSL 인증서도 웹사이트에 한정해서 사용한다고 생각했는데 �
 예를 들어 http://leelee.com 이라는 루트 도메인에서 사용하는 인증서라고 했을 때 http://leelee-test.com 도메인을 호스팅하는 서버에서 CSR을 생성해야 한다고 생각한 것이다.
 
 하지만 CSR은 local 호스트에서 생성을 하고, 만약 CSR을 생성할 때 private key를 함께 만들었다면 해당 키를 인증서를 사용할 서버로 옮겨주면 된다. 물론 서버에 직접 생성을 하면 옮길 필요가 없으니 더 간단해지기는 할 것이다.
+<br>
 
 > 인증서를 서버에 ‘installed’ 된다는 표현이 많이 쓰여지고 있다. 실제로는 인증서를 서버에 설치한다기 보다는 특정 디렉터리에 넣어둔다.
 >
@@ -71,11 +79,15 @@ SSL 인증서도 웹사이트에 한정해서 사용한다고 생각했는데 �
 - SSL Certificate은 두 시스템에서 오고가는 data를 암호화한다.
 - Code Signing Certificate은 암호화를 하지 않고, 소프트웨어 자체를 hash & sign 한다. 이는 모든 코드에 디지털 서명을 한 것과 마찬가지로, 만약 중간에서 누가 코드를 수정한다면 해시값이 변경이 되어 end user가 코드를 다운받기 전에 alert를 띄워 사전에 설치를 못 하도록 막는다.
 
+<br>
+
 ![certificate difference](/assets/img/post/certificate/certificate_difference.png)
+<br>
 
 ## SSL Certificate 상세보기
 
 SSL Certificate는 크게 (1) 검증 대상과 (2) 커버하는 도메인의 개수 에 따라서 분류할 수 있다.
+<br>
 
 ### DV, OV, EV
 
@@ -86,7 +98,9 @@ SSL Certificate는 크게 (1) 검증 대상과 (2) 커버하는 도메인의 개
 
 하지만 검증받은 대상의 identiy가 다르기 때문에 DV는 작은 서비스에서 사용하기가 용이하고 그 외에 eCommerce나 중요한 정보를 주고 받아야 하는 서비스의 경우에는 다른 인증서를 써야 한다.
 
-### Domain Validation
+<br>
+
+#### Domain Validation
 
 → 도메인 소유권을 확인한다.
 
@@ -96,7 +110,7 @@ SSL Certificate는 크게 (1) 검증 대상과 (2) 커버하는 도메인의 개
 
 → Let’s encrypt에서 발급하는 인증서도 DV로, OV나 EV 처럼 다른 인증을 받을 때는 사용할 수 없다.
 
-### Organization Validation
+#### Organization Validation
 
 → 도메인 소유권 + Organization 존재를 확인한다.
 
@@ -104,11 +118,12 @@ SSL Certificate는 크게 (1) 검증 대상과 (2) 커버하는 도메인의 개
 
 → 발급하는데 몇 시간 또는 몇 일 정도가 소요된다.
 
-### Extended Validation
+#### Extended Validation
 
 → 도메인 소유권 + Organization 존재 확인 + 물리적인 추가 절차를 확인한다.
 
 → SSL certification industry’s governing consortium 가이드라인을 준수해야 하는 등 발급 절차가 복잡하다.
+<br>
 
 ### Single, Multiple, Wildcard
 
@@ -128,17 +143,17 @@ www.leelee.co.kr
 leelee.co.kr
 ```
 
-### Single Domain
+#### Single Domain
 
 → 단 하나의 FQDN을 커버한다.
 
-### Multiple Domain
+#### Multiple Domain
 
 → 여러개의 FQDN을 커버한다.
 
 → 인증서를 등록할 때 SAN (Subject Alternative Name) 항목에 다수의 도메인을 입력하는데, 이때 입력하는 FQDN들이 커버된다.
 
-### Wildcard Domain
+#### Wildcard Domain
 
 → 하나의 Root Domain과 무제한의 서브도메인을 커버한다. (wildcard는 하나의 전체도메인을 입력하지 않기 때문에 FQDN이라 하지 않았다.)
 
@@ -161,6 +176,8 @@ www.sub.leelee.co.kr
 
 ---
 
+<br>
+
 # 인증서와 관련된 개념
 
 ## PKI
@@ -172,9 +189,13 @@ PKI는 Public Key Infrastructure의 약자로 공개키 기반구조라고 하�
 - Private key는 개인만 소유하며 밖으로 공개해서는 안된다.
 - Public key는 공개하는 키로, 누구에게든 공개해도 된다.
 
+<br>
+
 ### Asymmetric Key Algorithm
 
 비대칭키 알고리즘으로 Private key, Public key 두 개의 키를 사용한다. 이처럼 Encryption(암호화)와 Decryption(복호화)에 두 개의 다른 키를 쓰기 때문에 비 대칭키라고 한다. 대표적인 알고리즘으로는 RSA가 있다.
+
+<br>
 
 ### 적용 시나리오
 
@@ -186,6 +207,8 @@ PKI는 Public Key Infrastructure의 약자로 공개키 기반구조라고 하�
 - 사용자 A의 public key로 암호화된 데이터는 오직 사용자 A의 private key로 decrypt 할 수 있다.
 - **사용자 A의 private key는 사용자 A만 소유하고 있기 때문에 사용자 B는 사용자 A만 볼 수 있는 데이터를 전송하게 된 것이다.**
 
+<br>
+
 ### Private key를 이용해 암호화 : 신원인증
 
 ![private key](/assets/img/post/certificate/private_key_example.png)
@@ -194,11 +217,16 @@ PKI는 Public Key Infrastructure의 약자로 공개키 기반구조라고 하�
 - 만약 사용자 B가 전달받은 데이터가 사용자 A의 public key로 decrypt가 안된다면 해당 데이터는 사용자A가 보냈다고 할 수 없다.
 - **사용자 B가 사전에 공유된 사용자 A의 public key로 데이터를 decrypt할 수 있다면 해당 데이터는 사용자 A가 보냈다는 것을 확신할 수 있다.**
 
+<br>
+
 ### Plus 해커가 암호화된 데이터를 도청할 경우
 
 ![haker](/assets/img/post/certificate/haker_example.png)
 
 - 사용자 A의 private key가 없기 때문에 해커가 중간에서 데이터를 decryption 할 수 없다.
+
+<br>
+<br>
 
 결국 PKI에서는 두 가지 방식의 네트워크 보안이 가능하다.
 
@@ -209,16 +237,24 @@ PKI는 Public Key Infrastructure의 약자로 공개키 기반구조라고 하�
 > PKI 구조에서 어떤 side인가에 따라서 목표가 데이터 보안인지 신원인증인지를 알 수 있다.
 >
 
+<br>
+<br>
+
+
 ## X.509
 
 X.509는 디지털 인증서 생성 관련 국제 표준을(format)을 의미한다. X.509를 사용하는 네트워크 노드들은 전세계적으로 약속된 x.509 국제 표준을 방식으로 디지털 ID를 생성해 서로의 신원을 증명할 수 있다.
 
 X.509는 인터넷의 다양한 분야에서 신원 확인을 위해 광범위하게 사용되고 있는 가장 유명한 디지털 신원 증명 방식이다.
 
+<br>
+
 ### X.509 version 3 인증서 양식
 
 
 ![certificate format](/assets/img/post/certificate/certificate_format.png)
+
+<br>
 
 > Key usage extension
 >
@@ -227,14 +263,20 @@ X.509는 인터넷의 다양한 분야에서 신원 확인을 위해 광범위�
 
 ![key usage](/assets/img/post/certificate/key_usage.png)
 
+<br>
+
 예를 들어 인증서가 sign을 하거나 signature를 검증하기 위해 사용된다면 Key usage extension으로 Digital signature와 Non-repudication 를 설정할 수 있다.
 
 반대로 인증서가 key 관리를 위해서만 사용이 된다면 key encipherment를 설정할 수 있다.
+
+<br>
 
 > Extended key usage
 >
 
 Key usage extension이 기본적인 인증서의 사용 목적(purpose)를 나타내는 것이라면 Extended key usage는 인증서의 additional한 사용 목적을 나타낸다. 보통 Extended key usage는 end entity(kasa)의 인증서에만 표시가 된다.
+
+<br>
 
 ![extend key usage](/assets/img/post/certificate/extend_key_usage.png)
 
@@ -243,65 +285,71 @@ Extended key usage는 `critical`이거나 `non-critical`이다.
 - `critical`이라면 인증서는 설정되어있는 용도로만 사용을 해야 한다. 해당 인증서를 다른 용도로 사용 했을 경우에는 CA 정책에 위반된다.
 - non-critical 이라면 설정되어있는 용도 외의 다른 용도로 사용 했을 경우에도 CA의 제한에 걸리지 않는다. 또한 다수의 kye/certificate을 가지고 있는 entity라면 맞는 key/certificate를 찾는데에도 사용이 될 수 있다.
 
+<br>
+
 ## CSR, Private Key, Certificate
 
-### CSR
+#### CSR
 
 - CA에 인증서를 서명해달라고 요청할 때 사용이 된다.
 - 인증서 발급할 때만 사용이 되고, 인증서가 발급된 후에는 별도로 사용 되지 않는다.
 
-### Private Key
+#### Private Key
 
 - PKI의 핵심이 되는 비밀키이다.
 - 만료 기간이 별도로 존재하지 않는다.
 
-### Public Key
+#### Public Key
 
 - PKI의 또 다른 핵심이 되는 공개키이다.
 - **Public Key라고 따로 파일이 존재하기 보다는 Certificate에 포함이 되어있다.**
 - 만료 기간이 별도로 존재하지 않는다.
 
-### Certificate
+#### Certificate
 
 - Public Key와 각종 정보를 담고 있는 인증서로, x.509 형식으로 되어있다.
 - **만료 기간이 존재한다.**
 - → 처음에는 Private Key와 Public Key에 만료 기간이 존재한다고 착각했으나, Certificate에 만료 기간이 존재하기 때문에 만료가 된 인증서를 새 인증서로 교체해줘야 하는 것 이었다.
+
+<br>
 
 ### PKI File Extension
 
 > PEM (Privacy Enhanced Mail) 은 가장 흔하게 사용되는 X.509 인증서 형식인데 .crt, .pem, .cer, .key 확장자 모두가 PEM을 뜻한다. -----BEGIN CERTIFICATE----- 로 시작하는 파일들이 PEM이다.
 >
 
-### .cert *.crt
+#### .cert *.crt
 
 - Certificate(인증서)를 위한 확장자다.
 - Base64 encoded X.509 certificate
 - DER encoded X.509 certificate
 - 해당 확장자들은 Private key를 지원하지 않는다.
 
-### .key
+#### .key
 
 - Private key 확장장다.
 
-### .pem
+#### .pem
 
 - Certificate를 위한 확장자다.
 
-### .crl
+#### .crl
 
 - Certificate Revoke List를 위한 확장자다.
 - Certificate Revoke List는 폐기된 인증서의 목록이며, CA는 CRL을 통해 폐기된 인증서를 관리한다.
 
-### .csr
+#### .csr
 
 - Certificate Singing Request를 위한 확장자다.
 
-### .der
+#### .der
 
 - Certificate을 위한 인증서 확장자인데, DER encoded X.509 Certificate에 한정된다.
 - 해당 확장자는 Private key를 지원하지 않는다.
 - 보통의 인증서들과 달리 `----BEGIN CERTIFICATE-----` 로 ㅈ시작하지 않는다.
 - Java contexts에서 자주 사용이 된다.
+
+<br>
 
 ```java
 # sample of DER certificate
