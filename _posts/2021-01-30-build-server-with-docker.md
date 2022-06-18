@@ -3,7 +3,7 @@ layout: post
 title: "[Docker] Build Shiny server with Docker"
 date: 2021-01-30 22:43:59
 author: Jamie Lee
-categories: Backend
+categories: Infra
 tags:   Docker
 cover:  "/assets/img/docker.png"
 pagination:

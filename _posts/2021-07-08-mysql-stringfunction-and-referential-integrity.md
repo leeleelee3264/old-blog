@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "[SQL] String function & Referential Integrity"
+title: "[MySQL] String function & Referential Integrity"
 date: 2021-07-08 08:43:59
 author: Jamie Lee
-categories: Backend
+categories: Infra
 tags:	sql
 pagination:
 enabled: true

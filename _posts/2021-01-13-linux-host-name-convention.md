@@ -3,7 +3,7 @@ layout: post
 title: "[Linux] Host and url name convention"
 date: 2021-01-13 22:00:59
 author: Jamie Lee
-categories: Backend
+categories: Infra
 tags:	linux
 cover:  "/assets/img/ubuntu.png"
 pagination: 

@@ -1,9 +1,9 @@
 ---
 layout: post 
-title: "[Linux] Writing shell script"
+title: "[Linux] Write shell script to rotate log"
 date: 2021-01-05 20:39:40
 author: Jamie Lee
-categories: Backend
+categories: Infra
 tags:	linux
 cover:  "/assets/img/ubuntu.png"
 pagination: 

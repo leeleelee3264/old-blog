@@ -1,6 +1,6 @@
 ---
 layout: post 
-title: "[SQL] View and a little bit of UNION/JOIN"
+title: "[MySQL] View and a little bit of UNION/JOIN"
 date: 2020-10-27 08:43:59
 author: Jamie Lee
 categories: Backend

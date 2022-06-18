@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "[SQL] History of Join & Join Set"
+title: "[MySQL] History of Join & Join Set"
 date: 2021-07-14 08:43:59
 author: Jamie Lee
-categories: Backend
+categories: Infra
 tags:	sql
 pagination:
 enabled: true

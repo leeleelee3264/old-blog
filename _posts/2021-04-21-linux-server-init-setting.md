@@ -3,7 +3,7 @@ layout: post
 title: "[Linux] 리눅스 서버 설치 & 초기 세팅하기"
 date: 2021-04-16 08:43:59
 author: Jamie Lee
-categories: Backend
+categories: Infra
 tags:	linux 
 pagination:
 enabled: true

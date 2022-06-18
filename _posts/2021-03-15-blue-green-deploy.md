@@ -3,7 +3,7 @@ layout: post
 title: "[Linux] 무중단 서버로 배포하기"
 date: 2021-03-15 08:43:59
 author: Jamie Lee
-categories: Backend
+categories: Infra
 tags:	linux
 cover:  "/assets/img/ubuntu.png"
 pagination: 

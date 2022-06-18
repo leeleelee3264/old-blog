@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "[SQL] SQL 백업 종류"
+title: "[MySQL] SQL 백업 종류"
 date: 2021-07-21 08:43:59
 author: Jamie Lee
-categories: Backend
+categories: Infra
 tags:	sql
 pagination:
 enabled: true

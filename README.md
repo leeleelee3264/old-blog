@@ -33,12 +33,12 @@
 - [[Linux] Shell Script 로 Mysql db 전체백업하기](https://leeleelee3264.github.io/backend/2021/09/09/linux-shell-db-backup.html)
 
 
-- [[SQL] SQL 백업 종류](https://leeleelee3264.github.io/backend/2021/07/21/mysql-backup.html)
-- [[SQL] History of Join & Join set](https://leeleelee3264.github.io/backend/2021/07/14/mysql-history-of-join-and-join-set.html)
-- [[SQL] View and a little bile of UNION/JOIN](https://leeleelee3264.github.io/backend/2020/10/27/sql-view-union-join.html)
-- [[SQL] Clustered index 와 Non-Clustered index](https://leeleelee3264.github.io/backend/2021/06/21/mysql-index.html)
-- [[SQL] String function & Referential Integrity](https://leeleelee3264.github.io/backend/2021/07/08/mysql-stringfunction-and-referential-integrity.html)
-- [[SQL] (1) Structured Query Language & Key (2) Collation](https://leeleelee3264.github.io/backend/2021/06/30/mysql-sql-and-key-and-collation.html)
+- [[MySQL] SQL 백업 종류](https://leeleelee3264.github.io/backend/2021/07/21/mysql-backup.html)
+- [[MySQL] History of Join & Join set](https://leeleelee3264.github.io/backend/2021/07/14/mysql-history-of-join-and-join-set.html)
+- [[MySQL] View and a little bile of UNION/JOIN](https://leeleelee3264.github.io/backend/2020/10/27/sql-view-union-join.html)
+- [[MySQL] Clustered index 와 Non-Clustered index](https://leeleelee3264.github.io/backend/2021/06/21/mysql-index.html)
+- [[MySQL] String function & Referential Integrity](https://leeleelee3264.github.io/backend/2021/07/08/mysql-stringfunction-and-referential-integrity.html)
+- [[MySQL] (1) Structured Query Language & Key (2) Collation](https://leeleelee3264.github.io/backend/2021/06/30/mysql-sql-and-key-and-collation.html)
 
 
 - [[Docker] Build shiny server with Docker](https://leeleelee3264.github.io/backend/2021/01/30/build-server-with-docker.html)

@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "[SQL] Clustered Index 와 Non-Clustered Index"
+title: "[MySQL] Clustered Index 와 Non-Clustered Index"
 date: 2021-06-21 08:43:59
 author: Jamie Lee
-categories: Backend
+categories: Infra
 tags:	sql
 pagination:
 enabled: true

@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "[SQL] (1)Structured Query Language & Key (2) Collation"
+title: "[MySQL] (1)Structured Query Language & Key (2) Collation"
 date: 2021-06-30 08:43:59
 author: Jamie Lee
-categories: Backend
+categories: Infra
 tags:	sql
 pagination:
 enabled: true

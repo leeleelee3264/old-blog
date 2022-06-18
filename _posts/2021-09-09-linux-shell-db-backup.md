@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "[Linux] Shell Script 로 Mysql db 전체백업하기"
+title: "[Linux & MySQL] Shell Script 로 Mysql db 전체백업하기"
 date: 2021-09-09 23:59:59
 author: Jamie Lee
-categories: Backend
+categories: Infra
 tags:	linux
 cover:  "/assets/img/ubuntu.png"
 pagination:
