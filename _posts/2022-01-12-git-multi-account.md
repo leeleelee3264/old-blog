@@ -28,6 +28,18 @@ index
 
 <br>
 
+참고: 복수의 깃허브 계정을 사용 할 때, 아래처럼 각 계정들의 root source directory를 나누어두면 관리적 측면에서도, git config 설정을 할 때에도 더 편리하다. 
+
+```shell
+.
+└── home
+    ├── office
+    └── personal
+
+```
+
+<br>
+
 맥에서 개인 깃허브 계정과 회사 깃허브 계정을 동시에 쓰는 방법을 찾아봤는데 삽질을 조금 해서 다음번에도 이런 일이 있을까봐 간략하게 문서화 해두기로 했다. 중요한 부분은 이렇게 복수 개의 계정을 세팅해두었으면, **매번 새로운 레포지토리를 만들거나 클론할 때 마다 추가 작업들을 해줘야 오류가 나지 않는다.**
 
 ## 터미널에서 여러 개 깃허브 계정 세팅하기
@@ -88,6 +100,8 @@ config 작성이 끝났다면 로컬에서 해줘야 할 일은 끝이다! 이�
 
 ssh-keygen 을 하면 파일이 각각 `id_rsa.pub` 와 `id_rsa` 가 생긴다. 여기서 .pub는 외부로 공개되는 공개키이다. **깃허브에 등록될 키는 이 id_rsa.pub 키로**, 해당 파일을 열어보면 파일 끝에 이메일이 들어가 있다.  그리고 일반 id_rsa 는 외부로 공개가 되어서는 안되는 키이다!
 
+<br>
+
 id_rsa.pub
 
 ```bash
@@ -105,11 +119,14 @@ IqgHGiVCntP9wmQ== leelee@personal.com
 
 ```
 
+<br>
 
 
 github setting 페이지로 이동:
 
 ![https://www.heady.io/hs-fs/hubfs/Assets%20June%202020/Blog%20Images/1_Zz-0nINK5t3TrX0KIz2rYw.png?width=227&name=1_Zz-0nINK5t3TrX0KIz2rYw.png](https://www.heady.io/hs-fs/hubfs/Assets%20June%202020/Blog%20Images/1_Zz-0nINK5t3TrX0KIz2rYw.png?width=227&name=1_Zz-0nINK5t3TrX0KIz2rYw.png)
+
+<br>
 
 SSH and GPG Keys 항목에서 New SSH key 로 키 등록:
 
@@ -117,10 +134,61 @@ SSH and GPG Keys 항목에서 New SSH key 로 키 등록:
 
 작업이 다 끝났으면 아래에 나오는 **매번 해줘야하는 작업들** 항목을 해주면 된다. 이미 레포지토리들이 다 로컬에 클론이 되어있는 상태라면 레포지토리를 지우고 다시 클론을 해주거나, git remote set-url 을 이용해 주소를 변경해주면 된다.
 
+<br>
+
+
+> 계정 정보 명시
+>
+
+Github에서 사용하는 **name과** **email을** 별도로 설정해주지 않으면 개인 리포지토리에 올릴 커밋의 작성자가 회사 계정으로 되어있는 둥의 혼선을 겪을 수 있다. 떄문에 각각 계정별로 정보를 명시해줘야 한다.
+
+(해당 예시에서는 개인 계정을 default로 사용한다.)
+<br>
+
+계정 명시:
+1. home과 회사 office directory 에 각각 .gitconfig 파일을 하나씩 만들어준다. 
+2. home에 있는 .gitconfig에 default로 사용할 계정의 name과 email을 입력해준다. 
+3. home에 있는 .gitconfig에 회사 계정의 .gitconfig 를 불러오는 조건을 추가해준다. 
+4. office에 있는 .gitconfig에 회사 계정의 name과 email을 입력해준다. 
+
+
+home .gitconfig: 
+```shell
+[user]
+	name = leelee-personal
+	email = leelee@personal.com
+[includeIf "gitdir:~/office/"]
+	path = ~/office/.gitconfig
+```
+<br>
+
+office .gitconfig:
+```shell
+[user]
+	name = leelee-office
+	email = leelee@office.com
+```
+
+<br>
+
+모든 파일들을 만들었을 때 디렉터리의 구성은 아래와 같다. 
+```shell
+.
+└── home
+    ├── .gitconfig
+    ├── office
+    │   └── .gitconfig
+    └── personal
+
+```
+
+<br>
+
+
 ## 매번 해줘야 하는 작업들
 
-> 레포지토리 주소 수정
->
+### 레포지토리 주소 수정
+
 
 기존 url:
 
@@ -136,7 +204,11 @@ git clone git@github.com:(Repo path).git
 git clone git@github.com-office:(Repo path).git
 ```
 
+<br>
+
 .ssh/config 에서 연결할 Host를 계정별로 분기해서 각각 `github.com-personal` 과 `github.com-office` 로 구분을 했는데 이제는 매번 레포지토리를 만들거나, 클론할 때 해당 작업을 해줘야 한다. git remote set-url 로 레포지토리를 연결할 떄도 똑같은 형식으로 해줘야 한다.
+
+<br>
 
 set-url 예시:
 
@@ -144,19 +216,8 @@ set-url 예시:
 git remote set-url origin git@github.com-office:(Repo path).git
 ```
 
-<br> 
 
-> 계정 정보 명시
->
-
-이 항목은 디폴트로 사용하는 계정에 연결된 레포지토리가 아닐 때 추가로 해주면 되는 작업이다. 처음에 깃 터미널을 설치했을 때 처럼 깃허브의 계정 정보를 git config 로 설정 해주면 된다.
-
-계정 명시:
-
-```bash
-git config user.name "office"
-git config user.email "leelee@office.com"
-```
+<br>
 
 ## Reference
 
