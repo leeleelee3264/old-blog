@@ -56,6 +56,8 @@ SSL 인증서도 웹사이트에 한정해서 사용한다고 생각했는데 �
 
 하지만 CSR은 local 호스트에서 생성을 하고, 만약 CSR을 생성할 때 private key를 함께 만들었다면 해당 키를 인증서를 사용할 서버로 옮겨주면 된다. 물론 서버에 직접 생성을 하면 옮길 필요가 없으니 더 간단해지기는 할 것이다.
 <br>
+<br>
+
 
 > 인증서를 서버에 ‘installed’ 된다는 표현이 많이 쓰여지고 있다. 실제로는 인증서를 서버에 설치한다기 보다는 특정 디렉터리에 넣어둔다.
 >
@@ -88,6 +90,8 @@ SSL 인증서도 웹사이트에 한정해서 사용한다고 생각했는데 �
 
 SSL Certificate는 크게 (1) 검증 대상과 (2) 커버하는 도메인의 개수 에 따라서 분류할 수 있다.
 <br>
+<br>
+
 
 ### DV, OV, EV
 
@@ -124,6 +128,7 @@ SSL Certificate는 크게 (1) 검증 대상과 (2) 커버하는 도메인의 개
 
 → SSL certification industry’s governing consortium 가이드라인을 준수해야 하는 등 발급 절차가 복잡하다.
 <br>
+<br>
 
 ### Single, Multiple, Wildcard
 
@@ -142,6 +147,8 @@ www.sub.leelee.co.kr
 www.leelee.co.kr
 leelee.co.kr
 ```
+
+<br>
 
 #### Single Domain
 
@@ -232,7 +239,9 @@ PKI는 Public Key Infrastructure의 약자로 공개키 기반구조라고 하�
 
 - public key를 이용해 encryption 하면 원하는 상대방에게만 데이터를 공개할 수 있다. from 사용자 B → to 사용자 A
 - private key를 이용해 encryption 하면 신원 인증을 할 수 있다. from 사용자 A → to 사용자 B
--
+
+<br>
+
 
 > PKI 구조에서 어떤 side인가에 따라서 목표가 데이터 보안인지 신원인증인지를 알 수 있다.
 >
@@ -318,6 +327,8 @@ Extended key usage는 `critical`이거나 `non-critical`이다.
 > PEM (Privacy Enhanced Mail) 은 가장 흔하게 사용되는 X.509 인증서 형식인데 .crt, .pem, .cer, .key 확장자 모두가 PEM을 뜻한다. -----BEGIN CERTIFICATE----- 로 시작하는 파일들이 PEM이다.
 >
 
+<br>
+
 #### .cert *.crt
 
 - Certificate(인증서)를 위한 확장자다.
@@ -348,8 +359,6 @@ Extended key usage는 `critical`이거나 `non-critical`이다.
 - 해당 확장자는 Private key를 지원하지 않는다.
 - 보통의 인증서들과 달리 `----BEGIN CERTIFICATE-----` 로 ㅈ시작하지 않는다.
 - Java contexts에서 자주 사용이 된다.
-
-<br>
 
 ```java
 # sample of DER certificate
