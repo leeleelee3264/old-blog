@@ -3,7 +3,7 @@ layout: post
 title: "[Python] Python Decorator로 간단한 profiler 만들기"
 date: 2022-06-30 08:43:59
 author: Jamie Lee
-categories: backend
+categories: Backend
 tags:	Python
 pagination:
 enabled: true
