@@ -240,6 +240,8 @@ Python의 Decorator는 함수의 시작 - 끝 부분에 추가 action을 할 수
 
 메모리를 프로파일링하는 것에 한정한다면 Python에서 builtin으로 제공하는 `memory_profiler` 라는 것이 있다. 패키지 안의 `@profiler` 데코레이터를 사용하면 함수 안에서 코드가 실행이 될 때 한 줄 한 줄 얼마의 메모리를 사용했는지를 볼 수 있다.
 
+<br>
+
 example of profiler:
 
 ```python
@@ -260,6 +262,8 @@ def main_func():
 if __name__ == "__main__":
     main_func()
 ```
+
+<br>
 
 result of profiler:
 
