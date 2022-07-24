@@ -10,9 +10,9 @@ exclude:
 
 # Site settings
 title: Logging
-subtitle: "Log of Jamie"
-email: jamieseungminlee@gmail.com
-name: Seungmin Jamie Lee
+subtitle: "Log of LeeLee"
+email: absinthe4902@naver.com
+name: Seungmin Lee
 # Base URL of site (i.e. /blog). It should always start with a slash,
 # and never end with a slash. Set it to a blank value if hosting at the
 # root of your server.
@@ -22,7 +22,7 @@ cover: "/assets/img/banff.jpg"
 logo: "/assets/img/mylogo.png"
 
 description: >
-  Logging of computer science by Seungmin Jamie Lee
+  Log of LeeLee
 
 # Build settings
 markdown: kramdown
@@ -75,10 +75,10 @@ social:
 
   - name: Facebook
     icon: facebook
-    username: Jamie Lee
-    url: https://facebook.com/seungminjamie.lee
+    username: ""
+    url: ""
     desc: Friend me on Facebook
-    share: true
+    share: false
 
   - name: GitHub
     icon: github
