@@ -43,6 +43,7 @@ Singpass는 Myinfo를 손쉽게 사용할 수 있도록 Java와 node.js 버전�
   - API document를 작성한다.
   - Project에 대한 블로그 포스팅을 작성한다.
 
+<br>
 
 
 ## Dev Stack
@@ -87,9 +88,12 @@ Myinfo는 이미지와 같은 oauth2 구조를 가진다.
 
 **Resource API from Myinfo**
 
-- [authorise api]([https://public.cloud.myinfo.gov.sg/myinfo/api/myinfo-kyc-v3.2.2.html#operation/getauthorise](https://public.cloud.myinfo.gov.sg/myinfo/api/myinfo-kyc-v3.2.2.html#operation/getauthorise)) `GET /v3/authorise`
-- [token api]([https://public.cloud.myinfo.gov.sg/myinfo/api/myinfo-kyc-v3.2.2.html#operation/gettoken](https://public.cloud.myinfo.gov.sg/myinfo/api/myinfo-kyc-v3.2.2.html#operation/gettoken)) `POST /v3/token`
-- [person api]([https://public.cloud.myinfo.gov.sg/myinfo/api/myinfo-kyc-v3.2.2.html#operation/getperson](https://public.cloud.myinfo.gov.sg/myinfo/api/myinfo-kyc-v3.2.2.html#operation/getperson)) `GET /v3/person/{sub}`
+- [authorise api]([https://public.cloud.myinfo.gov.sg/myinfo/api/myinfo-kyc-v3.2.2.html#operation/getauthorise](https://public.cloud.myinfo.gov.sg/myinfo/api/myinfo-kyc-v3.2.2.html#operation/getauthorise)) 
+- `GET /v3/authorise`
+- [token api]([https://public.cloud.myinfo.gov.sg/myinfo/api/myinfo-kyc-v3.2.2.html#operation/gettoken](https://public.cloud.myinfo.gov.sg/myinfo/api/myinfo-kyc-v3.2.2.html#operation/gettoken)) 
+- `POST /v3/token`
+- [person api]([https://public.cloud.myinfo.gov.sg/myinfo/api/myinfo-kyc-v3.2.2.html#operation/getperson](https://public.cloud.myinfo.gov.sg/myinfo/api/myinfo-kyc-v3.2.2.html#operation/getperson)) 
+- `GET /v3/person/{sub}`
 
 
 <br>
@@ -119,7 +123,7 @@ curl -i -H 'Accept: application/json' <http://localhost:3001/user/me/external/my
 {
     "message": "OK",
     "data": {
-        "url": "<https://test.api.myinfo.gov.sg/com/v3/authorise?client_id=STG2-MYINFO-SELF-TEST&attributes=name,dob,birthcountry,nationality,uinfin,sex,regadd&state=eb03c000-00a3-4708-ab30-926306bfc4a8&redirect_uri=http://localhost:3001/callback&purpose=python-myinfo-connector>",
+        "url": "https://test.api.myinfo.gov.sg/com/v3/authorise?client_id=STG2-MYINFO-SELF-TEST&attributes=name,dob,birthcountry,nationality,uinfin,sex,regadd&state=eb03c000-00a3-4708-ab30-926306bfc4a8&redirect_uri=http://localhost:3001/callback&purpose=python-myinfo-connector",
         "state": "eb03c000-00a3-4708-ab30-926306bfc4a8"
     }
 }
