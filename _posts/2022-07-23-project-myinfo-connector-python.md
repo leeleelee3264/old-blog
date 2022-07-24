@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[Project] Python Version of Myinfo oauth2 Connector"
-date: 2022-07-24 08:43:59
+date: 2022-07-23 08:43:59
 author: Jamie Lee
 categories: Project
 tags:	project
