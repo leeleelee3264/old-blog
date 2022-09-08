@@ -2,11 +2,11 @@
 @import url(//fonts.googleapis.com/css?family=Roboto+Slab:400,700,300|Roboto:400,700,300|Open+Sans:300italic,400italic,600italic,700italic,800italic,400,800,700,600,300);
 
 // Typography
-$base-font-family: "Open Sans", "Helvetica Neue", "Helvetica", "Roboto", "Arial", sans-serif; // $helvetica;
-$heading-font-family: "Roboto Slab", "Helvetica Neue", "Helvetica", "Arial", sans-serif; // $base-font-family;
+$base-font-family: "Lato","PingFang SC","Microsoft YaHei",sans-serif; // $helvetica;
+$heading-font-family: "Lato","PingFang SC","Microsoft YaHei",sans-serif; // $base-font-family;
 
 // Font Sizes
-$base-font-size: $em-base; // 16px
+$base-font-size: $em-base; // 14px
 
 // Adjust modular scale ratio
 $modular-scale-ratio: $minor-third;
@@ -36,11 +36,12 @@ $red:	#c0392b;				// Pomegranate
 $gray: #7f8c8d;				// Asbestos
 // Even more colors
 $bc-red: #bc0000;
+$dracula-orchid: #2d3436;
 
 // Font Colors
 $base-background-color: #fff;
 $base-font-color: $dark-gray;
-$action-color: $green;
+$action-color: $dracula-orchid;
 $highlight-color: tint($action-color, 33%);
 
 // Border

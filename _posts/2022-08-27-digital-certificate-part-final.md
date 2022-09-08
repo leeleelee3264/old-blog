@@ -20,6 +20,12 @@ enabled: true
 
 * * *
 
+# test embed
+
+<script src="https://gist.github.com/leeleelee3264/c5be1e7338abb6b4cef17685a52806b5.js"></script>
+
+
+
 CA
 ==
 
