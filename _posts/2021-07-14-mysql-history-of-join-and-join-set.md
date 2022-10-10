@@ -40,7 +40,7 @@ index
 
 # History of Join <a name="History_of_SQL_standard"></a>
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0ceba2a4-7b09-4003-9c96-c30467e1c82e/sql_standard.png](https://https://leeleelee3264.github.io/leeleelee3264.github.io-old//assets/img/post/sql_standard.png)
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/0ceba2a4-7b09-4003-9c96-c30467e1c82e/sql_standard.png](https://https://leeleelee3264.github.io-old//assets/img/post/sql_standard.png)
 
 그림에서 보는 것 처럼 Join은 1992년에 만들어진 SQL-92 standard 에서 만들어졌다. 92는 Join뿐만 아니라 DDL인 ALTER과 DROP도 포함이 되어있고, 학교에서 제일 많이 가르치고 실무에서도 제일 많이 사용되고 있다.
 
@@ -70,7 +70,7 @@ Where 조건을 걸지 않아서 orders와 users를 합쳤을 때 나오는 모�
 
 <br> 
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/90b72793-0129-4d30-9961-bf3829f7784a/cross_join.png](https://https://leeleelee3264.github.io/leeleelee3264.github.io-old//assets/img/post/cross_join.png)
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/90b72793-0129-4d30-9961-bf3829f7784a/cross_join.png](https://https://leeleelee3264.github.io-old//assets/img/post/cross_join.png)
 
 <br> 
 
@@ -190,7 +190,7 @@ orders (주문)
 
 ---
 
-![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b495431a-8708-4325-abf6-82715bbb05f9/join_set.png](https://https://leeleelee3264.github.io/leeleelee3264.github.io-old//assets/img/post/join_set.PNG)
+![https://s3-us-west-2.amazonaws.com/secure.notion-static.com/b495431a-8708-4325-abf6-82715bbb05f9/join_set.png](https://https://leeleelee3264.github.io-old//assets/img/post/join_set.PNG)
 
 ## Inner Join AKA Join
 
