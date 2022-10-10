@@ -17,7 +17,7 @@ name: Seungmin Lee
 # and never end with a slash. Set it to a blank value if hosting at the
 # root of your server.
 baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://https://leeleelee3264.github.io-old/" # the base hostname & protocol for your site
+url: "http://https://leeleelee3264.github.io/" # the base hostname & protocol for your site
 cover: "/assets/img/banff.jpg"
 logo: "/assets/img/mylogo.png"
 
@@ -189,7 +189,7 @@ protocols:
 
     twitter_image: "/assets/img/mylogo.png"
 
-    os_repo: "https://github.com/leeleelee3264/https://leeleelee3264.github.io-old/"
+    os_repo: "https://github.com/leeleelee3264/https://leeleelee3264.github.io/"
     os_rcs_type: "git"
 
-    os_src: "git@github.com:leeleelee3264/https://leeleelee3264.github.io-old/.git"
+    os_src: "git@github.com:leeleelee3264/https://leeleelee3264.github.io/.git"

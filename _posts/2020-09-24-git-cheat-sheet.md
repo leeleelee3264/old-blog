@@ -431,7 +431,7 @@ git config user.name
 # 1. check name of remote branch 
 git remote -v 
 # 2. change url of remote branch
-git remote set-url origin https://github.com/leeleelee3264/https://leeleelee3264.github.io-old/.git
+git remote set-url origin https://github.com/leeleelee3264/https://leeleelee3264.github.io/.git
 ```
 
 <br> 
