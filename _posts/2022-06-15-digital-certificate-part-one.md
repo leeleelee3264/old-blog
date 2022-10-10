@@ -377,5 +377,4 @@ Extended key usage는 `critical`이거나 `non-critical`이다.
 
 ---
 
-## Next
 

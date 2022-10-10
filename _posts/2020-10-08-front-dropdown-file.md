@@ -18,7 +18,7 @@ pagination:
 
 ![drag%20and%20drop%20(front)%203bbcb41524264640801dce23e80eb29e/dragdrop.png](/assets/img/post/dragdrop.PNG)
 
-[demo](https://leeleelee3264.github.io/demo/dragdrop){: .btn}
+[demo](https://https://leeleelee3264.github.io/leeleelee3264.github.io-old//demo/dragdrop){: .btn}
  
 
 ## HTML

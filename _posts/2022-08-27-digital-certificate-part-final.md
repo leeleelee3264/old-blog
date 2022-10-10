@@ -20,12 +20,6 @@ enabled: true
 
 * * *
 
-# test embed
-
-<script src="https://gist.github.com/leeleelee3264/c5be1e7338abb6b4cef17685a52806b5.js"></script>
-
-
-
 CA
 ==
 
@@ -151,7 +145,7 @@ echo | openssl s_client -servername google.com -connect google.com:443 |\\n  sed
 ### 인증서 열어보기
 
 간단하게 인증서 조회를 하기 위해서는 online parser를 사용할 수 있다. [[Online Parser]](https://certlogik.com/decoder/)
-파싱의 결과로 나온 field에 대한 설명은 [[LeeLee- Digital Certificate]](https://leeleelee3264.github.io/infra/2022/06/15/digital-certificate-part-one.html) 에서 더 자세하게 확인할 수 있다.
+파싱의 결과로 나온 field에 대한 설명은 [[LeeLee- Digital Certificate]](https://https://leeleelee3264.github.io/leeleelee3264.github.io-old//infra/2022/06/15/digital-certificate-part-one.html) 에서 더 자세하게 확인할 수 있다.
 
 ```java
 openssl x509 -in certificate.crt -noout -text 

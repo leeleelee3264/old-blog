@@ -50,7 +50,7 @@ I'm a Backend developer who dreams Devops. Here is something about me. <br>
 ### 📬 Contact
 - Email: <a href = "mailto: absinthe4902@naver.com">absinthe4902@naver.com</a>
 - LinkedIn: [LeeLee](https://www.linkedin.com/in/seungmin4035/)
-- Blog: https://leeleelee3264.github.io
+- Blog: https://https://leeleelee3264.github.io/leeleelee3264.github.io-old/
 
 <br>
 
