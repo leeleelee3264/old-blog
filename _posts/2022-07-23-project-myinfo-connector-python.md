@@ -250,7 +250,7 @@ curl -i -H 'Accept: application/json' <http://localhost:3001/user/me/external/my
 
 ## PKI Digital Signature
 
-Myinfo는 PKI Digital Signature를 필요로 한다. 해당 문서에서는 python에서 PKI를 사용하는 방법만을 다루기 때문에 PKI에 대한 더 자세한 설명은 링크로 첨부하겠다. [[Security] Digital Certificate](https://https://leeleelee3264.github.io//infra/2022/06/15/digital-certificate-part-one.html)
+Myinfo는 PKI Digital Signature를 필요로 한다. 해당 문서에서는 python에서 PKI를 사용하는 방법만을 다루기 때문에 PKI에 대한 더 자세한 설명은 링크로 첨부하겠다. [[Security] Digital Certificate](https://https://https://leeleelee3264.github.io/leeleelee3264.github.io-old/infra/2022/06/15/digital-certificate-part-one.html)
 
 이 프로젝트에서는 Myinfo에서 샘플로 제공하는 client private key와 myinfo public key를 사용했다. 샘플환경에서는 client의 public key는 이미 myinfo에서 가지고 있다고 가정되어있기 때문에 myinfo에 별도로 clinet public key를 전달하지 않아도 된다. python 패키지로는 *`jwcrypto`*와 `Crypto`를 사용했다.
 
