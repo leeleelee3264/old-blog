@@ -189,7 +189,7 @@ protocols:
 
     twitter_image: "/assets/img/mylogo.png"
 
-    os_repo: "https://github.com/leeleelee3264/https://leeleelee3264.github.io/"
+    os_repo: "https://github.com/leeleelee3264/leeleelee3264.github.io-old"
     os_rcs_type: "git"
 
-    os_src: "git@github.com:leeleelee3264/https://leeleelee3264.github.io/.git"
+    os_src: "git@github.com:leeleelee3264/leeleelee3264.github.io-old.git"
