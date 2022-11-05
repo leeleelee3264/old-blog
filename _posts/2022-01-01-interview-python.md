@@ -18,7 +18,7 @@ enabled: true
 <br> 
 <br> 
 
-전편 [[2021 Backend Engineer Interview - Java]]([https://https://https://leeleelee3264.github.io/leeleelee3264.github.io-old/general/2021/12/02/interview-java.html](https://https://https://leeleelee3264.github.io/leeleelee3264.github.io-old/general/2021/12/02/interview-java.html)) 에 이어서 이번에는 Python과 약간의 DevOps, 개발 전반 상식에 대한 면접 질문을 정리했다.
+전편 [[2021 Backend Engineer Interview - Java]]([https://https://https://leeleelee3264.github.io/old-blog/general/2021/12/02/interview-java.html](https://https://https://leeleelee3264.github.io/old-blog/general/2021/12/02/interview-java.html)) 에 이어서 이번에는 Python과 약간의 DevOps, 개발 전반 상식에 대한 면접 질문을 정리했다.
 
 index
 

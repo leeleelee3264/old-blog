@@ -12,7 +12,7 @@ enabled: true
 
 > ShellScript를 사용해서 Mysql db를 전체백업 하는 방법을 알아본다.
 
-SQL 백업에는 전체백업, 증분백업, 차등백업이 있다. 백업 종류에 대한 더 자세한 정보는 이전의 포스팅에서 확인이 가능하다. [[SQL 백업 종류]]([https://https://https://leeleelee3264.github.io/leeleelee3264.github.io-old/backend/2021/07/21/mysql-backup.html](https://https://https://leeleelee3264.github.io/leeleelee3264.github.io-old/backend/2021/07/21/mysql-backup.html))
+SQL 백업에는 전체백업, 증분백업, 차등백업이 있다. 백업 종류에 대한 더 자세한 정보는 이전의 포스팅에서 확인이 가능하다. [[SQL 백업 종류]]([https://https://https://leeleelee3264.github.io/old-blog/backend/2021/07/21/mysql-backup.html](https://https://https://leeleelee3264.github.io/old-blog/backend/2021/07/21/mysql-backup.html))
 
 
 
